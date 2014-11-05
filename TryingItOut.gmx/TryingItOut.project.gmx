@@ -14,6 +14,7 @@
     <sprite>sprites\sp_player_N</sprite>
     <sprite>sprites\sp_player_W</sprite>
     <sprite>sprites\sp_player_E</sprite>
+    <sprite>sprites\sp_bullet_test</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tiles</background>
@@ -21,6 +22,7 @@
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\obj_player</object>
+    <object>objects\obj_bullet</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_testArea</room>

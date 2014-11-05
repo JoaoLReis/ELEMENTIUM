@@ -29,7 +29,31 @@
 
 hsp = 0;
 moveSpeed = 4;
+canshoot = true;
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>canshoot = true;
 </string>
           </argument>
         </arguments>
@@ -64,40 +88,85 @@ xMove = key_left + key_right;
 
 if(key_up != 0)
 {
+    direction = 90;
     sprite_index = sp_player_N;
 }
 if(key_down != 0)
 {
+    direction = 270;
     sprite_index = sp_player_S;
 }
 if(key_left != 0)
 {
+    direction = 180;
     sprite_index = sp_player_W;
 }
 if(key_right != 0)
 {
+    direction = 0;
     sprite_index = sp_player_E;
 }
 if(key_up != 0 &amp;&amp; key_right != 0)
 {
+    direction = 45;
     sprite_index = sp_player_NE;
 }
 if(key_up != 0 &amp;&amp; key_left != 0)
 {
+    direction = 135;
     sprite_index = sp_player_NW;
 }
 if(key_down != 0 &amp;&amp; key_left != 0)
 {
+    direction = 225;
     sprite_index = sp_player_SW;
 }
 if(key_down != 0 &amp;&amp; key_right != 0)
 {
+    direction = 315;
     sprite_index = sp_player_SE;
 }
 
 
 x += xMove * moveSpeed;
 y += yMove * moveSpeed;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="50">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if canshoot
+{
+    //Towards mouse
+    var b = instance_create(x, y, obj_bullet);
+    b.direction = point_direction(x, y, mouse_x, mouse_y);
+    b.image_angle = image_angle;
+    b.speed = 10;
+    
+    //Towards direction
+    var b = instance_create(x, y, obj_bullet);
+    b.direction = direction;
+    b.speed = 10;
+    canshoot = false;
+    alarm[0]=9;
+}
 </string>
           </argument>
         </arguments>
