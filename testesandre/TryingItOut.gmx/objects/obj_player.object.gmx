@@ -32,7 +32,7 @@ moveSpeed = 4;
 canshoot = true;
 canmelee = true;
 canmove = true;
-global.curHealth = 20;
+
 
 </string>
           </argument>
