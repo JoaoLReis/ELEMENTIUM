@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0]=60;
+            <string>alarm[0]=global.valueProjRange;
 </string>
           </argument>
         </arguments>

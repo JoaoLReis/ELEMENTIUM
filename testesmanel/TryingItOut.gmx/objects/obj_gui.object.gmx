@@ -115,8 +115,11 @@ if(cursorPosition &lt; 0)
     cursorPosition = 6;
     
 //begin game
-if(keyboard_check_pressed(vk_enter))
+if(keyboard_check_pressed(vk_enter)){
+    global.valueHealth = global.defaultHealth + global.curHealth * 50;
+    global.valueProjRange = global.defaultProjRange + global.curProjRange * 10;
     room_goto(rm_testArea);
+}
 </string>
           </argument>
         </arguments>
@@ -143,10 +146,12 @@ if(keyboard_check_pressed(vk_enter))
 draw_text(100, 100, "Avalible Points: " + string(global.availiblePoints));
 draw_text(100, 130, "Character:");
     draw_menu_bar(160, global.curHealth, global.maxHealth, "Health: ");
+    draw_text(500, 160, "Value: " + string(global.defaultHealth + global.curHealth * 50));
     draw_menu_bar(190, global.curAttack, global.maxAttack, "Attack: ");
     draw_menu_bar(220, global.curDefense, global.maxDefense, "Defense: ");
     draw_menu_bar(250, global.curProjRange, global.maxProjRange, "Projectile Range: ");
-
+    draw_text(500, 250, "Value: " + string(global.defaultProjRange + global.curProjRange * 10));
+    
 draw_text(100, 280, "Elements:");
     draw_menu_bar(310, global.curFireStrength, global.maxFireStrength, "Fire: ");
     draw_menu_bar(340, global.curEarthStrength, global.maxEarthStrength, "Earth: ");

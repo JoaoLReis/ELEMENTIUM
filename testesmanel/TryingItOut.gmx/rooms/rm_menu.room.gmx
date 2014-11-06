@@ -13,12 +13,19 @@
   <code>global.availiblePoints = 10;
 global.curHealth = 0;
 global.maxHealth = 3;
+global.valueHealth = 50;
+global.defaultHealth = 50;
+
 global.curAttack = 0;
 global.maxAttack = 3;
 global.curDefense = 0;
 global.maxDefense = 3;
+
 global.curProjRange = 0;
 global.maxProjRange = 3;
+global.valueProjRange = 30;
+global.defaultProjRange = 30;
+
 global.curFireStrength = 0;
 global.maxFireStrength = 3;
 global.curEarthStrength = 0;
