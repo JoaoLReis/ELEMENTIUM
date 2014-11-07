@@ -26,11 +26,66 @@
           <argument>
             <kind>1</kind>
             <string>/// Initialize variables
-
+lastroom = rm_testArea;
 hsp = 0;
 moveSpeed = 4;
 canshoot = true;
+canmelee = true;
+canmove = true;
 
+//create event of player object
+
+friction = .7
+acceleration = 1
+max_speed = 5
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>canmove = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>canmelee = true;
 </string>
           </argument>
         </arguments>
@@ -54,6 +109,7 @@ canshoot = true;
           <argument>
             <kind>1</kind>
             <string>canshoot = true;
+
 </string>
           </argument>
         </arguments>
@@ -77,59 +133,118 @@ canshoot = true;
           <argument>
             <kind>1</kind>
             <string>/// Keyboard event Handler
-
 key_right = keyboard_check(vk_right);
 key_left = -keyboard_check(vk_left);
 key_up = -keyboard_check(vk_up);
 key_down = keyboard_check(vk_down);
 
-yMove = key_up + key_down;
-xMove = key_left + key_right;
-
 if(key_up != 0)
 {
-    direction = 90;
+    if place_free(x, y - 1)
+        motion_add(90, acceleration)
     sprite_index = sp_player_N;
 }
 if(key_down != 0)
 {
-    direction = 270;
+    if place_free(x, y + 1)
+        motion_add(270, acceleration)
     sprite_index = sp_player_S;
 }
 if(key_left != 0)
 {
-    direction = 180;
+    if place_free(x - 1,y)
+        motion_add(180, acceleration)
     sprite_index = sp_player_W;
 }
 if(key_right != 0)
 {
-    direction = 0;
+    if place_free(x + 1, y)
+        motion_add(0, acceleration)
     sprite_index = sp_player_E;
 }
 if(key_up != 0 &amp;&amp; key_right != 0)
 {
-    direction = 45;
     sprite_index = sp_player_NE;
 }
 if(key_up != 0 &amp;&amp; key_left != 0)
 {
-    direction = 135;
     sprite_index = sp_player_NW;
 }
 if(key_down != 0 &amp;&amp; key_left != 0)
 {
-    direction = 225;
     sprite_index = sp_player_SW;
 }
 if(key_down != 0 &amp;&amp; key_right != 0)
 {
-    direction = 315;
     sprite_index = sp_player_SE;
 }
 
+if speed &gt; max_speed
+{
+     speed = max_speed
+}
 
-x += xMove * moveSpeed;
-y += yMove * moveSpeed;
+if(global.valueHealth == 0)
+{
+    // deactivates the game
+    instance_deactivate_all(true);
+    // kills the game
+    game_end();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_collision">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>x = round(x)
+y = round(y)
+move_outside_solid(direction - 180, speed)
+move_contact_solid(direction, speed)
+speed = 0
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_enemy">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.valueHealth = global.valueHealth - 1;
+
+//this goes in collision event with player in the enemy
+dir = point_direction(other.x, other.y, x, y)
+with (obj_player ) { motion_set(dir,20) }
 </string>
           </argument>
         </arguments>
@@ -165,6 +280,38 @@ y += yMove * moveSpeed;
         </arguments>
       </action>
     </event>
+    <event eventtype="5" enumb="88">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Melee
+if canmelee{
+    //Towards direction
+    var b = instance_create(x, y, obj_melee);
+    b.direction = direction;
+    canmove = false
+    canmelee = false;
+    alarm[1] = 10;
+    alarm[2] = 6;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="50">
       <action>
         <libid>1</libid>
@@ -190,7 +337,7 @@ y += yMove * moveSpeed;
     b.image_angle = image_angle;
     canshoot = false;
     b.speed = 10;
-
+    alarm[0]=9;
 }
 </string>
           </argument>

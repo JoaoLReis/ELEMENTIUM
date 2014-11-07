@@ -15,6 +15,9 @@
     <sprite>sprites\sp_player_W</sprite>
     <sprite>sprites\sp_player_E</sprite>
     <sprite>sprites\sp_bullet_test</sprite>
+    <sprite>sprites\sp_melee</sprite>
+    <sprite>sprites\sp_enemy</sprite>
+    <sprite>sprites\sp_collision</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tiles</background>
@@ -27,6 +30,9 @@
     <object>objects\obj_player</object>
     <object>objects\obj_bullet</object>
     <object>objects\obj_gui</object>
+    <object>objects\obj_melee</object>
+    <object>objects\obj_enemy</object>
+    <object>objects\obj_collision</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_menu</room>
