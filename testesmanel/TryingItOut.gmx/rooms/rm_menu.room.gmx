@@ -18,8 +18,13 @@ global.defaultHealth = 50;
 
 global.curAttack = 0;
 global.maxAttack = 3;
+global.valueAttack = 2;
+global.defaultAttack = 2;
+
 global.curDefense = 0;
 global.maxDefense = 3;
+global.valueDefense = 0;
+global.defaultDefense = 0;
 
 global.curProjRange = 0;
 global.maxProjRange = 3;

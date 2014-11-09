@@ -6,26 +6,28 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\sp_player_SW</sprite>
-    <sprite>sprites\sp_player_NE</sprite>
-    <sprite>sprites\sp_player_SE</sprite>
-    <sprite>sprites\sp_player_NW</sprite>
-    <sprite>sprites\sp_player_S</sprite>
-    <sprite>sprites\sp_player_N</sprite>
-    <sprite>sprites\sp_player_W</sprite>
-    <sprite>sprites\sp_player_E</sprite>
     <sprite>sprites\sp_bullet_test</sprite>
     <sprite>sprites\sp_melee</sprite>
     <sprite>sprites\sp_enemy</sprite>
     <sprite>sprites\sp_collision</sprite>
-    <sprite>sprites\sp_player_E_IDLE</sprite>
-    <sprite>sprites\sp_player_N_IDLE</sprite>
-    <sprite>sprites\sp_player_NE_IDLE</sprite>
-    <sprite>sprites\sp_player_NW_IDLE</sprite>
-    <sprite>sprites\sp_player_S_IDLE</sprite>
-    <sprite>sprites\sp_player_SE_IDLE</sprite>
-    <sprite>sprites\sp_player_SW_IDLE</sprite>
-    <sprite>sprites\sp_player_W_IDLE</sprite>
+    <sprites name="character">
+      <sprite>sprites\sp_player_W_IDLE</sprite>
+      <sprite>sprites\sp_player_S_IDLE</sprite>
+      <sprite>sprites\sp_player_N_IDLE</sprite>
+      <sprite>sprites\sp_player_E_IDLE</sprite>
+      <sprite>sprites\sp_player_E</sprite>
+      <sprite>sprites\sp_player_W</sprite>
+      <sprite>sprites\sp_player_S</sprite>
+      <sprite>sprites\sp_player_SE</sprite>
+      <sprite>sprites\sp_player_NE</sprite>
+      <sprite>sprites\sp_player_N</sprite>
+      <sprite>sprites\sp_player_SW</sprite>
+      <sprite>sprites\sp_player_NW</sprite>
+    </sprites>
+    <sprites name="gui">
+      <sprite>sprites\sp_red_bar</sprite>
+      <sprite>sprites\sp_green_bar</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tiles</background>
@@ -46,6 +48,12 @@
     <room>rooms\rm_menu</room>
     <room>rooms\rm_testArea</room>
   </rooms>
+  <constants number="4">
+    <constant name="DOWN">3</constant>
+    <constant name="UP">2</constant>
+    <constant name="RIGHT">1</constant>
+    <constant name="LEFT">0</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>
