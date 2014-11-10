@@ -42,7 +42,9 @@ image_speed = 0.15
 
 step_count = 0;
 flash = false;
-
+// init lightmap
+instance_create(0,0,obj_lightmap);
+light = instance_create(x,y,obj_light);
 
 </string>
           </argument>
@@ -228,7 +230,6 @@ if(speed == 0){
         sprite_index = sp_player_S_IDLE;
 }
 
-
 if(global.valueHealth &lt;= 0)
 {
     // deactivates the game
@@ -241,7 +242,7 @@ if(global.valueHealth &lt;= 0)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_collision">
+    <event eventtype="4" ename="obj_shadowcaster">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -439,6 +440,8 @@ if flash{
      if step_count &lt; 7
      exit;
 }
+light.x = x;
+light.y = y;
 draw_self();
 </string>
           </argument>

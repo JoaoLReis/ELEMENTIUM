@@ -29,7 +29,6 @@
 alert = 0;
 maxHealth = 20;
 valueHealth = maxHealth;
-
 </string>
           </argument>
         </arguments>
@@ -155,7 +154,7 @@ valueHealth = maxHealth;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_collision">
+    <event eventtype="4" ename="obj_shadowcaster">
       <action>
         <libid>1</libid>
         <id>115</id>

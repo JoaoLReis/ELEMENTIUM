@@ -28,6 +28,7 @@
       <sprite>sprites\sp_red_bar</sprite>
       <sprite>sprites\sp_green_bar</sprite>
     </sprites>
+    <sprite>sprites\sp_light</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tiles</background>
@@ -35,6 +36,14 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\draw_menu_bar.gml</script>
+    <script>scripts\lightmap_init.gml</script>
+    <script>scripts\lightmap_update.gml</script>
+    <script>scripts\lightmap_draw.gml</script>
+    <script>scripts\light_init.gml</script>
+    <script>scripts\light_update.gml</script>
+    <script>scripts\light_draw.gml</script>
+    <script>scripts\caster_init.gml</script>
+    <script>scripts\caster_draw.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -42,7 +51,9 @@
     <object>objects\obj_gui</object>
     <object>objects\obj_melee</object>
     <object>objects\obj_enemy</object>
-    <object>objects\obj_collision</object>
+    <object>objects\obj_shadowcaster</object>
+    <object>objects\obj_lightmap</object>
+    <object>objects\obj_light</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_menu</room>
