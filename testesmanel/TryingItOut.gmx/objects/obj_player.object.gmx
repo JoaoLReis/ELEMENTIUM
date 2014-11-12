@@ -37,8 +37,8 @@ canmove = true;
 
 friction = .7
 acceleration = 1
-max_speed = 5
-image_speed = 0.15
+max_speed = 5.5
+image_speed = 0.25
 
 step_count = 0;
 flash = false;
