@@ -43,8 +43,8 @@ image_speed = 0.15
 step_count = 0;
 flash = false;
 // init lightmap
-instance_create(0,0,obj_lightmap);
-light = instance_create(x,y,obj_light);
+//instance_create(0,0,obj_lightmap);
+//light = instance_create(x,y,obj_light);
 
 </string>
           </argument>
@@ -232,11 +232,32 @@ if(speed == 0){
 
 if(global.valueHealth &lt;= 0)
 {
-    // deactivates the game
-    instance_deactivate_all(true);
-    // kills the game
-    game_end();
+    room_goto(rm_menu);
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_artefact_end">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// game over
+room_goto(rm_gameover);
 </string>
           </argument>
         </arguments>
@@ -436,8 +457,8 @@ draw_healthbar(10, 10, 10 + maxHealth, 20, (global.valueHealth / maxHealth) * 10
           <argument>
             <kind>1</kind>
             <string>//draw event
-light.x = x;
-light.y = y;
+//light.x = x;
+//light.y = y;
 if flash{
      if step_count &lt; 7
      exit;
