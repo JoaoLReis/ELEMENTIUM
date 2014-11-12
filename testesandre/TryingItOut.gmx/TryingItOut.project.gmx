@@ -34,6 +34,7 @@
     <sprites name="light">
       <sprite>sprites\sp_light</sprite>
     </sprites>
+    <sprite>sprites\sp_chasing</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tiles</background>

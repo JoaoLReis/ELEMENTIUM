@@ -80,7 +80,7 @@ image_angle = direction;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_collision">
+    <event eventtype="4" ename="obj_shadowcaster">
       <action>
         <libid>1</libid>
         <id>603</id>
