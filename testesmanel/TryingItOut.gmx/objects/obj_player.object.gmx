@@ -43,8 +43,8 @@ image_speed = 0.15
 step_count = 0;
 flash = false;
 // init lightmap
-instance_create(0,0,obj_lightmap);
-light = instance_create(x,y,obj_light);
+//instance_create(0,0,obj_lightmap);
+//light = instance_create(x,y,obj_light);
 
 </string>
           </argument>
@@ -436,12 +436,12 @@ draw_healthbar(10, 10, 10 + maxHealth, 20, (global.valueHealth / maxHealth) * 10
           <argument>
             <kind>1</kind>
             <string>//draw event
+//light.x = x;
+//light.y = y;
 if flash{
      if step_count &lt; 7
      exit;
 }
-light.x = x;
-light.y = y;
 draw_self();
 </string>
           </argument>
