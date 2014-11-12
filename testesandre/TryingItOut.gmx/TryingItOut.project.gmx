@@ -28,7 +28,13 @@
       <sprite>sprites\sp_red_bar</sprite>
       <sprite>sprites\sp_green_bar</sprite>
     </sprites>
-    <sprite>sprites\sp_light</sprite>
+    <sprites name="interactables">
+      <sprite>sprites\sp_end_level</sprite>
+    </sprites>
+    <sprites name="light">
+      <sprite>sprites\sp_light</sprite>
+    </sprites>
+    <sprite>sprites\sp_chasing</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tiles</background>
@@ -36,14 +42,16 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\draw_menu_bar.gml</script>
-    <script>scripts\lightmap_init.gml</script>
-    <script>scripts\lightmap_update.gml</script>
-    <script>scripts\lightmap_draw.gml</script>
-    <script>scripts\light_init.gml</script>
-    <script>scripts\light_update.gml</script>
-    <script>scripts\light_draw.gml</script>
-    <script>scripts\caster_init.gml</script>
-    <script>scripts\caster_draw.gml</script>
+    <scripts name="light">
+      <script>scripts\caster_draw.gml</script>
+      <script>scripts\lightmap_init.gml</script>
+      <script>scripts\light_draw.gml</script>
+      <script>scripts\light_init.gml</script>
+      <script>scripts\lightmap_draw.gml</script>
+      <script>scripts\caster_init.gml</script>
+      <script>scripts\light_update.gml</script>
+      <script>scripts\lightmap_update.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -54,10 +62,15 @@
     <object>objects\obj_shadowcaster</object>
     <object>objects\obj_lightmap</object>
     <object>objects\obj_light</object>
+    <object>objects\obj_artefact_end</object>
+    <object>objects\obj_gameover_gui</object>
+    <object>objects\obj_init</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_init</room>
     <room>rooms\rm_menu</room>
     <room>rooms\rm_testArea</room>
+    <room>rooms\rm_gameover</room>
   </rooms>
   <constants number="4">
     <constant name="DOWN">3</constant>
