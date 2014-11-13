@@ -29,6 +29,8 @@
       <sprite>sprites\sp_green_bar</sprite>
     </sprites>
     <sprite>sprites\sp_light</sprite>
+    <sprite>sprites\sp_chasing</sprite>
+    <sprite>sprites\sp_end_level</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tiles</background>
@@ -54,10 +56,16 @@
     <object>objects\obj_shadowcaster</object>
     <object>objects\obj_lightmap</object>
     <object>objects\obj_light</object>
+    <object>objects\obj_artefact_end</object>
+    <object>objects\obj_collision</object>
+    <object>objects\obj_gameover_gui</object>
+    <object>objects\obj_init</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_menu</room>
     <room>rooms\rm_testArea</room>
+    <room>rooms\rm_gameover</room>
+    <room>rooms\rm_init</room>
   </rooms>
   <constants number="4">
     <constant name="DOWN">3</constant>

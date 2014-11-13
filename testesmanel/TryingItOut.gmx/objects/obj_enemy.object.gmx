@@ -29,108 +29,47 @@
 alert = 0;
 maxHealth = 20;
 valueHealth = maxHealth;
+
+moveSpeed = 2;
+
+chasing = false;
+
+direction = random(360);
+speed = moveSpeed;
+alarm[0] = 60;
+
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
-        <id>102</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_set_motion</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>0</kind>
-            <string>random(360)</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>2</string>
+            <kind>1</kind>
+            <string>direction = random(360);
+speed = moveSpeed/4;
+alarm[0] = 60;
+
+</string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>405</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_dice</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>20</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>422</id>
-        <kind>1</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>102</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_set_motion</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>random(360)</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>2</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>424</id>
-        <kind>2</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -149,6 +88,29 @@ valueHealth = maxHealth;
             <kind>1</kind>
             <string>if(valueHealth &lt;= 0)  
     instance_destroy();
+    
+radius = 150;
+    
+target = obj_player;
+
+if point_distance(x, y, target.x, target.y) &lt; radius
+{
+    //for(i = 20; i&lt; (point_distance(x, y, target.x, target.y)); i+=8)
+    //{
+    //    if(position_empty(x+i, y+i))
+    //    {
+    //        continue;   
+    //    }
+    //    else 
+    //    {
+    //        chasing = false;
+    //        exit;
+    //    }
+    //}    
+    move_towards_point(target.x, target.y, moveSpeed);
+    chasing = true;
+}
+else chasing = false;
 </string>
           </argument>
         </arguments>
@@ -248,6 +210,11 @@ valueHealth = maxHealth;
             <string>if(valueHealth &lt; maxHealth){
     draw_healthbar(x - 10, y - 30, x + 10, y - 25, 
                 (valueHealth / maxHealth) * 100, c_black, c_red, c_red, 0, true, true);
+}
+
+if(chasing)
+{
+    draw_sprite(sp_chasing, 0, x, y-32);
 }
 </string>
           </argument>
