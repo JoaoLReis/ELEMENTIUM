@@ -63,49 +63,49 @@ if(key_down != 0){
 //health
 if(cursorPosition == 0){
     if(key_left != 0 &amp;&amp; global.curHealth &gt; 0)
-        {global.curHealth--; global.availiblePoints++;}  
-    if(key_right != 0 &amp;&amp; global.curHealth &lt; global.maxHealth &amp;&amp; global.availiblePoints &gt; 0)
-        {global.curHealth++; global.availiblePoints--;}
+        {global.curHealth--; global.availablePoints++;}  
+    if(key_right != 0 &amp;&amp; global.curHealth &lt; global.maxHealth &amp;&amp; global.availablePoints &gt; 0)
+        {global.curHealth++; global.availablePoints--;}
 }
 
 //attack
 if(cursorPosition == 1){
     if(key_left != 0 &amp;&amp; global.curAttack &gt; 0)
-        {global.curAttack--; global.availiblePoints++;}  
-    if(key_right != 0 &amp;&amp; global.curAttack &lt; global.maxAttack &amp;&amp; global.availiblePoints &gt; 0)
-        {global.curAttack++; global.availiblePoints--;}
+        {global.curAttack--; global.availablePoints++;}  
+    if(key_right != 0 &amp;&amp; global.curAttack &lt; global.maxAttack &amp;&amp; global.availablePoints &gt; 0)
+        {global.curAttack++; global.availablePoints--;}
 }
 
 //defense
 if(cursorPosition == 2){
     if(key_left != 0 &amp;&amp; global.curDefense &gt; 0)
-        {global.curDefense--; global.availiblePoints++;}  
-    if(key_right != 0 &amp;&amp; global.curDefense &lt; global.maxDefense &amp;&amp; global.availiblePoints &gt; 0)
-        {global.curDefense++; global.availiblePoints--;}
+        {global.curDefense--; global.availablePoints++;}  
+    if(key_right != 0 &amp;&amp; global.curDefense &lt; global.maxDefense &amp;&amp; global.availablePoints &gt; 0)
+        {global.curDefense++; global.availablePoints--;}
 }
 
 //Projectile Range
 if(cursorPosition == 3){
     if(key_left != 0 &amp;&amp; global.curProjRange &gt; 0)
-        {global.curProjRange--; global.availiblePoints++;}  
-    if(key_right != 0 &amp;&amp; global.curProjRange &lt; global.maxProjRange &amp;&amp; global.availiblePoints &gt; 0)
-        {global.curProjRange++; global.availiblePoints--;}
+        {global.curProjRange--; global.availablePoints++;}  
+    if(key_right != 0 &amp;&amp; global.curProjRange &lt; global.maxProjRange &amp;&amp; global.availablePoints &gt; 0)
+        {global.curProjRange++; global.availablePoints--;}
 }
 
 //Fire
 if(cursorPosition == 4){
     if(key_left != 0 &amp;&amp; global.curFireStrength &gt; 0)
-        {global.curFireStrength--; global.availiblePoints++;}  
-    if(key_right != 0 &amp;&amp; global.curFireStrength &lt; global.maxFireStrength &amp;&amp; global.availiblePoints &gt; 0)
-        {global.curFireStrength++; global.availiblePoints--;}
+        {global.curFireStrength--; global.availablePoints++;}  
+    if(key_right != 0 &amp;&amp; global.curFireStrength &lt; global.maxFireStrength &amp;&amp; global.availablePoints &gt; 0)
+        {global.curFireStrength++; global.availablePoints--;}
 }
 
 //Earth
 if(cursorPosition == 5){
     if(key_left != 0 &amp;&amp; global.curEarthStrength &gt; 0)
-        {global.curEarthStrength--; global.availiblePoints++;}  
-    if(key_right != 0 &amp;&amp; global.curEarthStrength &lt; global.maxEarthStrength &amp;&amp; global.availiblePoints &gt; 0)
-        {global.curEarthStrength++; global.availiblePoints--;}
+        {global.curEarthStrength--; global.availablePoints++;}  
+    if(key_right != 0 &amp;&amp; global.curEarthStrength &lt; global.maxEarthStrength &amp;&amp; global.availablePoints &gt; 0)
+        {global.curEarthStrength++; global.availablePoints--;}
 }
 
 //loop cursor
@@ -145,7 +145,7 @@ if(keyboard_check_pressed(vk_enter)){
           <argument>
             <kind>1</kind>
             <string>
-draw_text(100, 100, "Avalible Points: " + string(global.availiblePoints));
+draw_text(100, 100, "Avalible Points: " + string(global.availablePoints));
 draw_text(100, 130, "Character:");
     draw_menu_bar(160, global.curHealth, global.maxHealth, "Health: ");
     draw_text(500, 160, "Value: " + string(global.defaultHealth + global.curHealth * 50));

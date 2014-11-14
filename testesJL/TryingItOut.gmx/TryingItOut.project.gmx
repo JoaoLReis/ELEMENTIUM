@@ -7,8 +7,14 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\sp_bullet_test</sprite>
+    <sprite>sprites\sp_bulletFire</sprite>
+    <sprite>sprites\sp_bulletWater</sprite>
+    <sprite>sprites\sp_bulletEarth</sprite>
     <sprite>sprites\sp_melee</sprite>
     <sprite>sprites\sp_enemy</sprite>
+    <sprite>sprites\sp_enemyEarth</sprite>
+    <sprite>sprites\sp_enemyWater</sprite>
+    <sprite>sprites\sp_enemyFire</sprite>
     <sprite>sprites\sp_collision</sprite>
     <sprites name="character">
       <sprite>sprites\sp_player_W_IDLE</sprite>
@@ -46,10 +52,18 @@
     <script>scripts\light_draw.gml</script>
     <script>scripts\caster_init.gml</script>
     <script>scripts\caster_draw.gml</script>
+    <script>scripts\damage_Player.gml</script>
+    <script>scripts\damageEnemy.gml</script>
+    <script>scripts\damageEnemyFire.gml</script>
+    <script>scripts\damageEnemyWater.gml</script>
+    <script>scripts\damageEnemyEarth.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_bullet</object>
+    <object>objects\obj_bulletFire</object>
+    <object>objects\obj_bulletWater</object>
+    <object>objects\obj_bulletEarth</object>
     <object>objects\obj_gui</object>
     <object>objects\obj_melee</object>
     <object>objects\obj_enemy</object>
@@ -60,12 +74,15 @@
     <object>objects\obj_collision</object>
     <object>objects\obj_gameover_gui</object>
     <object>objects\obj_init</object>
+    <object>objects\obj_EnemyFire</object>
+    <object>objects\obj_enemyWater</object>
+    <object>objects\obj_enemyEarth</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_init</room>
     <room>rooms\rm_menu</room>
     <room>rooms\rm_testArea</room>
     <room>rooms\rm_gameover</room>
-    <room>rooms\rm_init</room>
   </rooms>
   <constants number="4">
     <constant name="DOWN">3</constant>
