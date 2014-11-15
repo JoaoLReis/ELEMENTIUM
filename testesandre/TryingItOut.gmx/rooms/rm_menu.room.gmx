@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>global.availiblePoints = 10;
+  <code>global.availablePoints = global.defaultavailablePoints;
 global.curHealth = 0;
 
 global.valueHealth = global.defaultHealth;

@@ -290,37 +290,6 @@ speed = 0
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_enemy">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(!flash){
-    global.valueHealth = global.valueHealth - (10 - global.valueDefense);
-    flash = true;
-    alarm[3] = 60;
-    
-    //this goes in collision event with player in the enemy
-    dir = point_direction(other.x, other.y, x, y)
-    with (obj_player ) { motion_set(dir,10) }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="5" enumb="90">
       <action>
         <libid>1</libid>
@@ -377,6 +346,96 @@ if canmelee{
     canmelee = false;
     alarm[1] = 10;
     alarm[2] = 6;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="82">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if canshoot{
+    //Towards direction
+    var b = instance_create(x, y, obj_bulletEarth);
+    b.direction = direction;
+    b.speed = 10;
+    canshoot = false;
+    alarm[0]=9;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="81">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if canshoot{
+    //Towards direction
+    var b = instance_create(x, y, obj_bulletFire);
+    b.direction = direction;
+    b.speed = 10;
+    canshoot = false;
+    alarm[0]=9;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="69">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if canshoot{
+    //Towards direction
+    var b = instance_create(x, y, obj_bulletWater);
+    b.direction = direction;
+    b.speed = 10;
+    canshoot = false;
+    alarm[0]=9;
 }
 </string>
           </argument>

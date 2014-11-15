@@ -6,16 +6,7 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\sp_bullet_test</sprite>
-    <sprite>sprites\sp_bulletFire</sprite>
-    <sprite>sprites\sp_bulletWater</sprite>
-    <sprite>sprites\sp_bulletEarth</sprite>
     <sprite>sprites\sp_melee</sprite>
-    <sprite>sprites\sp_enemy</sprite>
-    <sprite>sprites\sp_enemyEarth</sprite>
-    <sprite>sprites\sp_enemyWater</sprite>
-    <sprite>sprites\sp_enemyFire</sprite>
-    <sprite>sprites\sp_collision</sprite>
     <sprites name="character">
       <sprite>sprites\sp_player_W_IDLE</sprite>
       <sprite>sprites\sp_player_S_IDLE</sprite>
@@ -34,49 +25,82 @@
       <sprite>sprites\sp_red_bar</sprite>
       <sprite>sprites\sp_green_bar</sprite>
     </sprites>
-    <sprite>sprites\sp_light</sprite>
-    <sprite>sprites\sp_chasing</sprite>
-    <sprite>sprites\sp_end_level</sprite>
+    <sprites name="Enemies">
+      <sprite>sprites\sp_enemy</sprite>
+      <sprite>sprites\sp_enemyEarth</sprite>
+      <sprite>sprites\sp_enemyWater</sprite>
+      <sprite>sprites\sp_end_level</sprite>
+      <sprite>sprites\sp_enemyFire</sprite>
+      <sprite>sprites\sp_chasing</sprite>
+    </sprites>
+    <sprites name="Projectiles">
+      <sprite>sprites\sp_bulletWater</sprite>
+      <sprite>sprites\sp_bullet_test</sprite>
+      <sprite>sprites\sp_bulletFire</sprite>
+      <sprite>sprites\sp_bulletEarth</sprite>
+    </sprites>
+    <sprites name="Light">
+      <sprite>sprites\sp_light</sprite>
+    </sprites>
+    <sprites name="Map">
+      <sprite>sprites\sp_collision</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tiles</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\draw_menu_bar.gml</script>
-    <script>scripts\lightmap_init.gml</script>
-    <script>scripts\lightmap_update.gml</script>
-    <script>scripts\lightmap_draw.gml</script>
-    <script>scripts\light_init.gml</script>
-    <script>scripts\light_update.gml</script>
-    <script>scripts\light_draw.gml</script>
-    <script>scripts\caster_init.gml</script>
-    <script>scripts\caster_draw.gml</script>
-    <script>scripts\damage_Player.gml</script>
-    <script>scripts\damageEnemy.gml</script>
-    <script>scripts\damageEnemyFire.gml</script>
-    <script>scripts\damageEnemyWater.gml</script>
-    <script>scripts\damageEnemyEarth.gml</script>
+    <scripts name="Lighting">
+      <script>scripts\lightmap_init.gml</script>
+      <script>scripts\lightmap_update.gml</script>
+      <script>scripts\lightmap_draw.gml</script>
+      <script>scripts\light_init.gml</script>
+      <script>scripts\light_update.gml</script>
+      <script>scripts\light_draw.gml</script>
+      <script>scripts\caster_init.gml</script>
+      <script>scripts\caster_draw.gml</script>
+    </scripts>
+    <scripts name="Damage">
+      <script>scripts\damage_Player.gml</script>
+      <script>scripts\damageEnemy.gml</script>
+      <script>scripts\damageEnemyFire.gml</script>
+      <script>scripts\damageEnemyWater.gml</script>
+      <script>scripts\damageEnemyEarth.gml</script>
+    </scripts>
+    <scripts name="GUI">
+      <script>scripts\draw_menu_bar.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
-    <object>objects\obj_bullet</object>
-    <object>objects\obj_bulletFire</object>
-    <object>objects\obj_bulletWater</object>
-    <object>objects\obj_bulletEarth</object>
-    <object>objects\obj_gui</object>
     <object>objects\obj_melee</object>
-    <object>objects\obj_enemy</object>
-    <object>objects\obj_shadowcaster</object>
-    <object>objects\obj_lightmap</object>
-    <object>objects\obj_light</object>
-    <object>objects\obj_artefact_end</object>
-    <object>objects\obj_collision</object>
-    <object>objects\obj_gameover_gui</object>
-    <object>objects\obj_init</object>
-    <object>objects\obj_EnemyFire</object>
-    <object>objects\obj_enemyWater</object>
-    <object>objects\obj_enemyEarth</object>
+    <objects name="Projectiles">
+      <object>objects\obj_bullet</object>
+      <object>objects\obj_bulletFire</object>
+      <object>objects\obj_bulletWater</object>
+      <object>objects\obj_bulletEarth</object>
+    </objects>
+    <objects name="Enemies">
+      <object>objects\obj_EnemyFire</object>
+      <object>objects\obj_enemyWater</object>
+      <object>objects\obj_enemyEarth</object>
+      <object>objects\obj_enemy</object>
+    </objects>
+    <objects name="Lighting">
+      <object>objects\obj_lightmap</object>
+      <object>objects\obj_light</object>
+    </objects>
+    <objects name="GUI">
+      <object>objects\obj_gameover_gui</object>
+      <object>objects\obj_init</object>
+      <object>objects\obj_gui</object>
+    </objects>
+    <objects name="Map">
+      <object>objects\obj_shadowcaster</object>
+      <object>objects\obj_artefact_end</object>
+      <object>objects\obj_collision</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
