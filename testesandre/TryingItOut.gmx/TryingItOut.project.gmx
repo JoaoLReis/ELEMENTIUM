@@ -24,6 +24,10 @@
     <sprites name="gui">
       <sprite>sprites\sp_red_bar</sprite>
       <sprite>sprites\sp_green_bar</sprite>
+      <sprite>sprites\sp_gui_earth</sprite>
+      <sprite>sprites\sp_gui_water</sprite>
+      <sprite>sprites\sp_gui_fire</sprite>
+      <sprite>sprites\sp_gui_neutral</sprite>
     </sprites>
     <sprites name="Enemies">
       <sprite>sprites\sp_enemy</sprite>
@@ -48,6 +52,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tiles</background>
+    <background>background\background1</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -70,6 +75,8 @@
     </scripts>
     <scripts name="GUI">
       <script>scripts\draw_menu_bar.gml</script>
+      <script>scripts\draw_element_menu.gml</script>
+      <script>scripts\nextElementalState.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">

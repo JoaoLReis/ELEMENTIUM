@@ -33,6 +33,7 @@ canshoot = true;
 canmelee = true;
 canmove = true;
 
+
 //create event of player object
 
 friction = .7
@@ -45,6 +46,39 @@ flash = false;
 // init lightmap
 //instance_create(0,0,obj_lightmap);
 //light = instance_create(x,y,obj_light);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// INITIALIZE ELEMENTAL STATE
+//List of current elements owned by the player.
+elements = ds_list_create();
+ds_list_add(elements,"NEUTRAL");
+ds_list_add(elements,"FIRE");
+ds_list_add(elements,"WATER");
+
+//Current elemental state
+elementalState = "NEUTRAL";
+index = 0;
+
+
 
 </string>
           </argument>
@@ -442,6 +476,55 @@ if canmelee{
         </arguments>
       </action>
     </event>
+    <event eventtype="6" enumb="61">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Moves Elemental State Downwards
+nextElementalState(elementalState, false, index);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="60">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Moves Elemental State upward
+nextElementalState(elementalState, true, index);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="50">
       <action>
         <libid>1</libid>
@@ -491,8 +574,31 @@ if canmelee{
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var maxHealth = global.defaultHealth + global.curHealth * 50;
+            <string>/// HEALTHBAR
+var maxHealth = global.defaultHealth + global.curHealth * 50;
 draw_healthbar(10, 10, 10 + maxHealth, 20, (global.valueHealth / maxHealth) * 100, c_black, c_red, c_red, 0, true, true);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// ELEMENTS MENU
+draw_element_menu(elementalState);
 </string>
           </argument>
         </arguments>
