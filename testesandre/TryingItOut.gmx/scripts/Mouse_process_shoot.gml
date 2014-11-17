@@ -30,9 +30,9 @@ if(mouse_check_button(mb_left))
         }    
     }
 }
-else
+
 /// Melee
-if(keyboard_check(ord("V")))
+if(keyboard_check(ord("X")))
 {
     if (canmelee)
     {
@@ -46,5 +46,4 @@ if(keyboard_check(ord("V")))
         alarm[2] = 6;
     }
 }
-
 

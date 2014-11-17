@@ -37,11 +37,12 @@
       <sprite>sprites\sp_enemyFire</sprite>
       <sprite>sprites\sp_chasing</sprite>
     </sprites>
-    <sprites name="Projectiles">
+    <sprites name="Projectiles&amp;Spells">
       <sprite>sprites\sp_bulletWater</sprite>
       <sprite>sprites\sp_bullet_test</sprite>
       <sprite>sprites\sp_bulletFire</sprite>
       <sprite>sprites\sp_bulletEarth</sprite>
+      <sprite>sprites\sp_fireBall</sprite>
     </sprites>
     <sprites name="Light">
       <sprite>sprites\sp_light</sprite>
@@ -105,6 +106,7 @@
       <object>objects\obj_bulletFire</object>
       <object>objects\obj_bulletWater</object>
       <object>objects\obj_bulletEarth</object>
+      <object>objects\obj_fireBall</object>
     </objects>
     <objects name="Enemies">
       <object>objects\obj_EnemyFire</object>

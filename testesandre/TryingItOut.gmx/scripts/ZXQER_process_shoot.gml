@@ -5,12 +5,40 @@ if(keyboard_check(ord("Q")))
 {
     if (canshoot) 
     { 
-        //Towards direction
-        var b = instance_create(x, y, obj_bulletFire);
-        b.direction = direction;
-        b.speed = 10;
-        canshoot = false;
-        alarm[0]=9;
+        switch elementalState
+        {
+            case 'FIRE':
+            {
+                //Towards direction
+                var b = instance_create(x, y, obj_bulletFire);
+                b.direction = direction;
+                b.speed = 10;
+                canshoot = false;
+                alarm[0]=9;           
+            }
+            break;
+            case 'WATER':
+            {
+                //Towards direction
+                var b = instance_create(x, y, obj_bulletWater);
+                b.direction = direction;
+                b.speed = 10;
+                canshoot = false;
+                alarm[0]=9;           
+            }
+            break;
+            case 'EARTH':
+            {
+                //Towards direction
+                var b = instance_create(x, y, obj_bulletEarth);
+                b.direction = direction;
+                b.speed = 10;
+                canshoot = false;
+                alarm[0]=9;         
+            }
+            break;
+        }
+
     }
 }
 else
@@ -19,12 +47,7 @@ if(keyboard_check(ord("E")))
 {
     if (canshoot) 
     {
-        //Towards direction
-        var b = instance_create(x, y, obj_bulletWater);
-        b.direction = direction;
-        b.speed = 10;
-        canshoot = false;
-        alarm[0]=9;
+
     }
 }
 else
@@ -33,12 +56,7 @@ if(keyboard_check(ord("R")))
 {
     if (canshoot) 
     {
-        //Towards direction
-        var b = instance_create(x, y, obj_bulletEarth);
-        b.direction = direction;
-        b.speed = 10;
-        canshoot = false;
-        alarm[0]=9;
+
     }
 }
 else
