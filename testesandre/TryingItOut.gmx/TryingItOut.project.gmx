@@ -78,11 +78,29 @@
       <script>scripts\draw_element_menu.gml</script>
       <script>scripts\nextElementalState.gml</script>
     </scripts>
+    <scripts name="Projectile">
+      <script>scripts\Mouse_process_shoot.gml</script>
+      <script>scripts\ZXQER_process_shoot.gml</script>
+    </scripts>
+    <scripts name="Spells">
+      <scripts name="Fire">
+        <script>scripts\FireBall.gml</script>
+      </scripts>
+      <scripts name="Water">
+        <script>scripts\WaterSpray.gml</script>
+      </scripts>
+      <scripts name="Earth">
+        <script>scripts\StoneArmour.gml</script>
+      </scripts>
+      <scripts name="Neutral">
+        <script>scripts\BulletShoot.gml</script>
+      </scripts>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_melee</object>
-    <objects name="Projectiles">
+    <objects name="Projectiles&amp;Spells">
       <object>objects\obj_bullet</object>
       <object>objects\obj_bulletFire</object>
       <object>objects\obj_bulletWater</object>

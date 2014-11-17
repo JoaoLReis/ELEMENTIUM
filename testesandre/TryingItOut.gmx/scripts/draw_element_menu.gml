@@ -16,4 +16,3 @@ else if (currentState == "EARTH")
 {
     draw_sprite(sp_gui_earth, -1, sprite_get_width(sp_gui_earth)/2, sprite_get_height(sp_gui_earth)/2);
 }
-

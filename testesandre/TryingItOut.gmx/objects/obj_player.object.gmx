@@ -33,9 +33,7 @@ canshoot = true;
 canmelee = true;
 canmove = true;
 
-
 //create event of player object
-
 friction = .7
 acceleration = 1
 max_speed = 5
@@ -67,7 +65,7 @@ flash = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// INITIALIZE ELEMENTAL STATE
+            <string>/// Initialize Elemental State
 //List of current elements owned by the player.
 elements = ds_list_create();
 ds_list_add(elements,"NEUTRAL");
@@ -80,6 +78,40 @@ index = 0;
 
 
 
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Initialize Elemental Cooldowns
+Q_fire_cooldown = global.Q_fire_cooldown;
+E_fire_cooldown = global.E_fire_cooldown;
+R_fire_cooldown = global.R_fire_cooldown;
+
+Q_water_cooldown = global.Q_water_cooldown;
+E_water_cooldown = global.E_water_cooldown;
+R_water_cooldown = global.R_water_cooldown;
+
+Q_earth_cooldown = global.Q_earth_cooldown;
+E_earth_cooldown = global.E_earth_cooldown;
+R_earth_cooldown = global.R_earth_cooldown;
 </string>
           </argument>
         </arguments>
@@ -195,7 +227,7 @@ index = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Keyboard event Handler
+            <string>/// Keyboard Movement event Handler
 key_right = keyboard_check(vk_right);
 key_left = -keyboard_check(vk_left);
 key_up = -keyboard_check(vk_up);
@@ -204,46 +236,55 @@ key_down = keyboard_check(vk_down);
 //step event
 step_count = (step_count + 1) mod 14;
 
+//Movement
 if(canmove)
 {
-    if(key_up != 0)
+    if(key_up != 0 || keyboard_check(ord("W")))
     {
+        SpriteDirection = 90;
         if place_free(x, y - 1)
             motion_add(90, acceleration)
         sprite_index = sp_player_N;
     }
-    if(key_down != 0)
+    if(key_down != 0 || keyboard_check(ord("S")))
     {
+        SpriteDirection = 270;
         if place_free(x, y + 1)
             motion_add(270, acceleration)
         sprite_index = sp_player_S;
     }
-    if(key_left != 0)
+    if(key_left != 0 || keyboard_check(ord("A")))
     {
+        SpriteDirection = 180;
         if place_free(x - 1,y)
             motion_add(180, acceleration)
         sprite_index = sp_player_W;
     }
-    if(key_right != 0)
+    if(key_right != 0 || keyboard_check(ord("D")))
     {
+        SpriteDirection = 0;
         if place_free(x + 1, y)
             motion_add(0, acceleration)
         sprite_index = sp_player_E;
     }
-    if(key_up != 0 &amp;&amp; key_right != 0)
+    if(key_up != 0 &amp;&amp; key_right != 0 || (keyboard_check(ord("W")) &amp;&amp; keyboard_check(ord("D"))))
     {
+        SpriteDirection = 45;
         sprite_index = sp_player_NE;
     }
-    if(key_up != 0 &amp;&amp; key_left != 0)
+    if(key_up != 0 &amp;&amp; key_left != 0 || (keyboard_check(ord("W")) &amp;&amp; keyboard_check(ord("A"))))
     {
+        SpriteDirection = 135;
         sprite_index = sp_player_NW;
     }
-    if(key_down != 0 &amp;&amp; key_left != 0)
+    if(key_down != 0 &amp;&amp; key_left != 0 || (keyboard_check(ord("S")) &amp;&amp; keyboard_check(ord("A"))))
     {
+        SpriteDirection = 225;
         sprite_index = sp_player_SW;
     }
-    if(key_down != 0 &amp;&amp; key_right != 0)
+    if(key_down != 0 &amp;&amp; key_right != 0 || (keyboard_check(ord("S")) &amp;&amp; keyboard_check(ord("D"))))
     {
+        SpriteDirection = 315;
         sprite_index = sp_player_SE;
     }
     if speed &gt; max_speed
@@ -263,7 +304,50 @@ if(speed == 0){
     if(direction &gt;= 225 &amp;&amp; direction &lt; 315)
         sprite_index = sp_player_S_IDLE;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Keyboard Fire event Handler
+Mouse_process_shoot();
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Death Event handler
 if(global.valueHealth &lt;= 0)
 {
     room_goto(rm_menu);
@@ -324,158 +408,6 @@ speed = 0
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="90">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if canshoot{
-    //Towards direction
-    var b = instance_create(x, y, obj_bullet);
-    b.direction = direction;
-    b.speed = 10;
-    canshoot = false;
-    alarm[0]=9;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="5" enumb="88">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Melee
-if canmelee{
-    //Towards direction
-    var b = instance_create(x, y, obj_melee);
-    b.direction = direction;
-    canmove = false
-    canmelee = false;
-    alarm[1] = 10;
-    alarm[2] = 6;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="5" enumb="82">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if canshoot{
-    //Towards direction
-    var b = instance_create(x, y, obj_bulletEarth);
-    b.direction = direction;
-    b.speed = 10;
-    canshoot = false;
-    alarm[0]=9;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="5" enumb="81">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if canshoot{
-    //Towards direction
-    var b = instance_create(x, y, obj_bulletFire);
-    b.direction = direction;
-    b.speed = 10;
-    canshoot = false;
-    alarm[0]=9;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="5" enumb="69">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if canshoot{
-    //Towards direction
-    var b = instance_create(x, y, obj_bulletWater);
-    b.direction = direction;
-    b.speed = 10;
-    canshoot = false;
-    alarm[0]=9;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="6" enumb="61">
       <action>
         <libid>1</libid>
@@ -520,38 +452,6 @@ nextElementalState(elementalState, false, index);
             <string>/// Moves Elemental State upward
 nextElementalState(elementalState, true, index);
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="50">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if canshoot
-{
-    //Towards mouse
-    var b = instance_create(x, y, obj_bullet);
-    b.direction = point_direction(x, y, mouse_x, mouse_y);
-    b.image_angle = image_angle;
-    canshoot = false;
-    b.speed = 10;
-    alarm[0]=9;
-}
 </string>
           </argument>
         </arguments>
