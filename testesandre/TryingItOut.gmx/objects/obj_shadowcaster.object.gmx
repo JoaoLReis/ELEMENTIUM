@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>/// inits shadow casting
-caster_init();
+//caster_init();
+depth = room_height- y;
 </string>
           </argument>
         </arguments>

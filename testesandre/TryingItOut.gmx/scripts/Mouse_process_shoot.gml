@@ -46,4 +46,3 @@ if(keyboard_check(ord("X")))
         alarm[2] = 6;
     }
 }
-
