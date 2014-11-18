@@ -28,6 +28,7 @@
             <string>/// inits shadow casting
 //caster_init();
 depth = room_height- y;
+
 </string>
           </argument>
         </arguments>
