@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>/// Sets projectile range
-alarm[0]=global.valueProjRange;
+alarm[0]=random_range(global.valueProjRange - 10, global.valueProjRange);
 
 damage = global.valueAttack;
 damageType = "NEUTRAL";

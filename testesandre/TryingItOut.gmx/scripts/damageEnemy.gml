@@ -18,3 +18,5 @@ if(enemyType == "EARTH")
     damageEnemyEarth(damage, damageType, enemyHit)
 }
 
+enemyHit.chaseByHit = true;
+enemyHit.alarm[1] = 120;

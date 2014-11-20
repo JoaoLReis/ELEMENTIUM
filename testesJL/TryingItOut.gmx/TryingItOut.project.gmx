@@ -24,6 +24,10 @@
     <sprites name="gui">
       <sprite>sprites\sp_red_bar</sprite>
       <sprite>sprites\sp_green_bar</sprite>
+      <sprite>sprites\sp_gui_earth</sprite>
+      <sprite>sprites\sp_gui_water</sprite>
+      <sprite>sprites\sp_gui_fire</sprite>
+      <sprite>sprites\sp_gui_neutral</sprite>
     </sprites>
     <sprites name="Enemies">
       <sprite>sprites\sp_enemy</sprite>
@@ -33,11 +37,12 @@
       <sprite>sprites\sp_enemyFire</sprite>
       <sprite>sprites\sp_chasing</sprite>
     </sprites>
-    <sprites name="Projectiles">
+    <sprites name="Projectiles&amp;Spells">
       <sprite>sprites\sp_bulletWater</sprite>
       <sprite>sprites\sp_bullet_test</sprite>
       <sprite>sprites\sp_bulletFire</sprite>
       <sprite>sprites\sp_bulletEarth</sprite>
+      <sprite>sprites\sp_fireBall</sprite>
     </sprites>
     <sprites name="Light">
       <sprite>sprites\sp_light</sprite>
@@ -48,6 +53,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tiles</background>
+    <background>background\background1</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -70,16 +76,37 @@
     </scripts>
     <scripts name="GUI">
       <script>scripts\draw_menu_bar.gml</script>
+      <script>scripts\draw_element_menu.gml</script>
+      <script>scripts\nextElementalState.gml</script>
+    </scripts>
+    <scripts name="Projectile">
+      <script>scripts\Mouse_process_shoot.gml</script>
+      <script>scripts\ZXQER_process_shoot.gml</script>
+    </scripts>
+    <scripts name="Spells">
+      <scripts name="Fire">
+        <script>scripts\FireBall.gml</script>
+      </scripts>
+      <scripts name="Water">
+        <script>scripts\WaterSpray.gml</script>
+      </scripts>
+      <scripts name="Earth">
+        <script>scripts\StoneArmour.gml</script>
+      </scripts>
+      <scripts name="Neutral">
+        <script>scripts\BulletShoot.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_melee</object>
-    <objects name="Projectiles">
+    <objects name="Projectiles&amp;Spells">
       <object>objects\obj_bullet</object>
       <object>objects\obj_bulletFire</object>
       <object>objects\obj_bulletWater</object>
       <object>objects\obj_bulletEarth</object>
+      <object>objects\obj_fireBall</object>
     </objects>
     <objects name="Enemies">
       <object>objects\obj_EnemyFire</object>

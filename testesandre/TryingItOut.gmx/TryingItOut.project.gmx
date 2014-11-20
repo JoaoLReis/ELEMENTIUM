@@ -89,6 +89,8 @@
       </scripts>
       <scripts name="Water">
         <script>scripts\WaterSpray.gml</script>
+        <script>scripts\WaterNova.gml</script>
+        <script>scripts\WaterJet.gml</script>
       </scripts>
       <scripts name="Earth">
         <script>scripts\StoneArmour.gml</script>
