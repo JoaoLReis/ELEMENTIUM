@@ -6,6 +6,10 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprites name="planets">
+      <sprite>sprites\sp_earth_planet</sprite>
+      <sprite>sprites\sp_portal</sprite>
+    </sprites>
     <sprite>sprites\sp_melee</sprite>
     <sprites name="character">
       <sprite>sprites\sp_player_W_IDLE</sprite>
@@ -49,11 +53,14 @@
     </sprites>
     <sprites name="Map">
       <sprite>sprites\sp_collision</sprite>
+      <sprite>sprites\sp_collision_simple</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tiles</background>
     <background>background\background1</background>
+    <background>background\background2</background>
+    <background>background\background3</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -101,6 +108,9 @@
     </scripts>
   </scripts>
   <objects name="objects">
+    <objects name="planets">
+      <object>objects\obj_earth_planet</object>
+    </objects>
     <object>objects\obj_player</object>
     <object>objects\obj_melee</object>
     <objects name="Projectiles&amp;Spells">
@@ -109,12 +119,19 @@
       <object>objects\obj_bulletWater</object>
       <object>objects\obj_bulletEarth</object>
       <object>objects\obj_fireBall</object>
+      <object>objects\obj_enemy_projectile</object>
     </objects>
     <objects name="Enemies">
-      <object>objects\obj_EnemyFire</object>
-      <object>objects\obj_enemyWater</object>
-      <object>objects\obj_enemyEarth</object>
       <object>objects\obj_enemy</object>
+      <objects name="Fire">
+        <object>objects\obj_EnemyFire</object>
+      </objects>
+      <objects name="Water">
+        <object>objects\obj_enemyWater</object>
+      </objects>
+      <objects name="Earth">
+        <object>objects\obj_enemyEarth</object>
+      </objects>
     </objects>
     <objects name="Lighting">
       <object>objects\obj_lightmap</object>
@@ -129,11 +146,13 @@
       <object>objects\obj_shadowcaster</object>
       <object>objects\obj_artefact_end</object>
       <object>objects\obj_collision</object>
+      <object>objects\obj_portal_animation</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
     <room>rooms\rm_menu</room>
+    <room>rooms\rm_starting_area</room>
     <room>rooms\rm_testArea</room>
     <room>rooms\rm_gameover</room>
   </rooms>

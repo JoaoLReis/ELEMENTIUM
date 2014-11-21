@@ -59,6 +59,7 @@ draw_text_transformed(room_width / 2, room_height / 2, "GAME OVER
 
 draw_set_halign(fa_center);
 draw_text_transformed(room_width / 2, room_height / 2, "Press Enter to Restart", 2, 2, image_angle);
+draw_set_halign(fa_left);
 </string>
           </argument>
         </arguments>
