@@ -3,32 +3,100 @@
 //Q
 if(mouse_check_button(mb_left))
 {
-    if (canshoot) 
+    switch elementalState
     {
-        switch elementalState
+        case 'NEUTRAL':
         {
-            case 'NEUTRAL':
-            {
+            if(canshoot)
                 BulletShoot();
-            }
-            break;
-            case 'FIRE': 
-            {
+        }
+        break;
+        case 'FIRE': 
+        {
+            if(obj_player.spells[0] < 0)
                 FireBall();
-            }; 
-            break;
-            case 'WATER':
-            {
+        }; 
+        break;
+        case 'WATER':
+        {
+            if(obj_player.spells[3] < 0)
                 WaterSpray();
-            };
-            break;
-            case 'EARTH':
-            {
+        };
+        break;
+        case 'EARTH':
+        {   
+            if(obj_player.spells[6] < 0)
                 StoneArmour();
-            };
-            break;
-        }    
-    }
+        };
+        break;
+    }    
+    
+}
+
+//E
+if(mouse_check_button(mb_right))
+{
+    switch elementalState
+    {
+        case 'NEUTRAL':
+        {
+            if(canshoot)
+                BulletShoot();
+        }
+        break;
+        case 'FIRE': 
+        {
+            if(obj_player.spells[1] < 0)
+                FireBall();
+        }; 
+        break;
+        case 'WATER':
+        {
+            if(obj_player.spells[4] < 0)
+                WaterJet();
+        };
+        break;
+        case 'EARTH':
+        {   
+            if(obj_player.spells[7] < 0)
+                StoneArmour();
+        };
+        break;
+    }    
+    
+}
+
+//R
+if(mouse_check_button(mb_middle))
+{
+    switch elementalState
+    {
+        case 'NEUTRAL':
+        {
+            if(canshoot)
+                BulletShoot();
+        }
+        break;
+        case 'FIRE': 
+        {
+            if(obj_player.spells[2] < 0)
+                FireBall();
+        }; 
+        break;
+        case 'WATER':
+        {
+            if(obj_player.spells[5] < 0)
+                WaterNova();
+        };
+        break;
+        case 'EARTH':
+        {   
+            if(obj_player.spells[8] < 0)
+                StoneArmour();
+        };
+        break;
+    }    
+    
 }
 
 /// Melee
