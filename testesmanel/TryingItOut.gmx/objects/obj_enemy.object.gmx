@@ -27,17 +27,47 @@
             <kind>1</kind>
             <string>/// Variables, alert means 
 alert = 0;
+
 maxHealth = 20;
 valueHealth = maxHealth;
+
+damage = 10;
+type = "NEUTRAL";
 
 moveSpeed = 2;
 
 chasing = false;
+chaseByHit = false;
 
 direction = random(360);
 speed = moveSpeed;
 alarm[0] = 60;
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Chase When hit
+
+chaseByHit = false;
 </string>
           </argument>
         </arguments>
@@ -110,6 +140,11 @@ if point_distance(x, y, target.x, target.y) &lt; radius
     move_towards_point(target.x, target.y, moveSpeed);
     chasing = true;
 }
+else if (chaseByHit)
+{
+    move_towards_point(target.x, target.y, moveSpeed);
+    chasing = true;
+}
 else chasing = false;
 </string>
           </argument>
@@ -166,7 +201,47 @@ else chasing = false;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_bullet">
+    <event eventtype="4" ename="obj_player">
+      <action>
+        <libid>1</libid>
+        <id>601</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>9</kind>
+            <script>damage_Player</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>damage</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -183,8 +258,13 @@ else chasing = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>valueHealth -= global.valueAttack;
+            <string>///Collision Detection
 
+x = round(x)
+y = round(y)
+move_outside_solid((direction - 180) % 360, speed)
+move_contact_solid(direction, speed)
+speed = 0
 </string>
           </argument>
         </arguments>
