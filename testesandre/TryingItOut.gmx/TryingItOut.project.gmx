@@ -8,6 +8,8 @@
   <sprites name="sprites">
     <sprites name="planets">
       <sprite>sprites\sp_earth_planet</sprite>
+      <sprite>sprites\sp_fire_planet</sprite>
+      <sprite>sprites\sp_water_planet</sprite>
       <sprite>sprites\sp_portal</sprite>
     </sprites>
     <sprite>sprites\sp_melee</sprite>
@@ -32,6 +34,7 @@
       <sprite>sprites\sp_gui_water</sprite>
       <sprite>sprites\sp_gui_fire</sprite>
       <sprite>sprites\sp_gui_neutral</sprite>
+      <sprite>sprites\sp_Interact</sprite>
     </sprites>
     <sprites name="Enemies">
       <sprite>sprites\sp_enemy</sprite>
@@ -40,6 +43,11 @@
       <sprite>sprites\sp_end_level</sprite>
       <sprite>sprites\sp_enemyFire</sprite>
       <sprite>sprites\sp_chasing</sprite>
+      <sprite>sprites\sp_suicide</sprite>
+      <sprite>sprites\sp_spawner</sprite>
+      <sprite>sprites\sp_suicide_spawner</sprite>
+      <sprite>sprites\sp_turret</sprite>
+      <sprite>sprites\sp_earth_spikes</sprite>
     </sprites>
     <sprites name="Projectiles&amp;Spells">
       <sprite>sprites\sp_bulletWater</sprite>
@@ -47,14 +55,19 @@
       <sprite>sprites\sp_bulletFire</sprite>
       <sprite>sprites\sp_bulletEarth</sprite>
       <sprite>sprites\sp_fireBall</sprite>
+      <sprite>sprites\sp_ice</sprite>
+      <sprite>sprites\sp_ice_block</sprite>
     </sprites>
     <sprites name="Light">
       <sprite>sprites\sp_light</sprite>
     </sprites>
     <sprites name="Map">
       <sprite>sprites\sp_collision</sprite>
+      <sprite>sprites\sp_collision_Water</sprite>
+      <sprite>sprites\sp_collision_Fire</sprite>
       <sprite>sprites\sp_collision_simple</sprite>
     </sprites>
+    <sprite>sprites\sp_spike</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tiles</background>
@@ -98,6 +111,7 @@
         <script>scripts\WaterSpray.gml</script>
         <script>scripts\WaterNova.gml</script>
         <script>scripts\WaterJet.gml</script>
+        <script>scripts\IceWall.gml</script>
       </scripts>
       <scripts name="Earth">
         <script>scripts\StoneArmour.gml</script>
@@ -106,10 +120,16 @@
         <script>scripts\BulletShoot.gml</script>
       </scripts>
     </scripts>
+    <scripts name="Interactions">
+      <script>scripts\Interact.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <objects name="planets">
       <object>objects\obj_earth_planet</object>
+      <object>objects\obj_water_planet</object>
+      <object>objects\obj_fire_planet</object>
+      <object>objects\obj_planet</object>
     </objects>
     <object>objects\obj_player</object>
     <object>objects\obj_melee</object>
@@ -120,18 +140,32 @@
       <object>objects\obj_bulletEarth</object>
       <object>objects\obj_fireBall</object>
       <object>objects\obj_enemy_projectile</object>
+      <object>objects\obj_bulletIce</object>
+      <object>objects\obj_ice_cage</object>
+      <object>objects\obj_ice_wall</object>
     </objects>
     <objects name="Enemies">
       <object>objects\obj_enemy</object>
       <objects name="Fire">
         <object>objects\obj_EnemyFire</object>
+        <object>objects\obj_suicide_fire</object>
+        <object>objects\obj_fire_Spawner</object>
+        <object>objects\obj_suicide_spawner</object>
+        <object>objects\obj_fire_bullet</object>
+        <object>objects\obj_fire_turret</object>
       </objects>
       <objects name="Water">
         <object>objects\obj_enemyWater</object>
+        <object>objects\obj_water_spawner</object>
       </objects>
       <objects name="Earth">
         <object>objects\obj_enemyEarth</object>
+        <object>objects\obj_earth_spawner</object>
+        <object>objects\obj_enemy_spikes</object>
+        <object>objects\obj_earth_spike</object>
       </objects>
+      <object>objects\obj_Spawner</object>
+      <object>objects\obj_turret</object>
     </objects>
     <objects name="Lighting">
       <object>objects\obj_lightmap</object>
@@ -154,6 +188,9 @@
     <room>rooms\rm_menu</room>
     <room>rooms\rm_starting_area</room>
     <room>rooms\rm_testArea</room>
+    <room>rooms\rm_Earth_Planet</room>
+    <room>rooms\rm_Water_Planet</room>
+    <room>rooms\rm_Fire_Planet</room>
     <room>rooms\rm_gameover</room>
   </rooms>
   <constants number="4">

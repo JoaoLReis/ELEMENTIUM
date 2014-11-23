@@ -53,7 +53,7 @@ if(mouse_check_button(mb_right))
         case 'WATER':
         {
             if(obj_player.spells[4] < 0)
-                WaterJet();
+                IceWall();
         };
         break;
         case 'EARTH':

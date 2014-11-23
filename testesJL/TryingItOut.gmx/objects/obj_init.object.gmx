@@ -60,7 +60,7 @@ global.E_fire_cooldown = 1;
 global.R_fire_cooldown = 27;
 
 global.Q_water_cooldown = 1;
-global.E_water_cooldown = 0.5;
+global.E_water_cooldown = 20.5;
 global.R_water_cooldown = 27;
 
 global.Q_earth_cooldown = 9;
