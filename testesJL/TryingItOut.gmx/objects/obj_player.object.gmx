@@ -199,7 +199,9 @@ instance_deactivate_all(true);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>flash = false;
+            <string>///Flash
+
+flash = false;
 </string>
           </argument>
         </arguments>
@@ -222,7 +224,8 @@ instance_deactivate_all(true);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>canmove = true;
+            <string>///CanMove
+canmove = true;
 </string>
           </argument>
         </arguments>
@@ -245,7 +248,9 @@ instance_deactivate_all(true);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>canmelee = true;
+            <string>///Can melee
+
+canmelee = true;
 </string>
           </argument>
         </arguments>
@@ -268,7 +273,9 @@ instance_deactivate_all(true);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>canshoot = true;
+            <string>///can shoot
+
+canshoot = true;
 
 </string>
           </argument>

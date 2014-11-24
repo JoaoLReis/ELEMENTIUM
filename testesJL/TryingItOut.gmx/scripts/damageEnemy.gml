@@ -3,8 +3,6 @@ var damageType = argument1;
 var enemyHit = argument2;
 var enemyType = enemyHit.type;
 
-show_debug_message(enemyType);
-
 if(enemyType == "FIRE")
 {
     damageEnemyFire(damage, damageType, enemyHit)

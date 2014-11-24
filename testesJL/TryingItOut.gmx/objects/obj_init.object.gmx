@@ -57,16 +57,16 @@ global.curWaterStrength = 0;
 global.maxWaterStrength = 3;
 
 global.Q_fire_cooldown = 13;
-global.E_fire_cooldown = 180;
-global.R_fire_cooldown = 27;
+global.E_fire_cooldown = 600;
+global.R_fire_cooldown = 900;
 
 global.Q_water_cooldown = 1;
-global.E_water_cooldown = 20.5;
-global.R_water_cooldown = 180;
+global.E_water_cooldown = 600;
+global.R_water_cooldown = 900;
 
 global.Q_earth_cooldown = 9;
 global.E_earth_cooldown = 180;
-global.R_earth_cooldown = 27;
+global.R_earth_cooldown = 1800;
 
 global.elements = ds_list_create();
 ds_list_add(global.elements,"NEUTRAL");

@@ -203,7 +203,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>valueHealth -= global.valueAttack;
+            <string>valueHealth -= global.valueAttack * 2;
 
 </string>
           </argument>
@@ -213,41 +213,27 @@ else
     <event eventtype="4" ename="obj_player">
       <action>
         <libid>1</libid>
-        <id>601</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_execute_script</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>9</kind>
-            <script>damage_Player</script>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>damage</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
+            <kind>1</kind>
+            <string>///damage
+
+if(!frozen)
+{
+    damage_Player(damage);
+}
+</string>
           </argument>
         </arguments>
       </action>

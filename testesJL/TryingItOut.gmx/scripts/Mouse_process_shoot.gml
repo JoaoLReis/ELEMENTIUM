@@ -26,7 +26,7 @@ if(mouse_check_button(mb_left))
         case 'EARTH':
         {   
             if(obj_player.spells[6] < 0)
-                StoneArmour();
+                EarthProjectile();
         };
         break;
     }    
@@ -40,8 +40,8 @@ if(mouse_check_button(mb_right))
     {
         case 'NEUTRAL':
         {
-            if(canshoot)
-                BulletShoot();
+            if(canmelee)
+                Melee();
         }
         break;
         case 'FIRE': 
@@ -92,7 +92,7 @@ if(mouse_check_button(mb_middle))
         case 'EARTH':
         {   
             if(obj_player.spells[8] < 0)
-                StoneArmour();
+                StoneArmor();
         };
         break;
     }    
