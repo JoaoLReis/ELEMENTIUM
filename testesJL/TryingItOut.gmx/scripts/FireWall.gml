@@ -15,4 +15,4 @@ newy = obj_fire_wall.sprite_width  * cos(degtorad(wallDirection))*1.5;
 var c = instance_create(posx - newx, posy - newy, obj_fire_wall);
 var d = instance_create(posx + newx, posy + newy, obj_fire_wall);
 
-obj_player.spells[2] = global.Q_fire_cooldown;
+obj_player.spells[2] = global.R_fire_cooldown;

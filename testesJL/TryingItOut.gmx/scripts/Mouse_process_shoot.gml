@@ -47,7 +47,7 @@ if(mouse_check_button(mb_right))
         case 'FIRE': 
         {
             if(obj_player.spells[1] < 0)
-                FireBall();
+                Dragon();
         }; 
         break;
         case 'WATER':

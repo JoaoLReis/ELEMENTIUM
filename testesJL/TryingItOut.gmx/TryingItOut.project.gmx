@@ -13,7 +13,6 @@
       <sprite>sprites\sp_water_planet</sprite>
       <sprite>sprites\sp_portal</sprite>
     </sprites>
-    <sprite>sprites\sp_melee</sprite>
     <sprites name="character">
       <sprite>sprites\sp_player_W_IDLE</sprite>
       <sprite>sprites\sp_player_S_IDLE</sprite>
@@ -61,6 +60,9 @@
       <sprite>sprites\sp_ice</sprite>
       <sprite>sprites\sp_ice_block</sprite>
       <sprite>sprites\sp_fire_wall</sprite>
+      <sprite>sprites\sp_dragon</sprite>
+      <sprite>sprites\sp_spike</sprite>
+      <sprite>sprites\sp_melee</sprite>
     </sprites>
     <sprites name="Light">
       <sprite>sprites\sp_light</sprite>
@@ -75,7 +77,6 @@
       <sprite>sprites\sp_collision_simple</sprite>
       <sprite>sprites\sp_treasure_chest</sprite>
     </sprites>
-    <sprite>sprites\sp_spike</sprite>
     <sprites name="elementPickup">
       <sprite>sprites\sp_fire_pickup</sprite>
       <sprite>sprites\sp_water_pickup</sprite>
@@ -122,6 +123,7 @@
       <scripts name="Fire">
         <script>scripts\FireBall.gml</script>
         <script>scripts\FireWall.gml</script>
+        <script>scripts\Dragon.gml</script>
       </scripts>
       <scripts name="Water">
         <script>scripts\WaterSpray.gml</script>
@@ -167,6 +169,7 @@
       <object>objects\obj_ice_cage</object>
       <object>objects\obj_ice_wall</object>
       <object>objects\obj_fire_wall</object>
+      <object>objects\obj_fire_dragon</object>
     </objects>
     <objects name="Enemies">
       <object>objects\obj_enemy</object>
@@ -187,6 +190,7 @@
         <object>objects\obj_earth_spawner</object>
         <object>objects\obj_enemy_spikes</object>
         <object>objects\obj_earth_spike</object>
+        <object>objects\obj_earth_spike_spawner</object>
       </objects>
       <object>objects\obj_Spawner</object>
       <object>objects\obj_turret</object>
