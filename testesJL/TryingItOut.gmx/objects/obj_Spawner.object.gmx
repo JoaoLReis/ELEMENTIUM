@@ -33,7 +33,7 @@ maxHealth = 100;
 valueHealth = maxHealth;
 type = "NEUTRAL";
 spawnRate = 100;
-canSpawn = true;
+canAct = true;
 damage = 3;
 moveSpeed = 0;
 speed = 0;
@@ -65,7 +65,7 @@ for (i = 0; i &lt; 20; i += 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>canSpawn = true;
+            <string>canAct = true;
 </string>
           </argument>
         </arguments>
@@ -92,9 +92,9 @@ for (i = 0; i &lt; 20; i += 1)
 if(valueHealth &lt;= 0)  
     instance_destroy();
 
-if(canSpawn)
+if(canAct)
 {
-    canSpawn = false;
+    canAct = false;
     for (i = 0; i &lt; ds_list_size(enemies); i += 1)
     {
         var enemy = ds_list_find_value(enemies, i);
@@ -113,6 +113,7 @@ if(canSpawn)
     ds_list_clear(removeList);
     alarm[0] = spawnRate;
 }
+
 </string>
           </argument>
         </arguments>

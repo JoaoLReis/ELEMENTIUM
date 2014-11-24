@@ -33,7 +33,6 @@ moveSpeed = moveSpeed/2;
 
 damage = 20;
 type = "EARTH";
-canSpike = true;
 </string>
           </argument>
         </arguments>
@@ -56,7 +55,7 @@ canSpike = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>canSpike = true;
+            <string>canAct = true;
 </string>
           </argument>
         </arguments>
@@ -83,10 +82,10 @@ canSpike = true;
 
 image_angle = direction;
 
-if(canSpike)
+if(canAct)
 {
     var i;
-    for (i = 0; i &lt; 50; i += 1)
+    for (i = 0; i &lt; 20; i += 1)
     {
         var b = instance_create(x, y, obj_earth_spike);
         b.direction = 18 * i;
@@ -94,7 +93,7 @@ if(canSpike)
         b.image_angle = image_angle;
         b.speed = 2;
     }
-    canSpike = false;
+    canAct = false;
     alarm[0] = 50;
 }
 </string>

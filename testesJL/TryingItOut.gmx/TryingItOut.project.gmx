@@ -9,6 +9,7 @@
     <sprites name="planets">
       <sprite>sprites\sp_earth_planet</sprite>
       <sprite>sprites\sp_fire_planet</sprite>
+      <sprite>sprites\sprite52</sprite>
       <sprite>sprites\sp_water_planet</sprite>
       <sprite>sprites\sp_portal</sprite>
     </sprites>
@@ -57,6 +58,7 @@
       <sprite>sprites\sp_fireBall</sprite>
       <sprite>sprites\sp_ice</sprite>
       <sprite>sprites\sp_ice_block</sprite>
+      <sprite>sprites\sp_fire_wall</sprite>
     </sprites>
     <sprites name="Light">
       <sprite>sprites\sp_light</sprite>
@@ -66,8 +68,14 @@
       <sprite>sprites\sp_collision_Water</sprite>
       <sprite>sprites\sp_collision_Fire</sprite>
       <sprite>sprites\sp_collision_simple</sprite>
+      <sprite>sprites\sp_treasure_chest</sprite>
     </sprites>
     <sprite>sprites\sp_spike</sprite>
+    <sprites name="elementPickup">
+      <sprite>sprites\sp_fire_pickup</sprite>
+      <sprite>sprites\sp_water_pickup</sprite>
+      <sprite>sprites\sp_earth_pickup</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tiles</background>
@@ -98,6 +106,8 @@
       <script>scripts\draw_menu_bar.gml</script>
       <script>scripts\draw_element_menu.gml</script>
       <script>scripts\nextElementalState.gml</script>
+      <script>scripts\getNextElementalState.gml</script>
+      <script>scripts\floatingMessage.gml</script>
     </scripts>
     <scripts name="Projectile">
       <script>scripts\Mouse_process_shoot.gml</script>
@@ -106,6 +116,7 @@
     <scripts name="Spells">
       <scripts name="Fire">
         <script>scripts\FireBall.gml</script>
+        <script>scripts\FireWall.gml</script>
       </scripts>
       <scripts name="Water">
         <script>scripts\WaterSpray.gml</script>
@@ -123,16 +134,21 @@
     <scripts name="Interactions">
       <script>scripts\Interact.gml</script>
     </scripts>
+    <script>scripts\IncreaseStat.gml</script>
+    <script>scripts\IncreaseElement.gml</script>
+    <script>scripts\UpdateStats.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="planets">
       <object>objects\obj_earth_planet</object>
       <object>objects\obj_water_planet</object>
       <object>objects\obj_fire_planet</object>
+      <object>objects\obj_test_Planet</object>
       <object>objects\obj_planet</object>
     </objects>
     <object>objects\obj_player</object>
     <object>objects\obj_melee</object>
+    <object>objects\obj_interactable</object>
     <objects name="Projectiles&amp;Spells">
       <object>objects\obj_bullet</object>
       <object>objects\obj_bulletFire</object>
@@ -143,6 +159,7 @@
       <object>objects\obj_bulletIce</object>
       <object>objects\obj_ice_cage</object>
       <object>objects\obj_ice_wall</object>
+      <object>objects\obj_fire_wall</object>
     </objects>
     <objects name="Enemies">
       <object>objects\obj_enemy</object>
@@ -175,12 +192,26 @@
       <object>objects\obj_gameover_gui</object>
       <object>objects\obj_init</object>
       <object>objects\obj_gui</object>
+      <object>objects\obj_floating_message</object>
     </objects>
     <objects name="Map">
       <object>objects\obj_shadowcaster</object>
       <object>objects\obj_artefact_end</object>
       <object>objects\obj_collision</object>
       <object>objects\obj_portal_animation</object>
+    </objects>
+    <objects name="Treasure">
+      <object>objects\obj_treasure</object>
+      <object>objects\obj_treasure_all</object>
+      <object>objects\obj_treasure_health</object>
+      <object>objects\obj_treasure_points</object>
+      <object>objects\obj_treasure_attack</object>
+      <object>objects\obj_treasure_defense</object>
+      <object>objects\obj_treasure_range</object>
+    </objects>
+    <objects name="ElementPickup">
+      <object>objects\obj_element_pickup</object>
+      <object>objects\obj_element_earth</object>
     </objects>
   </objects>
   <rooms name="rooms">

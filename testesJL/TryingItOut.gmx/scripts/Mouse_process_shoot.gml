@@ -20,7 +20,7 @@ if(mouse_check_button(mb_left))
         case 'WATER':
         {
             if(obj_player.spells[3] < 0)
-                WaterSpray();
+                WaterJet();
         };
         break;
         case 'EARTH':
@@ -80,7 +80,7 @@ if(mouse_check_button(mb_middle))
         case 'FIRE': 
         {
             if(obj_player.spells[2] < 0)
-                FireBall();
+                FireWall();
         }; 
         break;
         case 'WATER':

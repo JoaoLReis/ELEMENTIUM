@@ -32,9 +32,11 @@ maxHealth = 20;
 valueHealth = maxHealth;
 
 damage = 10;
+canAct = true;
 type = "NEUTRAL";
 
 moveSpeed = 2;
+frozen = false;
 
 chasing = false;
 chaseByHit = false;
@@ -146,6 +148,7 @@ else if (chaseByHit)
     chasing = true;
 }
 else chasing = false;
+
 </string>
           </argument>
         </arguments>

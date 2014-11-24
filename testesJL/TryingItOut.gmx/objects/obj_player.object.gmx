@@ -726,7 +726,7 @@ draw_healthbar(10, 10, 10 + maxHealth, 20, (global.valueHealth / maxHealth) * 10
           <argument>
             <kind>1</kind>
             <string>/// ELEMENTS MENU
-draw_element_menu(elementalState);
+draw_element_menu(elementalState, index);
 </string>
           </argument>
         </arguments>

@@ -26,8 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>/// Init
-global.availablePoints = 10;
-global.defaultavailablePoints = 10;
+global.availablePoints = 0;
+global.defaultavailablePoints = 0;
+
 global.curHealth = 0;
 global.maxHealth = 3;
 global.valueHealth = 50;
@@ -61,7 +62,7 @@ global.R_fire_cooldown = 27;
 
 global.Q_water_cooldown = 1;
 global.E_water_cooldown = 20.5;
-global.R_water_cooldown = 27;
+global.R_water_cooldown = 180;
 
 global.Q_earth_cooldown = 9;
 global.E_earth_cooldown = 1;
