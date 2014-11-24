@@ -6,8 +6,8 @@ switch (element)
 {
     //Earth
     case 1:
-        var elementList = player.elements; 
-        ds_list_add(elements, "EARTH");
+        var elementList = global.elements; 
+        ds_list_add(elementList, "EARTH");
         player.interacting = false;
         with (obj_element_earth) {instance_destroy()}
         break;

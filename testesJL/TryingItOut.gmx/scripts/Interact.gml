@@ -17,7 +17,7 @@ if(interactable != player)
             room_goto(rm_Water_Planet);
             break;
         case 4:
-            room_goto(rm_testArea);
+            room_goto(rm_final_room);
             break;
             
         //treasures TODO: also add current values

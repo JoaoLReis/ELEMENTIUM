@@ -29,7 +29,7 @@
 
 event_inherited();
 
-moveSpeed = moveSpeed/2;
+moveSpeed = 1;
 
 damage = 20;
 type = "EARTH";
@@ -82,19 +82,22 @@ type = "EARTH";
 
 image_angle = direction;
 
-if(canAct)
+if(!frozen)
 {
-    var i;
-    for (i = 0; i &lt; 20; i += 1)
+    if(canAct)
     {
-        var b = instance_create(x, y, obj_earth_spike);
-        b.direction = 18 * i;
-        b.damage = b.damage / 10;
-        b.image_angle = image_angle;
-        b.speed = 2;
+        var i;
+        for (i = 0; i &lt; 20; i += 1)
+        {
+            var b = instance_create(x, y, obj_earth_spike);
+            b.direction = 18 * i;
+            b.damage = b.damage / 10;
+            b.image_angle = image_angle;
+            b.speed = 2;
+        }
+        canAct = false;
+        alarm[0] = 50;
     }
-    canAct = false;
-    alarm[0] = 50;
 }
 </string>
           </argument>

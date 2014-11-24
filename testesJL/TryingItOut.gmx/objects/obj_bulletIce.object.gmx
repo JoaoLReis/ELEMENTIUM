@@ -57,7 +57,8 @@ damageType = "WATER";
             <string>///FREEZE
 
 deactivated_object = instance_place(x, y, obj_enemy);
-instance_deactivate_object(deactivated_object);
+deactivated_object.frozen = true;
+//instance_deactivate_object(deactivated_object);
 var cage = instance_create(deactivated_object.x, deactivated_object.y, obj_ice_cage);
 cage.deactivatedObject = deactivated_object;
 </string>

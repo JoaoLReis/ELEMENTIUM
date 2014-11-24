@@ -93,18 +93,21 @@ canAct = true;
     
 target = obj_player;
 
-if (point_distance(x, y, target.x, target.y) &lt; radius)
-{ 
-    image_angle = point_direction(x, y, target.x, target.y);
-    if(canAct)
-    {
-        var b = instance_create(x, y, bullet);
-        b.direction = image_angle;
-        b.image_angle = image_angle;
-        b.speed = 4;
-        alarm[0] = fireRate;
-        canAct = false;
-        b.deathTimer = fireRate*4;
+if(!frozen)
+{
+    if (point_distance(x, y, target.x, target.y) &lt; radius)
+    { 
+        image_angle = point_direction(x, y, target.x, target.y);
+        if(canAct)
+        {
+            var b = instance_create(x, y, bullet);
+            b.direction = image_angle;
+            b.image_angle = image_angle;
+            b.speed = 4;
+            alarm[0] = fireRate;
+            canAct = false;
+            b.deathTimer = fireRate*4;
+        }
     }
 }
 

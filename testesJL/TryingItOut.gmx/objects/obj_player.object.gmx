@@ -69,10 +69,7 @@ interactable = self;
             <kind>1</kind>
             <string>/// Initialize Elemental State
 //List of current elements owned by the player.
-elements = ds_list_create();
-ds_list_add(elements,"NEUTRAL");
-ds_list_add(elements,"FIRE");
-ds_list_add(elements,"WATER");
+
 
 //Current elemental state
 elementalState = "NEUTRAL";
@@ -157,6 +154,29 @@ R_earth_cooldown = global.R_earth_cooldown;
     spells[7] = 0;
     //R
     spells[8] = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///performance
+
+instance_deactivate_all(true);
 </string>
           </argument>
         </arguments>
@@ -496,6 +516,83 @@ if(interacting)
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Performance
+
+instance_activate_region(view_xview[0] - 64, view_yview - 64, view_wview[0] + 128, view_hview + 128, true);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_end_game">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// game over
+room_goto(rm_gameover);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_wall">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>x = round(x)
+y = round(y)
+move_outside_solid((direction - 180) % 360, speed)
+move_contact_solid(direction, speed)
+speed = 0
+
+var hit = instance_place(x, y, obj_shadowcaster);
+show_debug_message(string(hit.depth) + ", " + string(depth))
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="4" ename="obj_collision">
       <action>
@@ -544,38 +641,8 @@ show_debug_message(string(hit.depth) + ", " + string(depth))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// game over
-room_goto(rm_gameover);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_shadowcaster">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>x = round(x)
-y = round(y)
-move_outside_solid((direction - 180) % 360, speed)
-move_contact_solid(direction, speed)
-speed = 0
-
-var hit = instance_place(x, y, obj_shadowcaster);
-show_debug_message(string(hit.depth) + ", " + string(depth))
+            <string>/// to starting area
+room_goto(rm_starting_area);
 </string>
           </argument>
         </arguments>

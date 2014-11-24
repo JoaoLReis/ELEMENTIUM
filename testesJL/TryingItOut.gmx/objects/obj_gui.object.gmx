@@ -154,9 +154,25 @@ draw_text(100, 130, "Character:");
     draw_text(500, 250, "Value: " + string(global.defaultProjRange + global.curProjRange * 10));
     
 draw_text(100, 280, "Elements:");
-    draw_menu_bar(310, global.curFireStrength, global.maxFireStrength, "Fire: ");
-    draw_menu_bar(340, global.curEarthStrength, global.maxEarthStrength, "Earth: ");
-    
+
+var i = 1;
+
+if(ds_list_find_index(global.elements, "FIRE") != -1) 
+{
+    draw_menu_bar(280 + 30*i, global.curFireStrength, global.maxFireStrength, "Fire: ");
+    i+=1;
+}
+if(ds_list_find_index(global.elements, "WATER") != -1) 
+{
+    draw_menu_bar(280 + 30*i, global.curWaterStrength, global.maxWaterStrength, "Water: ");
+    i+=1;
+}
+if(ds_list_find_index(global.elements, "EARTH") != -1) 
+{
+    draw_menu_bar(280 + 30*i, global.curEarthStrength, global.maxEarthStrength, "Earth: ");
+    i+=1;
+}
+ 
 draw_text(150, 400, "Begin");
     
 if(cursorPosition &gt;= 0 &amp;&amp; cursorPosition &lt;= 3)

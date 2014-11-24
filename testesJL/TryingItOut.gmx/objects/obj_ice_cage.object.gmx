@@ -53,7 +53,13 @@ alarm[0] = alarmTime;
             <kind>1</kind>
             <string>if(deactivatedObject != 0)
 {
-    instance_activate_object(deactivatedObject);
+    if(instance_exists(deactivatedObject))
+    {
+        if(deactivatedObject.moveSpeed &gt; 0)
+            deactivatedObject.speed = deactivatedObject.moveSpeed;
+        deactivatedObject.frozen = false;
+    }
+    //instance_activate_object(deactivatedObject);
 }
 instance_destroy();
 </string>

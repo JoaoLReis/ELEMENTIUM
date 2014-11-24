@@ -59,7 +59,7 @@ if(mouse_check_button(mb_right))
         case 'EARTH':
         {   
             if(obj_player.spells[7] < 0)
-                StoneArmour();
+                GiantBoulder();
         };
         break;
     }    

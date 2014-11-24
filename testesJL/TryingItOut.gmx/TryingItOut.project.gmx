@@ -9,7 +9,7 @@
     <sprites name="planets">
       <sprite>sprites\sp_earth_planet</sprite>
       <sprite>sprites\sp_fire_planet</sprite>
-      <sprite>sprites\sprite52</sprite>
+      <sprite>sprites\sp_final_level</sprite>
       <sprite>sprites\sp_water_planet</sprite>
       <sprite>sprites\sp_portal</sprite>
     </sprites>
@@ -42,6 +42,7 @@
       <sprite>sprites\sp_enemyEarth</sprite>
       <sprite>sprites\sp_enemyWater</sprite>
       <sprite>sprites\sp_end_level</sprite>
+      <sprite>sprites\sp_end_game</sprite>
       <sprite>sprites\sp_enemyFire</sprite>
       <sprite>sprites\sp_chasing</sprite>
       <sprite>sprites\sp_suicide</sprite>
@@ -55,6 +56,7 @@
       <sprite>sprites\sp_bullet_test</sprite>
       <sprite>sprites\sp_bulletFire</sprite>
       <sprite>sprites\sp_bulletEarth</sprite>
+      <sprite>sprites\sp_Giant_Boulder</sprite>
       <sprite>sprites\sp_fireBall</sprite>
       <sprite>sprites\sp_ice</sprite>
       <sprite>sprites\sp_ice_block</sprite>
@@ -65,8 +67,11 @@
     </sprites>
     <sprites name="Map">
       <sprite>sprites\sp_collision</sprite>
+      <sprite>sprites\sp_breakable_earth</sprite>
       <sprite>sprites\sp_collision_Water</sprite>
+      <sprite>sprites\sp_breakable_ice</sprite>
       <sprite>sprites\sp_collision_Fire</sprite>
+      <sprite>sprites\sp_breakable_fire</sprite>
       <sprite>sprites\sp_collision_simple</sprite>
       <sprite>sprites\sp_treasure_chest</sprite>
     </sprites>
@@ -126,6 +131,7 @@
       </scripts>
       <scripts name="Earth">
         <script>scripts\StoneArmour.gml</script>
+        <script>scripts\GiantBoulder.gml</script>
       </scripts>
       <scripts name="Neutral">
         <script>scripts\BulletShoot.gml</script>
@@ -154,6 +160,7 @@
       <object>objects\obj_bulletFire</object>
       <object>objects\obj_bulletWater</object>
       <object>objects\obj_bulletEarth</object>
+      <object>objects\obj_giant_boulder</object>
       <object>objects\obj_fireBall</object>
       <object>objects\obj_enemy_projectile</object>
       <object>objects\obj_bulletIce</object>
@@ -196,7 +203,12 @@
     </objects>
     <objects name="Map">
       <object>objects\obj_shadowcaster</object>
+      <object>objects\obj_wall</object>
+      <object>objects\obj_breakable_earth</object>
+      <object>objects\obj_breakable_fire</object>
+      <object>objects\obj_breakable_ice</object>
       <object>objects\obj_artefact_end</object>
+      <object>objects\obj_end_game</object>
       <object>objects\obj_collision</object>
       <object>objects\obj_portal_animation</object>
     </objects>
@@ -219,6 +231,7 @@
     <room>rooms\rm_menu</room>
     <room>rooms\rm_starting_area</room>
     <room>rooms\rm_testArea</room>
+    <room>rooms\rm_final_room</room>
     <room>rooms\rm_Earth_Planet</room>
     <room>rooms\rm_Water_Planet</room>
     <room>rooms\rm_Fire_Planet</room>

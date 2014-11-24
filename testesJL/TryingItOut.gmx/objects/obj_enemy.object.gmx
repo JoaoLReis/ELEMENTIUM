@@ -92,8 +92,8 @@ chaseByHit = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>direction = random(360);
-speed = moveSpeed/4;
+            <string>
+motion_set(random(360), moveSpeed/4); 
 alarm[0] = 60;
 
 </string>
@@ -125,30 +125,36 @@ radius = 150;
     
 target = obj_player;
 
-if point_distance(x, y, target.x, target.y) &lt; radius
+if(!frozen)
 {
-    //for(i = 20; i&lt; (point_distance(x, y, target.x, target.y)); i+=8)
-    //{
-    //    if(position_empty(x+i, y+i))
-    //    {
-    //        continue;   
-    //    }
-    //    else 
-    //    {
-    //        chasing = false;
-    //        exit;
-    //    }
-    //}    
-    move_towards_point(target.x, target.y, moveSpeed);
-    chasing = true;
+    if point_distance(x, y, target.x, target.y) &lt; radius
+    {
+        //for(i = 20; i&lt; (point_distance(x, y, target.x, target.y)); i+=8)
+        //{
+        //    if(position_empty(x+i, y+i))
+        //    {
+        //        continue;   
+        //    }
+        //    else 
+        //    {
+        //        chasing = false;
+        //        exit;
+        //    }
+        //}    
+        move_towards_point(target.x, target.y, moveSpeed);
+        chasing = true;
+    }
+    else if (chaseByHit)
+    {
+        move_towards_point(target.x, target.y, moveSpeed);
+        chasing = true;
+    }
+    else chasing = false;
 }
-else if (chaseByHit)
+else
 {
-    move_towards_point(target.x, target.y, moveSpeed);
-    chasing = true;
+    motion_set(0, 0);
 }
-else chasing = false;
-
 </string>
           </argument>
         </arguments>

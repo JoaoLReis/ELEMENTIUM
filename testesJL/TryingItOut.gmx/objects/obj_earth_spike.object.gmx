@@ -34,7 +34,6 @@ valueHealth = maxHealth;
 type = "EARTH";
 
 damage = 7;
-moveSpeed = 0;
 alarm[0] = deathTimer;
 </string>
           </argument>
