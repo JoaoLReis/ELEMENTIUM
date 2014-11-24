@@ -314,7 +314,7 @@ if(canmove)
     if(key_up != 0 || keyboard_check(ord("W")))
     {
         SpriteDirection = 90;
-        if place_free(x, y - 1)
+        if place_free(x, y - acceleration)
             motion_add(90, acceleration)
         sprite_index = sp_player_N;
     }

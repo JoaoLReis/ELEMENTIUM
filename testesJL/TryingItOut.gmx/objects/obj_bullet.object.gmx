@@ -126,10 +126,12 @@ image_angle = direction;
             <string>///Damage Enemy
 
 var enemyHit = instance_place(x, y, obj_enemy);
-
-damageEnemy(damage, damageType, enemyHit);
-
-instance_destroy();
+if(!enemyHit.isProjectile)
+{
+    damageEnemy(damage, damageType, enemyHit);
+    
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

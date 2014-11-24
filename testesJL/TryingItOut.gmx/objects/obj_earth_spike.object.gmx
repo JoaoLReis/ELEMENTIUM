@@ -28,12 +28,13 @@
             <string>///Initialization
 
 event_inherited();
+isProjectile = true;
 deathTimer = 45;
 maxHealth = 1;
 valueHealth = maxHealth;
 type = "EARTH";
 
-damage = 7;
+damage = 12;
 alarm[0] = deathTimer;
 </string>
           </argument>
@@ -80,9 +81,8 @@ alarm[0] = deathTimer;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(valueHealth &lt;= 0)  
-    instance_destroy();
-    
+            <string>//if(valueHealth &lt;= 0)  
+//    instance_destroy();
 image_angle = direction;
 </string>
           </argument>

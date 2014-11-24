@@ -53,12 +53,15 @@ if(interactable != player)
         //ELEMENTS PICKUPS
         case 201://Earth
             IncreaseElement(1, player);
+            with(interactable){instance_destroy()};
             break;
         case 202://Fire
             IncreaseElement(2, player);
+            with(interactable){instance_destroy()};
             break;
         case 203://Water
             IncreaseElement(3, player);
+            with(interactable){instance_destroy()};
             break;
     }
 }

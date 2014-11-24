@@ -28,20 +28,21 @@
             <string>///Initialization
 
 event_inherited();
-deathTimer = 45;
+isProjectile = true;
+deathTimer = 70;
 maxHealth = 1;
 valueHealth = maxHealth;
 type = "FIRE";
 
 damage = 7;
 moveSpeed = 0;
-alarm[0] = deathTimer;
+alarm[6] = deathTimer;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="2" enumb="6">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -81,8 +82,9 @@ alarm[0] = deathTimer;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(valueHealth &lt;= 0)  
-    instance_destroy();
+            <string>///projectiles arent destroyed
+//if(valueHealth &lt;= 0)  
+//    instance_destroy();
 </string>
           </argument>
         </arguments>
