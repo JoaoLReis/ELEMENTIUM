@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>/// Init
-global.availablePoints = 0;
-global.defaultavailablePoints = 0;
+global.availablePoints = 4;
+global.defaultavailablePoints = 4;
 
 global.curHealth = 0;
 global.maxHealth = 3;
