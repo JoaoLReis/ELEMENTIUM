@@ -1243,6 +1243,15 @@
     <instance objName="obj_earth_spike_spawner" x="3904" y="3168" name="inst_1BE47332" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_earth_spike_spawner" x="5216" y="2848" name="inst_14FFF605" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_earth_spike_spawner" x="5152" y="4064" name="inst_CBDF94A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_spawn" x="2880" y="3936" name="inst_73ABDFE0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_spawn" x="3872" y="3968" name="inst_A23AA82F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_spawn" x="4896" y="4192" name="inst_7D3F59A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_spawn" x="5600" y="288" name="inst_36237C64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_spawn" x="5248" y="1792" name="inst_45901726" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_spawn" x="4256" y="1792" name="inst_06649DCD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_spawn" x="3136" y="1536" name="inst_18CE688A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_spawn" x="4352" y="288" name="inst_253F5327" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_spawn" x="3648" y="320" name="inst_18447F2B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background1" x="192" y="544" w="96" h="96" xo="128" yo="288" id="10000046" name="inst_0FB92750" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

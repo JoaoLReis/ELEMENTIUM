@@ -81,8 +81,10 @@ damageType = "EARTH";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_alpha = 0;
-alarm[2] = 3;
+            <string>///Blinking
+
+image_alpha = 0;
+alarm[2] = 6;
 alarm[1] = timer/2;
 </string>
           </argument>

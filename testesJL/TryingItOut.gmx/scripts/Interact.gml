@@ -44,6 +44,10 @@ if(interactable != player)
         case 506: //range
             IncreaseStat(6, player); 
             break;
+        //random temp stats
+        case 507: 
+            IncreaseTempStats(player);
+            break;
             
             
         //ELEMENTS PICKUPS

@@ -77,6 +77,7 @@
       <sprite>sprites\sp_breakable_fire</sprite>
       <sprite>sprites\sp_collision_simple</sprite>
       <sprite>sprites\sp_treasure_chest</sprite>
+      <sprite>sprites\sp_temp_stats</sprite>
     </sprites>
     <sprites name="elementPickup">
       <sprite>sprites\sp_fire_pickup</sprite>
@@ -146,6 +147,7 @@
       <script>scripts\Interact.gml</script>
     </scripts>
     <script>scripts\IncreaseStat.gml</script>
+    <script>scripts\IncreaseTempStats.gml</script>
     <script>scripts\IncreaseElement.gml</script>
     <script>scripts\UpdateStats.gml</script>
   </scripts>
@@ -223,6 +225,7 @@
     <objects name="Treasure">
       <object>objects\obj_treasure</object>
       <object>objects\obj_treasure_all</object>
+      <object>objects\obj_temp_stats</object>
       <object>objects\obj_treasure_health</object>
       <object>objects\obj_treasure_points</object>
       <object>objects\obj_treasure_attack</object>
@@ -233,6 +236,7 @@
       <object>objects\obj_element_pickup</object>
       <object>objects\obj_element_earth</object>
     </objects>
+    <object>objects\obj_treasure_spawn</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
