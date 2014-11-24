@@ -10,4 +10,4 @@ i = random_range(-20,20)
 
 b.direction +=5 + i;
 
-obj_player.spells[4] = global.E_water_cooldown;
+obj_player.spells[3] = global.Q_water_cooldown;

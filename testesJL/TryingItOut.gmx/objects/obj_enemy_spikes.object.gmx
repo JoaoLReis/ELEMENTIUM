@@ -29,7 +29,7 @@
 
 event_inherited();
 
-moveSpeed = 2;
+moveSpeed = 1;
 
 damage = 20;
 type = "EARTH";
@@ -38,7 +38,7 @@ type = "EARTH";
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="2" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -96,7 +96,7 @@ if(!frozen)
             b.speed = 2;
         }
         canAct = false;
-        alarm[0] = 50;
+        alarm[2] = 50;
     }
 }
 </string>

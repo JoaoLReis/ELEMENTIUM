@@ -30,7 +30,12 @@ global.curFireStrength = 0;
 
 global.curEarthStrength = 0;
 
-global.curIceStrength = 0;</code>
+global.curIceStrength = 0;
+
+while (ds_list_size(global.elements) &gt; 1)
+{
+    ds_list_delete(global.elements, 1);
+}</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

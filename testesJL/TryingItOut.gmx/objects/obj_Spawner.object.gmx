@@ -29,17 +29,19 @@
 
 event_inherited();
 
-maxHealth = 100;
+maxHealth = 50;
 valueHealth = maxHealth;
 type = "NEUTRAL";
-spawnRate = 100;
+spawnRate = 360;
 canAct = true;
 damage = 3;
 moveSpeed = 0;
 speed = 0;
+
+numberSpawns = 5 + 5 * global.numberWorldsVisited;
 enemies = ds_list_create();
 removeList = ds_list_create();
-for (i = 0; i &lt; 20; i += 1)
+for (i = 0; i &lt; numberSpawns; i += 1)
 {
     ds_list_add(enemies, instance_create(x, y, spawningEnemy));
 }

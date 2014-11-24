@@ -49,10 +49,15 @@ global.maxProjRange = 3;
 global.valueProjRange = 30;
 global.defaultProjRange = 30;
 
+global.possFireStr = 0;
 global.curFireStrength = 0;
 global.maxFireStrength = 3;
+
+global.possEarthStr = 0;
 global.curEarthStrength = 0;
 global.maxEarthStrength = 3;
+
+global.possWaterStr = 0;
 global.curWaterStrength = 0;
 global.maxWaterStrength = 3;
 
@@ -70,8 +75,8 @@ global.R_earth_cooldown = 1800;
 
 global.elements = ds_list_create();
 ds_list_add(global.elements,"NEUTRAL");
-ds_list_add(global.elements,"FIRE");
-ds_list_add(global.elements,"WATER");
+
+global.numberWorldsVisited = 0;
 
 room_goto(rm_menu);
 </string>

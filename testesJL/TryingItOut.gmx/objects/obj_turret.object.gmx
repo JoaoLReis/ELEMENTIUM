@@ -30,7 +30,7 @@
 event_inherited();
 radius = 150;
 
-maxHealth = 100;
+maxHealth = 50;
 type = "FIRE";
 valueHealth = maxHealth;
 
@@ -39,7 +39,7 @@ bullet = obj_fire_bullet;
 damage = 3;
 moveSpeed = 0;
 speed = 0;
-fireRate = 10;
+fireRate = 20;
 </string>
           </argument>
         </arguments>

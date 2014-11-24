@@ -28,3 +28,4 @@ if(ds_list_size(global.elements) > 1){
         }
     }
 }
+else return noone

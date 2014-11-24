@@ -414,7 +414,7 @@
     <instance objName="obj_shadowcaster" x="2304" y="1408" name="inst_3B5FE040" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="2304" y="1536" name="inst_DCFB7AA0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="2816" y="1408" name="inst_C8DD2A19" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_shadowcaster" x="3072" y="1536" name="inst_C23CC763" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_shadowcaster" x="3712" y="1536" name="inst_590749D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="2816" y="1536" name="inst_E6EF9A46" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="1408" y="768" name="inst_AA2F5288" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="1536" y="768" name="inst_78991884" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1069,7 +1069,7 @@
     <instance objName="obj_shadowcaster" x="3840" y="4736" name="inst_E8CA321D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="3840" y="4864" name="inst_69B1C4A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="3840" y="4992" name="inst_B16A4C11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_shadowcaster" x="3840" y="4352" name="inst_B4712286" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_shadowcaster" x="3712" y="5376" name="inst_73E6CFFF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="4096" y="3840" name="inst_5AC9866D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="4096" y="3968" name="inst_F34A8FBC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="4096" y="4096" name="inst_01968A35" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1099,7 +1099,7 @@
     <instance objName="obj_shadowcaster" x="2560" y="4992" name="inst_80BD9E7D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="2560" y="5120" name="inst_693466FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="2560" y="5248" name="inst_65AE3F96" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_shadowcaster" x="2816" y="5120" name="inst_30BD11C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_pickup" x="2816" y="5280" name="inst_B835F3AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="2944" y="5120" name="inst_F04A5B16" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="3072" y="5120" name="inst_F7CAF873" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="3328" y="5248" name="inst_D9F23837" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1139,6 +1139,75 @@
     <instance objName="obj_water_spawner" x="3040" y="3072" name="inst_8CD3C257" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="3840" y="3168" name="inst_29DFEB67" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="3904" y="2688" name="inst_B55C2A18" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_shadowcaster" x="2560" y="3712" name="inst_C488227F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_shadowcaster" x="4992" y="2304" name="inst_7A0572D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_shadowcaster" x="4608" y="896" name="inst_A0CB2822" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_shadowcaster" x="2560" y="4736" name="inst_35509A4A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_shadowcaster" x="4224" y="5632" name="inst_53A8EA50" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_shadowcaster" x="5504" y="3584" name="inst_3E4D5704" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_shadowcaster" x="5504" y="4352" name="inst_C659A8F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_shadowcaster" x="5376" y="5248" name="inst_235AD592" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_breakable_fire" x="4608" y="4224" name="inst_2AF907F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_breakable_fire" x="4736" y="4352" name="inst_970D1288" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_breakable_fire" x="4736" y="3584" name="inst_5ED62B65" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_artefact_end" x="5056" y="1216" name="inst_3DB48DCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_all" x="5088" y="5440" name="inst_28D80B33" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="2848" y="4896" name="inst_4091B53B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="3136" y="4896" name="inst_FD04108A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="3104" y="4544" name="inst_D31099D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="2848" y="4576" name="inst_00DB3F35" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="3680" y="4512" name="inst_7086DAE1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="3680" y="4832" name="inst_D60C1440" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="3680" y="5152" name="inst_D201065B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="4160" y="5440" name="inst_0ED3C021" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="4352" y="5440" name="inst_F86390A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="4384" y="4832" name="inst_2F294781" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="4384" y="4544" name="inst_9EDC2A0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="4352" y="4160" name="inst_5260AD5B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="3904" y="3808" name="inst_C456B59A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="3360" y="3936" name="inst_86D3BC53" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="2976" y="3936" name="inst_AFF08A7E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="2976" y="3680" name="inst_800C19BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="3296" y="3712" name="inst_406F4484" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="3168" y="1760" name="inst_D0E24E11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="3168" y="1952" name="inst_D81EC9A9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="3200" y="2176" name="inst_9DA78679" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="3648" y="2144" name="inst_27C7474F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="3648" y="1888" name="inst_44789719" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="4288" y="1952" name="inst_4458CF00" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="4576" y="2688" name="inst_7525205A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="4576" y="2912" name="inst_3E7BAD88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="4544" y="3232" name="inst_F7CC632F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="5056" y="2112" name="inst_3BB4198F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="5024" y="1760" name="inst_D9B2A589" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="5024" y="1440" name="inst_7912B648" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="4896" y="1952" name="inst_581F7119" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="5184" y="1568" name="inst_9E0FE077" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="4448" y="3424" name="inst_3ACD32AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="4736" y="3392" name="inst_57DAEC03" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="4928" y="4192" name="inst_11CD0845" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="4928" y="3968" name="inst_51553BA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="5216" y="3936" name="inst_2DBBD317" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="5216" y="4128" name="inst_67EE9660" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="5472" y="4128" name="inst_FDD55F52" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="5440" y="3936" name="inst_FEAFDFAB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="4928" y="4800" name="inst_D64ED09A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="5152" y="4800" name="inst_607C415B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="5152" y="5024" name="inst_BB409809" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="4928" y="5056" name="inst_F33F3299" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="4960" y="5280" name="inst_88801033" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="5184" y="5280" name="inst_47DE6F4E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="4928" y="5472" name="inst_CB8B0392" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_spawner" x="5248" y="5504" name="inst_9A1ECD2C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_temp_stats" x="4256" y="5568" name="inst_AD3EBB01" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_temp_stats" x="3648" y="5312" name="inst_A2B28BA0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_temp_stats" x="5504" y="4256" name="inst_D14B4ECA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_temp_stats" x="5280" y="4672" name="inst_1E303D83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_temp_stats" x="4512" y="1824" name="inst_0E26DC45" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_temp_stats" x="3136" y="1600" name="inst_9F9A19FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_temp_stats" x="2816" y="3680" name="inst_FC68BECF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_temp_stats" x="2784" y="4416" name="inst_502FD1C2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_temp_stats" x="4032" y="4832" name="inst_F7496399" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background3" x="3488" y="2880" w="64" h="64" xo="128" yo="320" id="10000609" name="inst_DE6CA5EB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

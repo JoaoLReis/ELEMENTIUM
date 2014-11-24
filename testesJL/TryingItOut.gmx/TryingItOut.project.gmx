@@ -235,6 +235,8 @@
     <objects name="ElementPickup">
       <object>objects\obj_element_pickup</object>
       <object>objects\obj_element_earth</object>
+      <object>objects\obj_fire_pickup</object>
+      <object>objects\obj_water_pickup</object>
     </objects>
     <object>objects\obj_treasure_spawn</object>
   </objects>

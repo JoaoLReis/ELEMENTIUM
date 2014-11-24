@@ -619,6 +619,8 @@ room_goto(rm_gameover);
           <argument>
             <kind>1</kind>
             <string>/// to starting area
+
+global.numberWorldsVisited += 1;
 room_goto(rm_starting_area);
 </string>
           </argument>
