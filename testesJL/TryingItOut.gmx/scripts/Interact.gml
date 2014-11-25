@@ -9,15 +9,19 @@ if(interactable != player)
         //planets
         case 1:
             room_goto(rm_Earth_Planet);
+            global.actualRoom = 1;
             break;
         case 2:
             room_goto(rm_Fire_Planet);
+            global.actualRoom = 2;
             break;
         case 3:
             room_goto(rm_Water_Planet);
+            global.actualRoom = 3;
             break;
         case 4:
             room_goto(rm_final_room);
+            global.actualRoom = 4;
             break;
             
         //treasures TODO: also add current values
