@@ -90,6 +90,11 @@
     <background>background\background1</background>
     <background>background\background2</background>
     <background>background\background3</background>
+    <background>background\background4</background>
+    <background>background\bg_minimap</background>
+    <background>background\bg_fire</background>
+    <background>background\bg_water</background>
+    <background>background\bg_earth</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -200,6 +205,7 @@
       </objects>
       <object>objects\obj_Spawner</object>
       <object>objects\obj_turret</object>
+      <object>objects\obj_enemyBullet</object>
     </objects>
     <objects name="Lighting">
       <object>objects\obj_lightmap</object>
@@ -221,6 +227,9 @@
       <object>objects\obj_end_game</object>
       <object>objects\obj_collision</object>
       <object>objects\obj_portal_animation</object>
+      <object>objects\obj_interact_scenario</object>
+      <object>objects\obj_portal</object>
+      <object>objects\obj_environment</object>
     </objects>
     <objects name="Treasure">
       <object>objects\obj_treasure</object>
@@ -251,11 +260,18 @@
     <room>rooms\rm_Fire_Planet</room>
     <room>rooms\rm_gameover</room>
   </rooms>
-  <constants number="4">
+  <constants number="11">
     <constant name="DOWN">3</constant>
     <constant name="UP">2</constant>
     <constant name="RIGHT">1</constant>
     <constant name="LEFT">0</constant>
+    <constant name="TEAM_FRIENDLY">0</constant>
+    <constant name="TEAM_ENEMY">1</constant>
+    <constant name="TEAM_PLAYER">2</constant>
+    <constant name="TEAM_BREAKABLE">3</constant>
+    <constant name="TEAM_PICKUPS">4</constant>
+    <constant name="TEAM_PORTALS">5</constant>
+    <constant name="TEAM_WALLS">6</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_enemy</parentName>
+  <parentName>obj_enemyBullet</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -28,14 +28,15 @@
             <string>///Initialization
 
 event_inherited();
-isProjectile = true;
+
 deathTimer = 45;
-maxHealth = 1;
-valueHealth = maxHealth;
+
 type = "EARTH";
 
 damage = 12;
 alarm[0] = deathTimer;
+
+team = 10000;
 </string>
           </argument>
         </arguments>

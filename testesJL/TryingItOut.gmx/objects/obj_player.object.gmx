@@ -47,6 +47,8 @@ flash = false;
 
 interacting = false;
 interactable = self;
+
+team = TEAM_PLAYER;
 </string>
           </argument>
         </arguments>
@@ -177,6 +179,39 @@ R_earth_cooldown = global.R_earth_cooldown;
             <string>///performance
 
 instance_deactivate_all(true);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///MINIMAP STUFF
+
+mapXSize = 200;
+mapYSize = 200;
+
+mapXScale = mapXSize/room_width;
+mapYScale = mapYSize/room_height;
+
+WIDTH = window_get_width();
+HEIGHT = window_get_height();
+
+mapSurface = surface_create(mapXSize, mapYSize);
+initiateSurface = 1;
 </string>
           </argument>
         </arguments>
@@ -547,6 +582,36 @@ instance_activate_region(view_xview[0] - 64, view_yview - 64, view_wview[0] + 12
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_environment">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>x = round(x)
+y = round(y)
+move_outside_solid((direction - 180) % 360, speed)
+move_contact_solid(direction, speed)
+speed = 0
+
+var hit = instance_place(x, y, obj_shadowcaster);
+show_debug_message(string(hit.depth) + ", " + string(depth))
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_collision">
       <action>
         <libid>1</libid>
@@ -622,36 +687,6 @@ room_goto(rm_gameover);
 
 global.numberWorldsVisited += 1;
 room_goto(rm_starting_area);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_wall">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>x = round(x)
-y = round(y)
-move_outside_solid((direction - 180) % 360, speed)
-move_contact_solid(direction, speed)
-speed = 0
-
-var hit = instance_place(x, y, obj_shadowcaster);
-show_debug_message(string(hit.depth) + ", " + string(depth))
 </string>
           </argument>
         </arguments>
@@ -807,6 +842,92 @@ draw_element_menu(elementalState, index);
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///MINIMAP STUFF
+
+var mapLeft = WIDTH - mapXSize;
+var mapTop = HEIGHT - mapYSize;
+
+draw_set_color(c_black);
+draw_rectangle(mapLeft - 2, 0, WIDTH, mapYSize + 2, false);
+
+
+if(surface_exists(mapSurface))
+{
+    draw_surface(mapSurface, mapLeft, 0);
+}
+else
+{
+    mapSurface = surface_create(mapXSize, mapYSize);
+    initiateSurface = 1;
+}
+
+with(obj_player)
+{
+    if team == TEAM_PLAYER draw_set_color(c_blue);
+    
+    draw_rectangle(mapLeft + x*other.mapXScale - 1, y*other.mapYScale - 1, mapLeft + x*other.mapXScale + 1, y*other.mapYScale + 1, false);
+}
+
+with(obj_enemy)
+{
+    if team == TEAM_ENEMY draw_set_color(c_red);
+    
+    draw_rectangle(mapLeft + x*other.mapXScale - 1, y*other.mapYScale - 1, mapLeft + x*other.mapXScale + 1, y*other.mapYScale + 1, false);
+}
+
+with(obj_portal)
+{
+    if team == TEAM_PORTALS draw_set_color(c_yellow);
+    
+    draw_rectangle(mapLeft + x*other.mapXScale - 1, y*other.mapYScale - 1, mapLeft + x*other.mapXScale + 1, y*other.mapYScale + 1, false);
+}
+
+with(obj_interact_scenario)
+{
+    if team == TEAM_BREAKABLE draw_set_color(c_orange);
+    
+    draw_rectangle(mapLeft + x*other.mapXScale - 1, y*other.mapYScale - 1, mapLeft + x*other.mapXScale + 1, y*other.mapYScale + 1, false);
+}
+
+with(obj_treasure)
+{
+    if team == TEAM_PICKUPS draw_set_color(c_dkgray);
+    
+    draw_rectangle(mapLeft + x*other.mapXScale - 1, y*other.mapYScale - 1, mapLeft + x*other.mapXScale + 1, y*other.mapYScale + 1, false);
+}
+
+with(obj_wall)
+{
+     if team == TEAM_WALLS draw_set_color(c_ltgray);
+    
+    draw_rectangle(mapLeft + x*other.mapXScale - 1, y*other.mapYScale - 1, mapLeft + x*other.mapXScale + 1, y*other.mapYScale + 1, false);
+}
+
+//Draw view rect
+draw_set_color(c_ltgray);
+draw_rectangle(mapLeft + view_xview*mapXScale, view_yview*mapYScale, mapLeft + (view_xview + view_wview)*mapXScale, (view_yview + view_hview)*mapYScale, true);
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="8" enumb="0">
       <action>
@@ -833,6 +954,38 @@ if flash{
      exit;
 }
 draw_self();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///MINIMAP STUFF
+
+if(initiateSurface == 1)
+{
+    surface_set_target(mapSurface);
+    draw_clear(c_black);
+      
+    draw_background_tiled_ext(background_index[0], 0, 0, mapXScale, mapYScale, c_white, 1);
+    
+    surface_reset_target();  
+    initiateSurface = 0;
+}
 </string>
           </argument>
         </arguments>

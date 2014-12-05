@@ -180,7 +180,8 @@ if(keyboard_check_pressed(vk_enter)){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>draw_set_color(c_black);
+
 draw_text(100, 100, "Avalible Points: " + string(global.availablePoints));
 draw_text(100, 130, "Character:");
     draw_menu_bar(160, global.curHealth, global.maxHealth, "Health: ");
