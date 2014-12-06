@@ -29,7 +29,7 @@
 
 event_inherited();
 
-maxHealth = 50;
+maxHealth = 100;
 valueHealth = maxHealth;
 type = "NEUTRAL";
 spawnRate = 360;

@@ -1217,6 +1217,10 @@ global.cooldowns = ds_list_create();</code>
     <instance objName="obj_temp_stats" x="4352" y="384" name="inst_D64FAF0C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_temp_stats" x="3616" y="384" name="inst_9B2C31F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_temp_stats" x="1056" y="1632" name="inst_296037C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fire_gunner" x="3168" y="3008" name="inst_B109F975" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fire_gunner" x="3392" y="2624" name="inst_D5B8615E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fire_gunner" x="3712" y="2688" name="inst_7C818B78" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fire_gunner" x="3616" y="3200" name="inst_A2791B3E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background3" x="3424" y="2976" w="64" h="64" xo="64" yo="256" id="10000573" name="inst_BCB61566" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -82,3 +82,5 @@ switch(incType)
         break;
 
 }
+
+ds_list_replace(global.treasures, global.actualRoom - 1, ds_list_find_value(global.treasures, global.actualRoom) - 1);

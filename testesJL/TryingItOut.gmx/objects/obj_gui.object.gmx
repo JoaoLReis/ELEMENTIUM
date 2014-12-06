@@ -26,6 +26,20 @@
           <argument>
             <kind>1</kind>
             <string>cursorPosition = 0;
+numEle = 0;
+
+if(global.possFireStr &gt; 0)
+{
+    numEle += 1;
+}
+if(global.possWaterStr &gt; 0)
+{
+    numEle += 1;
+}
+if(global.possEarthStr &gt; 0)
+{
+    numEle += 1;
+}
 </string>
           </argument>
         </arguments>
@@ -102,25 +116,31 @@ if(global.possFireStr &gt; 0)
             {global.curFireStrength++; global.availablePoints--;}
     }
     if (global.possWaterStr &gt; 0)
+    {
         if(cursorPosition == 5){
                 if(key_left != 0 &amp;&amp; global.curWaterStrength &gt; 0)
                     {global.curWaterStrength--; global.availablePoints++;}  
                 if(key_right != 0 &amp;&amp; global.curWaterStrength &lt; global.maxWaterStrength &amp;&amp; global.availablePoints &gt; 0)
                     {global.curWaterStrength++; global.availablePoints--;}
+        }
         if (global.possEarthStr &gt; 0)
+        {
             if(cursorPosition == 6){
                 if(key_left != 0 &amp;&amp; global.curEarthStrength &gt; 0)
                     {global.curEarthStrength--; global.availablePoints++;}  
                 if(key_right != 0 &amp;&amp; global.curEarthStrength &lt; global.maxEarthStrength &amp;&amp; global.availablePoints &gt; 0)
                     {global.curEarthStrength++; global.availablePoints--;}
             }
+        }
     }
     else if (global.possEarthStr &gt; 0)
+    {
         if(cursorPosition == 5){
             if(key_left != 0 &amp;&amp; global.curEarthStrength &gt; 0)
                 {global.curEarthStrength--; global.availablePoints++;}  
             if(key_right != 0 &amp;&amp; global.curEarthStrength &lt; global.maxEarthStrength &amp;&amp; global.availablePoints &gt; 0)
                 {global.curEarthStrength++; global.availablePoints--;}
+        }
     }
 }    
 else if (global.possWaterStr &gt; 0)
@@ -132,26 +152,39 @@ else if (global.possWaterStr &gt; 0)
                 {global.curWaterStrength++; global.availablePoints--;}
     }
     else if (global.possEarthStr &gt; 0)
+    {
         if(cursorPosition == 5){
             if(key_left != 0 &amp;&amp; global.curEarthStrength &gt; 0)
                 {global.curEarthStrength--; global.availablePoints++;}  
             if(key_right != 0 &amp;&amp; global.curEarthStrength &lt; global.maxEarthStrength &amp;&amp; global.availablePoints &gt; 0)
                 {global.curEarthStrength++; global.availablePoints--;}
         }
+    }
 }
 else if (global.possEarthStr &gt; 0)
+{
     if(cursorPosition == 4){
         if(key_left != 0 &amp;&amp; global.curEarthStrength &gt; 0)
             {global.curEarthStrength--; global.availablePoints++;}  
         if(key_right != 0 &amp;&amp; global.curEarthStrength &lt; global.maxEarthStrength &amp;&amp; global.availablePoints &gt; 0)
             {global.curEarthStrength++; global.availablePoints--;}
     }
+}
+
+if(cursorPosition == 4 + numEle)
+{
+    if(key_right != 0)
+    {
+        UpdateStats(0);
+        room_goto(rm_starting_area);
+    }
+}
 
 //loop cursor
-if(cursorPosition &gt; 7)
+if(cursorPosition &gt; 4 + numEle)
     cursorPosition = 0;
 if(cursorPosition &lt; 0)
-    cursorPosition = 7;
+    cursorPosition = 4 + numEle;
     
 //begin game
 if(keyboard_check_pressed(vk_enter)){
@@ -215,14 +248,14 @@ if(global.possEarthStr &gt; 0 )
     i+=1;
 }
  
-draw_text(150, 400, "Begin");
+draw_text(150, 310 +  30*i, "Begin");
     
 if(cursorPosition &gt;= 0 &amp;&amp; cursorPosition &lt; 4)
     draw_sprite(sp_green_bar, 0, 80, 160 + 8 + (cursorPosition*30));
-else if(cursorPosition &gt;= 4 &amp;&amp; cursorPosition &lt; 7)
-    draw_sprite(sp_green_bar, 0, 80, 160 + 8 + (cursorPosition*30) + 30);
+else if(cursorPosition &gt;= 4 &amp;&amp; cursorPosition &lt; 4 + numEle)
+    draw_sprite(sp_green_bar, 0, 80, 190 + 8 + (cursorPosition*30));
 else
-    draw_sprite(sp_green_bar, 0, 80, 400 + 8);
+    draw_sprite(sp_green_bar, 0, 80, 220 + 8 + (cursorPosition*30));
 </string>
           </argument>
         </arguments>

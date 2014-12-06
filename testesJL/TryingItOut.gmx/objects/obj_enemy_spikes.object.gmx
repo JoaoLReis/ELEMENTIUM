@@ -29,7 +29,7 @@
 
 event_inherited();
 
-moveSpeed = 1;
+moveSpeed = 1.5;
 
 damage = 20;
 type = "EARTH";

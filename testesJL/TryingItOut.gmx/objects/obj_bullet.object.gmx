@@ -30,6 +30,8 @@ alarm[0]=random_range(global.valueProjRange - 10, global.valueProjRange);
 
 damage = global.valueAttack;
 damageType = "NEUTRAL";
+
+explosion = obj_explosion;
 </string>
           </argument>
         </arguments>
@@ -129,7 +131,7 @@ var enemyHit = instance_place(x, y, obj_enemy);
 if(!enemyHit.isProjectile)
 {
     damageEnemy(damage, damageType, enemyHit);
-    
+    instance_create(enemyHit.x, enemyHit.y, explosion);
     instance_destroy();
 }
 </string>

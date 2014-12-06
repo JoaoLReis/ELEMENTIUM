@@ -30,6 +30,7 @@ damage = global.valueAttack / 10;
 
 alarm[0] = 240;
 damageType = "FIRE";
+explosion = obj_fire_explosion;
 </string>
           </argument>
         </arguments>
@@ -78,8 +79,11 @@ damageType = "FIRE";
             <string>///Damage Enemy
 
 var enemyHit = instance_place(x, y, obj_enemy);
-if enemyHit != noone
+if (enemyHit != noone)
+{
+    instance_create(enemyHit.x, enemyHit.y, explosion);
     damageEnemy(damage, damageType, enemyHit);
+}
 
 </string>
           </argument>

@@ -1209,6 +1209,12 @@ global.cooldowns = ds_list_create();</code>
     <instance objName="obj_temp_stats" x="2816" y="3680" name="inst_FC68BECF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_temp_stats" x="2784" y="4416" name="inst_502FD1C2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_temp_stats" x="4032" y="4832" name="inst_F7496399" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_gunner" x="3200" y="2784" name="inst_27916BF6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_gunner" x="3424" y="2656" name="inst_8260D9BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_gunner" x="3840" y="2880" name="inst_9F6104F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_gunner" x="3360" y="3168" name="inst_F4FA66B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_gunner" x="3552" y="3168" name="inst_E06A8F1A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_gunner" x="3200" y="3008" name="inst_AE7B257B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background3" x="3488" y="2880" w="64" h="64" xo="128" yo="320" id="10000609" name="inst_DE6CA5EB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

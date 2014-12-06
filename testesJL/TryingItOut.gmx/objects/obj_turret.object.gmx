@@ -38,7 +38,7 @@ bullet = obj_fire_bullet;
 
 damage = 3;
 moveSpeed = 0;
-speed = 0;
+speed = moveSpeed;
 fireRate = 20;
 </string>
           </argument>

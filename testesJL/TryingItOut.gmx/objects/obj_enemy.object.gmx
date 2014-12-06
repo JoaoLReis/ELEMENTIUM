@@ -28,6 +28,7 @@
             <string>/// Variables, alert means 
 alert = 0;
 
+radius = 200;
 maxHealth = 20;
 valueHealth = maxHealth;
 isProjectile = false;
@@ -38,6 +39,7 @@ type = "NEUTRAL";
 
 moveSpeed = 2;
 frozen = false;
+distanceToMantain = 0.7;
 
 chasing = false;
 chaseByHit = false;
@@ -124,7 +126,7 @@ alarm[0] = 60;
             <string>if(valueHealth &lt;= 0)  
     instance_destroy();
     
-radius = 200;
+//radius = 200;
     
 target = obj_player;
 
@@ -144,14 +146,18 @@ if(!frozen)
         //        exit;
         //    }
         //}    
-        if point_distance(x, y, target.x, target.y) &gt; 0.7
+        if (point_distance(x, y, target.x, target.y) &gt; distanceToMantain)
+        {
             move_towards_point(target.x, target.y, moveSpeed);
+        }
         chasing = true;
     }
     else if (chaseByHit)
     {
-        if point_distance(x, y, target.x, target.y) &gt; 0.7
+        if (point_distance(x, y, target.x, target.y) &gt; distanceToMantain)
+        {
             move_towards_point(target.x, target.y, moveSpeed);
+        }
         chasing = true;
     }
     else chasing = false;

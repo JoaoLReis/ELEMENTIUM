@@ -31,6 +31,7 @@ event_inherited();
 
 damage = global.valueAttack;
 damageType = "WATER";
+explosion = obj_water_explosion;
 </string>
           </argument>
         </arguments>

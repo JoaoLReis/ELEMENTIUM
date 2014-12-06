@@ -34,7 +34,7 @@ type = "NEUTRAL";
 moveSpeed = 2;
 
 damage = 12;
-
+explosion = obj_explosion;
 
 speed = moveSpeed;
 alarm[0] = deathTimer;
@@ -137,7 +137,7 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///damage
-
+instance_create(x, y, explosion);
 damage_Player(damage);
 instance_destroy();
 
