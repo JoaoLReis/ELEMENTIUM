@@ -36,6 +36,7 @@ timer = duration;
 alarm[1] = timer/2;
 alarm[0]=duration;
 damageType = "EARTH";
+
 </string>
           </argument>
         </arguments>

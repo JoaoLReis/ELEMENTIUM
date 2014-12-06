@@ -32,6 +32,8 @@ event_inherited();
 alarm[0]=random_range(global.valueProjRange - 10, global.valueProjRange) * 2;
 damage = global.valueAttack * 20;
 damageType = "EARTH";
+
+explosion = obj_earth_explosion;
 </string>
           </argument>
         </arguments>
