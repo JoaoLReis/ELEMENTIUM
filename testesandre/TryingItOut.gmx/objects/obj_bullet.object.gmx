@@ -83,7 +83,7 @@ image_angle = direction;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_shadowcaster">
+    <event eventtype="4" ename="obj_environment">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -126,10 +126,12 @@ image_angle = direction;
             <string>///Damage Enemy
 
 var enemyHit = instance_place(x, y, obj_enemy);
-
-damageEnemy(damage, damageType, enemyHit);
-
-instance_destroy();
+if(!enemyHit.isProjectile)
+{
+    damageEnemy(damage, damageType, enemyHit);
+    
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

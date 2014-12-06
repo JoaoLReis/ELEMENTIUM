@@ -28,13 +28,18 @@
             <string>/// Variables, alert means 
 alert = 0;
 
+radius = 200;
 maxHealth = 20;
 valueHealth = maxHealth;
+isProjectile = false;
 
 damage = 10;
+canAct = true;
 type = "NEUTRAL";
 
 moveSpeed = 2;
+frozen = false;
+distanceToMantain = 0.7;
 
 chasing = false;
 chaseByHit = false;
@@ -42,6 +47,8 @@ chaseByHit = false;
 direction = random(360);
 speed = moveSpeed;
 alarm[0] = 60;
+
+team = TEAM_ENEMY;
 
 </string>
           </argument>
@@ -90,8 +97,8 @@ chaseByHit = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>direction = random(360);
-speed = moveSpeed/4;
+            <string>
+motion_set(random(360), moveSpeed/4); 
 alarm[0] = 60;
 
 </string>
@@ -119,33 +126,46 @@ alarm[0] = 60;
             <string>if(valueHealth &lt;= 0)  
     instance_destroy();
     
-radius = 150;
+//radius = 200;
     
 target = obj_player;
 
-if point_distance(x, y, target.x, target.y) &lt; radius
+if(!frozen)
 {
-    //for(i = 20; i&lt; (point_distance(x, y, target.x, target.y)); i+=8)
-    //{
-    //    if(position_empty(x+i, y+i))
-    //    {
-    //        continue;   
-    //    }
-    //    else 
-    //    {
-    //        chasing = false;
-    //        exit;
-    //    }
-    //}    
-    move_towards_point(target.x, target.y, moveSpeed);
-    chasing = true;
+    if point_distance(x, y, target.x, target.y) &lt; radius
+    {
+        //for(i = 20; i&lt; (point_distance(x, y, target.x, target.y)); i+=8)
+        //{
+        //    if(position_empty(x+i, y+i))
+        //    {
+        //        continue;   
+        //    }
+        //    else 
+        //    {
+        //        chasing = false;
+        //        exit;
+        //    }
+        //}    
+        if (point_distance(x, y, target.x, target.y) &gt; distanceToMantain)
+        {
+            move_towards_point(target.x, target.y, moveSpeed);
+        }
+        chasing = true;
+    }
+    else if (chaseByHit)
+    {
+        if (point_distance(x, y, target.x, target.y) &gt; distanceToMantain)
+        {
+            move_towards_point(target.x, target.y, moveSpeed);
+        }
+        chasing = true;
+    }
+    else chasing = false;
 }
-else if (chaseByHit)
+else
 {
-    move_towards_point(target.x, target.y, moveSpeed);
-    chasing = true;
+    motion_set(0, 0);
 }
-else chasing = false;
 </string>
           </argument>
         </arguments>
@@ -172,7 +192,7 @@ else chasing = false;
           </argument>
           <argument>
             <kind>4</kind>
-            <string>0</string>
+            <string>1</string>
           </argument>
         </arguments>
       </action>
@@ -194,54 +214,16 @@ else chasing = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>valueHealth -= global.valueAttack;
-
+            <string>if(!isProjectile)
+{
+    valueHealth -= global.valueAttack * 2;
+}
 </string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="4" ename="obj_player">
-      <action>
-        <libid>1</libid>
-        <id>601</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_execute_script</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>9</kind>
-            <script>damage_Player</script>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>damage</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-        </arguments>
-      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -258,13 +240,39 @@ else chasing = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Collision Detection
+            <string>///damage
 
-x = round(x)
-y = round(y)
-move_outside_solid((direction - 180) % 360, speed)
-move_contact_solid(direction, speed)
-speed = 0
+if(!frozen)
+{
+    damage_Player(damage);
+    if(isProjectile)
+    {
+        instance_destroy();
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="40">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_deactivate_object(self);
 </string>
           </argument>
         </arguments>

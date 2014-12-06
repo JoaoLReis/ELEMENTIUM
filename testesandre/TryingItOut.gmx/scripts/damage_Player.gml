@@ -7,7 +7,13 @@ if(!target.flash){
     target.flash = true;
     target.alarm[3] = 60;
     
+
+  
     //this goes in collision event with player in the enemy
-    target.dir = point_direction(x, y, target.x, target.y)
-    with (obj_player ) { motion_set(dir,10) }
+    //direct = obj_player.direction;
+    //target.dir = point_direction(x, y, target.x, target.y)
+    //motion_set(-target.dir,10);  
+    //with (obj_player ) { motion_set(dir,10) }
+    //obj_player.direction = direct;   
 }
+

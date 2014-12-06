@@ -9,10 +9,10 @@
     <sprites name="planets">
       <sprite>sprites\sp_earth_planet</sprite>
       <sprite>sprites\sp_fire_planet</sprite>
+      <sprite>sprites\sp_final_level</sprite>
       <sprite>sprites\sp_water_planet</sprite>
       <sprite>sprites\sp_portal</sprite>
     </sprites>
-    <sprite>sprites\sp_melee</sprite>
     <sprites name="character">
       <sprite>sprites\sp_player_W_IDLE</sprite>
       <sprite>sprites\sp_player_S_IDLE</sprite>
@@ -41,6 +41,7 @@
       <sprite>sprites\sp_enemyEarth</sprite>
       <sprite>sprites\sp_enemyWater</sprite>
       <sprite>sprites\sp_end_level</sprite>
+      <sprite>sprites\sp_end_game</sprite>
       <sprite>sprites\sp_enemyFire</sprite>
       <sprite>sprites\sp_chasing</sprite>
       <sprite>sprites\sp_suicide</sprite>
@@ -48,32 +49,56 @@
       <sprite>sprites\sp_suicide_spawner</sprite>
       <sprite>sprites\sp_turret</sprite>
       <sprite>sprites\sp_earth_spikes</sprite>
+      <sprite>sprites\sp_earth_spiral</sprite>
+      <sprite>sprites\sp_earth_gunner</sprite>
+      <sprite>sprites\sp_water_gunner</sprite>
+      <sprite>sprites\sp_fire_gunner</sprite>
     </sprites>
     <sprites name="Projectiles&amp;Spells">
       <sprite>sprites\sp_bulletWater</sprite>
       <sprite>sprites\sp_bullet_test</sprite>
       <sprite>sprites\sp_bulletFire</sprite>
       <sprite>sprites\sp_bulletEarth</sprite>
+      <sprite>sprites\sp_Giant_Boulder</sprite>
+      <sprite>sprites\sp_stone_armor</sprite>
       <sprite>sprites\sp_fireBall</sprite>
       <sprite>sprites\sp_ice</sprite>
       <sprite>sprites\sp_ice_block</sprite>
+      <sprite>sprites\sp_fire_wall</sprite>
+      <sprite>sprites\sp_dragon</sprite>
+      <sprite>sprites\sp_spike</sprite>
+      <sprite>sprites\sp_melee</sprite>
     </sprites>
     <sprites name="Light">
       <sprite>sprites\sp_light</sprite>
     </sprites>
     <sprites name="Map">
       <sprite>sprites\sp_collision</sprite>
+      <sprite>sprites\sp_breakable_earth</sprite>
       <sprite>sprites\sp_collision_Water</sprite>
+      <sprite>sprites\sp_breakable_ice</sprite>
       <sprite>sprites\sp_collision_Fire</sprite>
+      <sprite>sprites\sp_breakable_fire</sprite>
       <sprite>sprites\sp_collision_simple</sprite>
+      <sprite>sprites\sp_treasure_chest</sprite>
+      <sprite>sprites\sp_temp_stats</sprite>
     </sprites>
-    <sprite>sprites\sp_spike</sprite>
+    <sprites name="elementPickup">
+      <sprite>sprites\sp_fire_pickup</sprite>
+      <sprite>sprites\sp_water_pickup</sprite>
+      <sprite>sprites\sp_earth_pickup</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_tiles</background>
     <background>background\background1</background>
     <background>background\background2</background>
     <background>background\background3</background>
+    <background>background\background4</background>
+    <background>background\bg_minimap</background>
+    <background>background\bg_fire</background>
+    <background>background\bg_water</background>
+    <background>background\bg_earth</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -98,6 +123,8 @@
       <script>scripts\draw_menu_bar.gml</script>
       <script>scripts\draw_element_menu.gml</script>
       <script>scripts\nextElementalState.gml</script>
+      <script>scripts\getNextElementalState.gml</script>
+      <script>scripts\floatingMessage.gml</script>
     </scripts>
     <scripts name="Projectile">
       <script>scripts\Mouse_process_shoot.gml</script>
@@ -106,6 +133,8 @@
     <scripts name="Spells">
       <scripts name="Fire">
         <script>scripts\FireBall.gml</script>
+        <script>scripts\FireWall.gml</script>
+        <script>scripts\Dragon.gml</script>
       </scripts>
       <scripts name="Water">
         <script>scripts\WaterSpray.gml</script>
@@ -114,21 +143,38 @@
         <script>scripts\IceWall.gml</script>
       </scripts>
       <scripts name="Earth">
-        <script>scripts\StoneArmour.gml</script>
+        <script>scripts\StoneArmor.gml</script>
+        <script>scripts\EarthProjectile.gml</script>
+        <script>scripts\GiantBoulder.gml</script>
       </scripts>
       <scripts name="Neutral">
         <script>scripts\BulletShoot.gml</script>
+        <script>scripts\Melee.gml</script>
       </scripts>
     </scripts>
     <scripts name="Interactions">
       <script>scripts\Interact.gml</script>
     </scripts>
+    <scripts name="Cooldowns">
+      <script>scripts\CooldownShow.gml</script>
+    </scripts>
+    <scripts name="StatManipulation">
+      <script>scripts\IncreaseStat.gml</script>
+      <script>scripts\IncreaseElement.gml</script>
+      <script>scripts\UpdateStats.gml</script>
+      <script>scripts\IncreaseTempStats.gml</script>
+    </scripts>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_Numbers</font>
+    <font>fonts\fnt_pickup</font>
+  </fonts>
   <objects name="objects">
     <objects name="planets">
       <object>objects\obj_earth_planet</object>
       <object>objects\obj_water_planet</object>
       <object>objects\obj_fire_planet</object>
+      <object>objects\obj_test_Planet</object>
       <object>objects\obj_planet</object>
     </objects>
     <object>objects\obj_player</object>
@@ -138,11 +184,15 @@
       <object>objects\obj_bulletFire</object>
       <object>objects\obj_bulletWater</object>
       <object>objects\obj_bulletEarth</object>
+      <object>objects\obj_giant_boulder</object>
+      <object>objects\obj_stone_armor</object>
       <object>objects\obj_fireBall</object>
       <object>objects\obj_enemy_projectile</object>
       <object>objects\obj_bulletIce</object>
       <object>objects\obj_ice_cage</object>
       <object>objects\obj_ice_wall</object>
+      <object>objects\obj_fire_wall</object>
+      <object>objects\obj_fire_dragon</object>
     </objects>
     <objects name="Enemies">
       <object>objects\obj_enemy</object>
@@ -153,19 +203,27 @@
         <object>objects\obj_suicide_spawner</object>
         <object>objects\obj_fire_bullet</object>
         <object>objects\obj_fire_turret</object>
+        <object>objects\obj_fire_gunner</object>
       </objects>
       <objects name="Water">
         <object>objects\obj_enemyWater</object>
         <object>objects\obj_water_spawner</object>
+        <object>objects\obj_water_gunner</object>
+        <object>objects\obj_water_bullet</object>
       </objects>
       <objects name="Earth">
         <object>objects\obj_enemyEarth</object>
         <object>objects\obj_earth_spawner</object>
         <object>objects\obj_enemy_spikes</object>
         <object>objects\obj_earth_spike</object>
+        <object>objects\obj_earth_spike_spawner</object>
+        <object>objects\obj_earth_gunner</object>
+        <object>objects\obj_earth_bullet</object>
       </objects>
       <object>objects\obj_Spawner</object>
       <object>objects\obj_turret</object>
+      <object>objects\obj_enemyBullet</object>
+      <object>objects\obj_gunner</object>
     </objects>
     <objects name="Lighting">
       <object>objects\obj_lightmap</object>
@@ -175,12 +233,42 @@
       <object>objects\obj_gameover_gui</object>
       <object>objects\obj_init</object>
       <object>objects\obj_gui</object>
+      <object>objects\obj_floating_message</object>
     </objects>
     <objects name="Map">
       <object>objects\obj_shadowcaster</object>
+      <object>objects\obj_wall</object>
+      <object>objects\obj_breakable_earth</object>
+      <object>objects\obj_breakable_fire</object>
+      <object>objects\obj_breakable_ice</object>
       <object>objects\obj_artefact_end</object>
+      <object>objects\obj_end_game</object>
       <object>objects\obj_collision</object>
       <object>objects\obj_portal_animation</object>
+      <object>objects\obj_interact_scenario</object>
+      <object>objects\obj_portal</object>
+      <object>objects\obj_environment</object>
+      <object>objects\obj_interactable</object>
+    </objects>
+    <objects name="Treasure">
+      <object>objects\obj_treasure</object>
+      <object>objects\obj_treasure_all</object>
+      <object>objects\obj_temp_stats</object>
+      <object>objects\obj_treasure_health</object>
+      <object>objects\obj_treasure_points</object>
+      <object>objects\obj_treasure_attack</object>
+      <object>objects\obj_treasure_defense</object>
+      <object>objects\obj_treasure_range</object>
+      <object>objects\obj_treasure_spawn</object>
+    </objects>
+    <objects name="ElementPickup">
+      <object>objects\obj_element_pickup</object>
+      <object>objects\obj_element_earth</object>
+      <object>objects\obj_fire_pickup</object>
+      <object>objects\obj_water_pickup</object>
+    </objects>
+    <objects name="Cooldowns">
+      <object>objects\obj_cooldown</object>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -188,16 +276,24 @@
     <room>rooms\rm_menu</room>
     <room>rooms\rm_starting_area</room>
     <room>rooms\rm_testArea</room>
+    <room>rooms\rm_final_room</room>
     <room>rooms\rm_Earth_Planet</room>
     <room>rooms\rm_Water_Planet</room>
     <room>rooms\rm_Fire_Planet</room>
     <room>rooms\rm_gameover</room>
   </rooms>
-  <constants number="4">
+  <constants number="11">
     <constant name="DOWN">3</constant>
     <constant name="UP">2</constant>
     <constant name="RIGHT">1</constant>
     <constant name="LEFT">0</constant>
+    <constant name="TEAM_FRIENDLY">0</constant>
+    <constant name="TEAM_ENEMY">1</constant>
+    <constant name="TEAM_PLAYER">2</constant>
+    <constant name="TEAM_BREAKABLE">3</constant>
+    <constant name="TEAM_PICKUPS">4</constant>
+    <constant name="TEAM_PORTALS">5</constant>
+    <constant name="TEAM_WALLS">6</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

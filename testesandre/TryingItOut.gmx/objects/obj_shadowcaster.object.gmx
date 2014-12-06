@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-110</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_wall</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,10 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// inits shadow casting
-//caster_init();
-depth = room_height- y;
+            <string>event_inherited();
 
+if(global.actualRoom == 2)
+    sprite_index = sp_collision_Fire;
+    
+if(global.actualRoom == 3)
+    sprite_index = sp_collision_Water;
+    
 </string>
           </argument>
         </arguments>

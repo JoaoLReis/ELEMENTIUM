@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_enemy</parentName>
+  <parentName>obj_enemyBullet</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -28,14 +28,15 @@
             <string>///Initialization
 
 event_inherited();
+
 deathTimer = 45;
-maxHealth = 1;
-valueHealth = maxHealth;
+
 type = "EARTH";
 
-damage = 7;
-moveSpeed = 0;
+damage = 12;
 alarm[0] = deathTimer;
+
+team = 10000;
 </string>
           </argument>
         </arguments>
@@ -81,9 +82,8 @@ alarm[0] = deathTimer;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(valueHealth &lt;= 0)  
-    instance_destroy();
-    
+            <string>//if(valueHealth &lt;= 0)  
+//    instance_destroy();
 image_angle = direction;
 </string>
           </argument>

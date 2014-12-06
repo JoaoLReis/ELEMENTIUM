@@ -13,5 +13,5 @@ for (i = 0; i < 10; i += 1)
     }
     else b.direction -=5 - i;
 }
-canshoot = false;
+
 alarm[0]=20;

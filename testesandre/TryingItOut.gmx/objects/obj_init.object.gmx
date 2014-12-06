@@ -26,8 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>/// Init
-global.availablePoints = 10;
-global.defaultavailablePoints = 10;
+global.availablePoints = 4;
+global.defaultavailablePoints = 4;
+
 global.curHealth = 0;
 global.maxHealth = 3;
 global.valueHealth = 50;
@@ -48,24 +49,39 @@ global.maxProjRange = 3;
 global.valueProjRange = 30;
 global.defaultProjRange = 30;
 
+global.possFireStr = 0;
 global.curFireStrength = 0;
 global.maxFireStrength = 3;
+
+global.possEarthStr = 0;
 global.curEarthStrength = 0;
 global.maxEarthStrength = 3;
-global.curIceStrength = 0;
-global.maxIceStrength = 0;
 
-global.Q_fire_cooldown = 9;
-global.E_fire_cooldown = 1;
-global.R_fire_cooldown = 27;
+global.possWaterStr = 0;
+global.curWaterStrength = 0;
+global.maxWaterStrength = 3;
+
+global.Q_fire_cooldown = 13;
+global.E_fire_cooldown = 600;
+global.R_fire_cooldown = 900;
 
 global.Q_water_cooldown = 1;
-global.E_water_cooldown = 20.5;
-global.R_water_cooldown = 27;
+global.E_water_cooldown = 600;
+global.R_water_cooldown = 900;
 
 global.Q_earth_cooldown = 9;
-global.E_earth_cooldown = 1;
-global.R_earth_cooldown = 27;
+global.E_earth_cooldown = 180;
+global.R_earth_cooldown = 1800;
+
+global.elements = ds_list_create();
+ds_list_add(global.elements,"NEUTRAL");
+
+global.numberWorldsVisited = 0;
+global.actualRoom = 0;
+
+global.numberCooldowns = 0;
+global.cooldowns = ds_list_create();
+
 room_goto(rm_menu);
 </string>
           </argument>

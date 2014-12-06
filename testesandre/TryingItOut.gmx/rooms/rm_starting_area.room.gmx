@@ -76,6 +76,8 @@
     <instance objName="obj_portal_animation" x="800" y="320" name="inst_1C092411" locked="0" code="" scaleX="0.253623187541962" scaleY="0.25" colour="4294967295" rotation="0"/>
     <instance objName="obj_fire_planet" x="800" y="416" name="inst_ACE69655" locked="0" code="" scaleX="0.125" scaleY="0.125" colour="4294967295" rotation="0"/>
     <instance objName="obj_portal_animation" x="800" y="416" name="inst_243824F4" locked="0" code="" scaleX="0.253623187541962" scaleY="0.25" colour="4294967295" rotation="0"/>
+    <instance objName="obj_test_Planet" x="416" y="288" name="inst_E34F20FD" locked="0" code="" scaleX="0.100000001490116" scaleY="0.100000001490116" colour="4294967295" rotation="0"/>
+    <instance objName="obj_portal_animation" x="416" y="288" name="inst_5BE8DD9A" locked="0" code="" scaleX="0.253623187541962" scaleY="0.25" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background3" x="320" y="224" w="64" h="64" xo="0" yo="128" id="10000406" name="inst_1DFB6AEF" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

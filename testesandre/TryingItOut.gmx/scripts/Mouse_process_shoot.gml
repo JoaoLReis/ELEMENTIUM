@@ -20,13 +20,13 @@ if(mouse_check_button(mb_left))
         case 'WATER':
         {
             if(obj_player.spells[3] < 0)
-                WaterSpray();
+                WaterJet();
         };
         break;
         case 'EARTH':
         {   
             if(obj_player.spells[6] < 0)
-                StoneArmour();
+                EarthProjectile();
         };
         break;
     }    
@@ -40,14 +40,14 @@ if(mouse_check_button(mb_right))
     {
         case 'NEUTRAL':
         {
-            if(canshoot)
-                BulletShoot();
+            if(canmelee)
+                Melee();
         }
         break;
         case 'FIRE': 
         {
             if(obj_player.spells[1] < 0)
-                FireBall();
+                Dragon();
         }; 
         break;
         case 'WATER':
@@ -59,7 +59,7 @@ if(mouse_check_button(mb_right))
         case 'EARTH':
         {   
             if(obj_player.spells[7] < 0)
-                StoneArmour();
+                GiantBoulder();
         };
         break;
     }    
@@ -80,7 +80,7 @@ if(mouse_check_button(mb_middle))
         case 'FIRE': 
         {
             if(obj_player.spells[2] < 0)
-                FireBall();
+                FireWall();
         }; 
         break;
         case 'WATER':
@@ -92,7 +92,7 @@ if(mouse_check_button(mb_middle))
         case 'EARTH':
         {   
             if(obj_player.spells[8] < 0)
-                StoneArmour();
+                StoneArmor();
         };
         break;
     }    
