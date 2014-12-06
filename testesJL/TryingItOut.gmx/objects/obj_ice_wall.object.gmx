@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = 270;
+            <string>team = 1242456;
+
+alarm[0] = 270;
 </string>
           </argument>
         </arguments>

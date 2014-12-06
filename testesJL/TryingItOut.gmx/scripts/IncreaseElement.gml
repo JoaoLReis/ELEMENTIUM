@@ -12,7 +12,6 @@ switch (element)
         player.interacting = false;
         global.availablePoints += 1;
         global.defaultavailablePoints += 1;
-        with (obj_element_earth) {instance_destroy()}
         break;
     //Fire
     case 2:
@@ -22,7 +21,6 @@ switch (element)
         player.interacting = false;
         global.availablePoints += 1;
         global.defaultavailablePoints += 1;
-        with (obj_element_earth) {instance_destroy()}
         break;
     //Water
     case 3:
@@ -32,7 +30,6 @@ switch (element)
         player.interacting = false;
         global.availablePoints += 1;
         global.defaultavailablePoints += 1;
-        with (obj_element_earth) {instance_destroy()}
         break;
 
 }

@@ -11,3 +11,5 @@ i = random_range(-20,20)
 b.direction +=5 + i;
 
 obj_player.spells[3] = global.Q_water_cooldown;
+
+//CooldownShow(sp_bulletWater, global.Q_water_cooldown);

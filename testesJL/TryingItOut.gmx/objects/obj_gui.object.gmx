@@ -181,6 +181,7 @@ if(keyboard_check_pressed(vk_enter)){
           <argument>
             <kind>1</kind>
             <string>draw_set_color(c_black);
+draw_set_font(fnt_pickup);
 
 draw_text(100, 100, "Avalible Points: " + string(global.availablePoints));
 draw_text(100, 130, "Character:");

@@ -9,3 +9,5 @@ for(i = 0; i < 1; i++)
 }
 
 obj_player.spells[6] = global.Q_earth_cooldown;
+
+//CooldownShow(sp_bulletEarth, global.Q_earth_cooldown);

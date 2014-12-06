@@ -79,6 +79,9 @@ ds_list_add(global.elements,"NEUTRAL");
 global.numberWorldsVisited = 0;
 global.actualRoom = 0;
 
+global.numberCooldowns = 0;
+global.cooldowns = ds_list_create();
+
 room_goto(rm_menu);
 </string>
           </argument>

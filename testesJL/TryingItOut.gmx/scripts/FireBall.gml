@@ -9,3 +9,5 @@ for(i = 0; i < 5; i++)
 }
 
 obj_player.spells[0] = global.Q_fire_cooldown;
+
+//CooldownShow(sp_bulletFire, global.Q_fire_cooldown);

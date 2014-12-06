@@ -16,3 +16,5 @@ var c = instance_create(posx - newx, posy - newy, obj_fire_wall);
 var d = instance_create(posx + newx, posy + newy, obj_fire_wall);
 
 obj_player.spells[2] = global.R_fire_cooldown;
+
+CooldownShow(sp_fire_wall, global.R_fire_cooldown);

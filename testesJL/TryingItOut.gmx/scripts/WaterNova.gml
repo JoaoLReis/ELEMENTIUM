@@ -10,3 +10,5 @@ for (i = 0; i < 50; i += 1)
 }
 
 spells[5]=global.R_water_cooldown;
+
+CooldownShow(sp_ice, global.R_water_cooldown);

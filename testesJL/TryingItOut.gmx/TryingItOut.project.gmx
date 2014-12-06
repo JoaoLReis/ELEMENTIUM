@@ -151,11 +151,20 @@
     <scripts name="Interactions">
       <script>scripts\Interact.gml</script>
     </scripts>
-    <script>scripts\IncreaseStat.gml</script>
-    <script>scripts\IncreaseTempStats.gml</script>
-    <script>scripts\IncreaseElement.gml</script>
-    <script>scripts\UpdateStats.gml</script>
+    <scripts name="Cooldowns">
+      <script>scripts\CooldownShow.gml</script>
+    </scripts>
+    <scripts name="StatManipulation">
+      <script>scripts\IncreaseStat.gml</script>
+      <script>scripts\IncreaseElement.gml</script>
+      <script>scripts\UpdateStats.gml</script>
+      <script>scripts\IncreaseTempStats.gml</script>
+    </scripts>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_Numbers</font>
+    <font>fonts\fnt_pickup</font>
+  </fonts>
   <objects name="objects">
     <objects name="planets">
       <object>objects\obj_earth_planet</object>
@@ -166,7 +175,6 @@
     </objects>
     <object>objects\obj_player</object>
     <object>objects\obj_melee</object>
-    <object>objects\obj_interactable</object>
     <objects name="Projectiles&amp;Spells">
       <object>objects\obj_bullet</object>
       <object>objects\obj_bulletFire</object>
@@ -230,6 +238,7 @@
       <object>objects\obj_interact_scenario</object>
       <object>objects\obj_portal</object>
       <object>objects\obj_environment</object>
+      <object>objects\obj_interactable</object>
     </objects>
     <objects name="Treasure">
       <object>objects\obj_treasure</object>
@@ -240,6 +249,7 @@
       <object>objects\obj_treasure_attack</object>
       <object>objects\obj_treasure_defense</object>
       <object>objects\obj_treasure_range</object>
+      <object>objects\obj_treasure_spawn</object>
     </objects>
     <objects name="ElementPickup">
       <object>objects\obj_element_pickup</object>
@@ -247,7 +257,9 @@
       <object>objects\obj_fire_pickup</object>
       <object>objects\obj_water_pickup</object>
     </objects>
-    <object>objects\obj_treasure_spawn</object>
+    <objects name="Cooldowns">
+      <object>objects\obj_cooldown</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>

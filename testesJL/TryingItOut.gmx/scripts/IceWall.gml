@@ -18,3 +18,5 @@ d.direction = wallDirection;
 d.image_angle = wallDirection;
 
 obj_player.spells[4] = global.E_water_cooldown;
+
+CooldownShow(sp_ice_block, global.E_water_cooldown);
