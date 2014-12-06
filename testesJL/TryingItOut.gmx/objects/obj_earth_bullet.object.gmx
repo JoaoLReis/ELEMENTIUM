@@ -33,7 +33,6 @@ deathTimer = 45;
 
 type = "WATER";
 
-damage = 12;
 alarm[0] = deathTimer;
 explosion = obj_earth_explosion;
 team = 10000;

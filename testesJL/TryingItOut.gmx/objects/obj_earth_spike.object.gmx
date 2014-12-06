@@ -33,7 +33,6 @@ deathTimer = 45;
 
 type = "EARTH";
 
-damage = 12;
 alarm[0] = deathTimer;
 
 team = 10000;

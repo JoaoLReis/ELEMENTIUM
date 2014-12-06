@@ -38,7 +38,7 @@ damage = 3;
 moveSpeed = 0;
 speed = 0;
 
-numberSpawns = 5 + 5 * global.numberWorldsVisited;
+numberSpawns = 5 + 2 * global.numberWorldsVisited;
 enemies = ds_list_create();
 removeList = ds_list_create();
 for (i = 0; i &lt; numberSpawns; i += 1)

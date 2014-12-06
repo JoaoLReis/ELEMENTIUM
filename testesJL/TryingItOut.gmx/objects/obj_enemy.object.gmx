@@ -33,7 +33,7 @@ maxHealth = 20;
 valueHealth = maxHealth;
 isProjectile = false;
 
-damage = 10;
+damage = 10 + 1*global.numberWorldsVisited;
 canAct = true;
 type = "NEUTRAL";
 

@@ -5,4 +5,4 @@ b.image_angle = image_angle;
 b.speed = 10;
 
 obj_player.canshoot = false;
-obj_player.alarm[0]=9;
+obj_player.alarm[0]=27;

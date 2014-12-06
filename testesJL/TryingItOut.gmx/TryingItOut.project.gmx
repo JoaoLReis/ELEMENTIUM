@@ -78,6 +78,7 @@
     </sprites>
     <sprites name="Map">
       <sprite>sprites\sp_collision</sprite>
+      <sprite>sprites\sp_secret</sprite>
       <sprite>sprites\sp_breakable_earth</sprite>
       <sprite>sprites\sp_collision_Water</sprite>
       <sprite>sprites\sp_breakable_ice</sprite>
@@ -255,6 +256,7 @@
     </objects>
     <objects name="Map">
       <object>objects\obj_shadowcaster</object>
+      <object>objects\obj_secret</object>
       <object>objects\obj_wall</object>
       <object>objects\obj_breakable_earth</object>
       <object>objects\obj_breakable_fire</object>
@@ -290,6 +292,7 @@
     <objects name="Cooldowns">
       <object>objects\obj_cooldown</object>
     </objects>
+    <object>objects\object82</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>

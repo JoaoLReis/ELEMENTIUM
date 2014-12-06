@@ -29,11 +29,10 @@
 
 event_inherited();
 
-deathTimer = 45;
+deathTimer = 90;
 
 type = "FIRE";
 
-damage = 7;
 alarm[0] = deathTimer;
 explosion = obj_fire_explosion;
 team = 10000;

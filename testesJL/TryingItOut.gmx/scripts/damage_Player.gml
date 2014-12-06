@@ -3,9 +3,9 @@ var incomingDamage = argument0;
 target = obj_player;
 
 if(!target.flash){
-    global.valueHealth = global.valueHealth - (incomingDamage - global.valueDefense);
+    global.valueHealth = global.valueHealth - (incomingDamage * (1 - global.valueDefense));
     target.flash = true;
-    target.alarm[3] = 60;
+    target.alarm[3] = 30;
     
 
   

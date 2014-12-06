@@ -28,7 +28,7 @@
             <string>/// Sets projectile range
 alarm[0]=random_range(global.valueProjRange - 10, global.valueProjRange);
 
-damage = global.valueAttack;
+damage = global.valueAttack * 3;
 damageType = "NEUTRAL";
 
 explosion = obj_explosion;

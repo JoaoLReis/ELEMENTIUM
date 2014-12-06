@@ -57,14 +57,23 @@ if(interactable != player)
         //ELEMENTS PICKUPS
         case 201://Earth
             IncreaseElement(1, player);
+            global.availablePoints += 1;
+            global.defaultavailablePoints += 1;
+            global.curEarthStrength += 1;
             with(interactable){instance_destroy()};
             break;
         case 202://Fire
             IncreaseElement(2, player);
+            global.availablePoints += 1;
+            global.defaultavailablePoints += 1;
+            global.curFireStrength += 1;
             with(interactable){instance_destroy()};
             break;
         case 203://Water
             IncreaseElement(3, player);
+            global.availablePoints += 1;
+            global.defaultavailablePoints += 1;
+            global.curWaterStrength += 1;
             with(interactable){instance_destroy()};
             break;
     }

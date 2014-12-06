@@ -13,19 +13,19 @@ if(mouse_check_button(mb_left))
         break;
         case 'FIRE': 
         {
-            if(obj_player.spells[0] < 0)
+            if(global.curFireStrength > 0 && obj_player.spells[0] < 0)
                 FireBall();
         }; 
         break;
         case 'WATER':
         {
-            if(obj_player.spells[3] < 0)
+            if(global.curWaterStrength > 0 && obj_player.spells[3] < 0)
                 WaterJet();
         };
         break;
         case 'EARTH':
         {   
-            if(obj_player.spells[6] < 0)
+            if(global.curEarthStrength > 0 && obj_player.spells[6] < 0)
                 EarthProjectile();
         };
         break;
@@ -46,19 +46,19 @@ if(mouse_check_button(mb_right))
         break;
         case 'FIRE': 
         {
-            if(obj_player.spells[1] < 0)
+            if(global.curFireStrength > 1 && obj_player.spells[1] < 0)
                 Dragon();
         }; 
         break;
         case 'WATER':
         {
-            if(obj_player.spells[4] < 0)
+            if(global.curWaterStrength > 1 && obj_player.spells[4] < 0)
                 IceWall();
         };
         break;
         case 'EARTH':
         {   
-            if(obj_player.spells[7] < 0)
+            if(global.curEarthStrength > 1 && obj_player.spells[7] < 0)
                 GiantBoulder();
         };
         break;
@@ -79,19 +79,19 @@ if(mouse_check_button(mb_middle))
         break;
         case 'FIRE': 
         {
-            if(obj_player.spells[2] < 0)
+            if(global.curFireStrength > 2 && obj_player.spells[2] < 0)
                 FireWall();
         }; 
         break;
         case 'WATER':
         {
-            if(obj_player.spells[5] < 0)
+            if(global.curWaterStrength > 2 && obj_player.spells[5] < 0)
                 WaterNova();
         };
         break;
         case 'EARTH':
         {   
-            if(obj_player.spells[8] < 0)
+            if(global.curEarthStrength > 2 && obj_player.spells[8] < 0)
                 StoneArmor();
         };
         break;
