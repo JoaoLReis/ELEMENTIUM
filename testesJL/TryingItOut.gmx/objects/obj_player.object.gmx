@@ -928,6 +928,54 @@ draw_rectangle(mapLeft + view_xview*mapXScale, view_yview*mapYScale, mapLeft + (
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Time + stat level
+
+var xoffset = 20;
+var yoffset = 120;
+
+draw_set_font(fnt_pickup);
+draw_set_color(c_ltgray);
+draw_set_halign(fa_left);
+
+var hours = 0;
+var minutes = 0;
+var seconds = 0;
+
+seconds = current_time div 1000;
+minutes = seconds div 60;
+hours = minutes div 60;
+minutes = minutes mod 60;
+seconds = seconds mod 60;
+
+draw_text(xoffset, yoffset, string(hours) + ":" + string(minutes) + ":" + string(seconds));
+
+draw_text(xoffset, yoffset + 30, "Health: " + string(global.curHealth));
+
+draw_text(xoffset, yoffset + 60, "Attack: " + string(global.curAttack));
+
+draw_text(xoffset, yoffset + 90, "Defense: " + string(global.curDefense));
+
+draw_text(xoffset, yoffset + 120, "Range: " + string(global.curProjRange));
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="8" enumb="0">
       <action>
