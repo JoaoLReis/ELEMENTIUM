@@ -29,10 +29,10 @@
 
 event_inherited();
 
-damage = 5;
+damage = damage/2;
 type = "WATER";
 
-moveSpeed = moveSpeed * 2;
+moveSpeed = moveSpeed * 1.5;
 </string>
           </argument>
         </arguments>

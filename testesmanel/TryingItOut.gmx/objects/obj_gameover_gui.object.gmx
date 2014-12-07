@@ -32,7 +32,7 @@ room_goto(rm_init);
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -50,15 +50,20 @@ room_goto(rm_init);
           <argument>
             <kind>1</kind>
             <string>
-
+draw_set_font(fnt_gameOver);
+draw_set_color(c_black);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
-draw_text_transformed(room_width / 2, room_height / 2, "GAME OVER
+draw_text_transformed(room_width / 2, room_height / 4, "GAME OVER", 2, 2, image_angle);
 
-", 2, 2, image_angle);
+draw_set_font(fnt_youWin);
+draw_set_color(c_green);
+draw_text_transformed(room_width / 2, room_height / 2, "YOU WIN ", 2, 2, image_angle);
 
+draw_set_font(fnt_pickup);
+draw_set_color(c_dkgray);
 draw_set_halign(fa_center);
-draw_text_transformed(room_width / 2, room_height / 2, "Press Enter to Restart", 2, 2, image_angle);
+draw_text_transformed(room_width / 2, room_height*3 / 4, "Press Enter to Restart", 2, 2, image_angle);
 draw_set_halign(fa_left);
 </string>
           </argument>

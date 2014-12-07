@@ -26,6 +26,20 @@
           <argument>
             <kind>1</kind>
             <string>cursorPosition = 0;
+numEle = 0;
+
+if(global.possFireStr &gt; 0)
+{
+    numEle += 1;
+}
+if(global.possWaterStr &gt; 0)
+{
+    numEle += 1;
+}
+if(global.possEarthStr &gt; 0)
+{
+    numEle += 1;
+}
 </string>
           </argument>
         </arguments>
@@ -93,35 +107,217 @@ if(cursorPosition == 3){
 }
 
 //Fire
-if(cursorPosition == 4){
-    if(key_left != 0 &amp;&amp; global.curFireStrength &gt; 0)
-        {global.curFireStrength--; global.availablePoints++;}  
-    if(key_right != 0 &amp;&amp; global.curFireStrength &lt; global.maxFireStrength &amp;&amp; global.availablePoints &gt; 0)
-        {global.curFireStrength++; global.availablePoints--;}
+if(global.possFireStr &gt; 0)
+{ 
+    if(cursorPosition == 4){
+        if(key_left != 0 &amp;&amp; global.curFireStrength &gt; 0)
+            {global.curFireStrength--; global.availablePoints++;}  
+        if(key_right != 0 &amp;&amp; global.curFireStrength &lt; global.maxFireStrength &amp;&amp; global.availablePoints &gt; 0)
+            {global.curFireStrength++; global.availablePoints--;}
+    }
+    if (global.possWaterStr &gt; 0)
+    {
+        if(cursorPosition == 5){
+                if(key_left != 0 &amp;&amp; global.curWaterStrength &gt; 0)
+                    {global.curWaterStrength--; global.availablePoints++;}  
+                if(key_right != 0 &amp;&amp; global.curWaterStrength &lt; global.maxWaterStrength &amp;&amp; global.availablePoints &gt; 0)
+                    {global.curWaterStrength++; global.availablePoints--;}
+        }
+        if (global.possEarthStr &gt; 0)
+        {
+            if(cursorPosition == 6){
+                if(key_left != 0 &amp;&amp; global.curEarthStrength &gt; 0)
+                    {global.curEarthStrength--; global.availablePoints++;}  
+                if(key_right != 0 &amp;&amp; global.curEarthStrength &lt; global.maxEarthStrength &amp;&amp; global.availablePoints &gt; 0)
+                    {global.curEarthStrength++; global.availablePoints--;}
+            }
+        }
+    }
+    else if (global.possEarthStr &gt; 0)
+    {
+        if(cursorPosition == 5){
+            if(key_left != 0 &amp;&amp; global.curEarthStrength &gt; 0)
+                {global.curEarthStrength--; global.availablePoints++;}  
+            if(key_right != 0 &amp;&amp; global.curEarthStrength &lt; global.maxEarthStrength &amp;&amp; global.availablePoints &gt; 0)
+                {global.curEarthStrength++; global.availablePoints--;}
+        }
+    }
+}    
+else if (global.possWaterStr &gt; 0)
+{
+    if(cursorPosition == 4){
+            if(key_left != 0 &amp;&amp; global.curWaterStrength &gt; 0)
+                {global.curWaterStrength--; global.availablePoints++;}  
+            if(key_right != 0 &amp;&amp; global.curWaterStrength &lt; global.maxWaterStrength &amp;&amp; global.availablePoints &gt; 0)
+                {global.curWaterStrength++; global.availablePoints--;}
+    }
+    else if (global.possEarthStr &gt; 0)
+    {
+        if(cursorPosition == 5){
+            if(key_left != 0 &amp;&amp; global.curEarthStrength &gt; 0)
+                {global.curEarthStrength--; global.availablePoints++;}  
+            if(key_right != 0 &amp;&amp; global.curEarthStrength &lt; global.maxEarthStrength &amp;&amp; global.availablePoints &gt; 0)
+                {global.curEarthStrength++; global.availablePoints--;}
+        }
+    }
+}
+else if (global.possEarthStr &gt; 0)
+{
+    if(cursorPosition == 4){
+        if(key_left != 0 &amp;&amp; global.curEarthStrength &gt; 0)
+            {global.curEarthStrength--; global.availablePoints++;}  
+        if(key_right != 0 &amp;&amp; global.curEarthStrength &lt; global.maxEarthStrength &amp;&amp; global.availablePoints &gt; 0)
+            {global.curEarthStrength++; global.availablePoints--;}
+    }
 }
 
-//Earth
-if(cursorPosition == 5){
-    if(key_left != 0 &amp;&amp; global.curEarthStrength &gt; 0)
-        {global.curEarthStrength--; global.availablePoints++;}  
-    if(key_right != 0 &amp;&amp; global.curEarthStrength &lt; global.maxEarthStrength &amp;&amp; global.availablePoints &gt; 0)
-        {global.curEarthStrength++; global.availablePoints--;}
+if(cursorPosition == 4 + numEle)
+{
+    if(key_right != 0)
+    {
+        UpdateStats(0);
+        room_goto(rm_starting_area);
+    }
 }
 
 //loop cursor
-if(cursorPosition &gt;= 7)
+if(cursorPosition &gt; 4 + numEle)
     cursorPosition = 0;
 if(cursorPosition &lt; 0)
-    cursorPosition = 6;
+    cursorPosition = 4 + numEle;
     
 //begin game
 if(keyboard_check_pressed(vk_enter)){
-    global.valueHealth = global.defaultHealth + global.curHealth * 50;
-    global.valueAttack = global.defaultAttack + global.curAttack * 2;
-    global.valueDefense = global.defaultDefense + global.curDefense;
-    global.valueProjRange = global.defaultProjRange + global.curProjRange * 10;
+    UpdateStats(0);
     room_goto(rm_starting_area);
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="53">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//click interaction on menu
+var xx = mouse_x;
+var yy = mouse_y;
+show_debug_message(xx);
+show_debug_message(yy);
+if(yy &gt; 120 &amp;&amp; yy &lt; 142 &amp;&amp; xx &gt; 260 &amp;&amp; xx &lt; (290 + global.maxHealth * 20)){
+    global.availablePoints += global.curHealth;
+    if(xx &gt; 290)
+        global.curHealth = ceil((xx - 290) / 20);
+    else
+        global.curHealth = 0;
+    global.availablePoints -= global.curHealth;
+    if(global.availablePoints &lt; 0){
+        global.curHealth += global.availablePoints;
+        global.availablePoints = 0;
+    }   
+}
+if(yy &gt; 143 &amp;&amp; yy &lt; 164 &amp;&amp; xx &gt; 260 &amp;&amp; xx &lt; (290 + global.maxAttack * 20)){
+    global.availablePoints += global.curAttack;
+    if(xx &gt; 290)
+        global.curAttack = ceil((xx - 290) / 20);
+    else
+        global.curAttack = 0;
+    global.availablePoints -= global.curAttack;
+    if(global.availablePoints &lt; 0){
+        global.curAttack += global.availablePoints;
+        global.availablePoints = 0;
+    }  
+} 
+if(yy &gt; 165 &amp;&amp; yy &lt; 186 &amp;&amp; xx &gt; 260 &amp;&amp; xx &lt; (290 + global.maxDefense * 20)){
+    global.availablePoints += global.curDefense;
+    if(xx &gt; 290)
+        global.curDefense = ceil((xx - 290) / 20);
+    else
+        global.curDefense = 0;
+    global.availablePoints -= global.curDefense;
+    if(global.availablePoints &lt; 0){
+        global.curDefense += global.availablePoints;
+        global.availablePoints = 0;
+    }  
+} 
+if(yy &gt; 187 &amp;&amp; yy &lt; 208 &amp;&amp; xx &gt; 260 &amp;&amp; xx &lt; (290 + global.maxProjRange * 20)){
+    global.availablePoints += global.curProjRange;
+    if(xx &gt; 290)
+        global.curProjRange = ceil((xx - 290) / 20);
+    else
+        global.curProjRange = 0;
+    global.availablePoints -= global.curProjRange;
+    if(global.availablePoints &lt; 0){
+        global.curProjRange += global.availablePoints;
+        global.availablePoints = 0;
+    }  
+}
+
+var i = 0;
+
+if(global.possFireStr &gt; 0 ) 
+{
+    if(yy &gt; (240 + i * 22) &amp;&amp; yy &lt; (240 + i*22 + 21) &amp;&amp; xx &gt; 260 &amp;&amp; xx &lt; (290 + global.maxFireStrength * 20)){
+        global.availablePoints += global.curFireStrength;
+        if(xx &gt; 290)
+            global.curFireStrength = ceil((xx - 290) / 20);
+        else
+            global.curFireStrength = 0;
+        global.availablePoints -= global.curFireStrength;
+        if(global.availablePoints &lt; 0){
+            global.curFireStrength += global.availablePoints;
+            global.availablePoints = 0;
+        }  
+    }
+    i+=1;
+}
+if(global.possWaterStr &gt; 0 ) 
+{
+    if(yy &gt; (240 + i * 22) &amp;&amp; yy &lt; (240 + i*22 + 21) &amp;&amp; xx &gt; 260 &amp;&amp; xx &lt; (290 + global.maxWaterStrength * 20)){
+        global.availablePoints += global.curWaterStrength;
+        if(xx &gt; 290)
+            global.curWaterStrength = ceil((xx - 290) / 20);
+        else
+            global.curWaterStrength = 0;
+        global.availablePoints -= global.curWaterStrength;
+        if(global.availablePoints &lt; 0){
+            global.curWaterStrength += global.availablePoints;
+            global.availablePoints = 0;
+        }
+    }
+    i+=1;
+}
+if(global.possEarthStr &gt; 0 )  
+{
+    if(yy &gt; (240 + i * 22) &amp;&amp; yy &lt; (240 + i*22 + 21) &amp;&amp; xx &gt; 260 &amp;&amp; xx &lt; (290 + global.maxEarthStrength * 20)){
+        global.availablePoints += global.curEarthStrength;
+        if(xx &gt; 290)
+            global.curEarthStrength = ceil((xx - 290) / 20);
+        else
+            global.curEarthStrength = 0;
+        global.availablePoints -= global.curEarthStrength;
+        if(global.availablePoints &lt; 0){
+            global.curEarthStrength += global.availablePoints;
+            global.availablePoints = 0;
+        } 
+    }
+    i+=1;
+}
+ 
 </string>
           </argument>
         </arguments>
@@ -144,30 +340,55 @@ if(keyboard_check_pressed(vk_enter)){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>draw_set_color(c_black);
+draw_set_halign(fa_left);
+draw_set_font(fnt_pickup);
+
 draw_text(100, 100, "Avalible Points: " + string(global.availablePoints));
 draw_text(100, 130, "Character:");
     draw_menu_bar(160, global.curHealth, global.maxHealth, "Health: ");
-    draw_text(500, 160, "Value: " + string(global.defaultHealth + global.curHealth * 50));
+    draw_text(500, 160, "Value: " + string(global.defaultHealth + global.curHealth * 10));
     draw_menu_bar(190, global.curAttack, global.maxAttack, "Attack: ");
-    draw_text(500, 190, "Value: " + string(global.defaultAttack + global.curAttack * 2));
+    draw_text(500, 190, "Value: " + string(global.defaultAttack + global.curAttack * 0.5));
+    var defInc = 0;
+    for(var i = 0; i &lt; global.curDefense; i++)
+    {
+        defInc += (1 - defInc)*(0.085) 
+    }
     draw_menu_bar(220, global.curDefense, global.maxDefense, "Defense: ");
-    draw_text(500, 220, "Value: " + string(global.defaultDefense + global.curDefense));
+    draw_text(500, 220, "Value: " + string((global.defaultDefense + defInc * 100)) + "%");
     draw_menu_bar(250, global.curProjRange, global.maxProjRange, "Projectile Range: ");
-    draw_text(500, 250, "Value: " + string(global.defaultProjRange + global.curProjRange * 10));
+    draw_text(500, 250, "Value: " + string(global.defaultProjRange + global.curProjRange * 2));
     
 draw_text(100, 280, "Elements:");
-    draw_menu_bar(310, global.curFireStrength, global.maxFireStrength, "Fire: ");
-    draw_menu_bar(340, global.curEarthStrength, global.maxEarthStrength, "Earth: ");
+
+var i = 1;
+
+if(global.possFireStr &gt; 0 ) 
+{
+    draw_menu_bar(280 + 30*i, global.curFireStrength, global.maxFireStrength, "Fire: ");
+    i+=1;
+}
+//if(ds_list_find_index(global.elements, "WATER") != -1) 
+if(global.possWaterStr &gt; 0 ) 
+{
+    draw_menu_bar(280 + 30*i, global.curWaterStrength, global.maxWaterStrength, "Water: ");
+    i+=1;
+}
+if(global.possEarthStr &gt; 0 )  
+{
+    draw_menu_bar(280 + 30*i, global.curEarthStrength, global.maxEarthStrength, "Earth: ");
+    i+=1;
+}
+ 
+draw_text(150, 310 +  30*i, "Begin");
     
-draw_text(150, 400, "Begin");
-    
-if(cursorPosition &gt;= 0 &amp;&amp; cursorPosition &lt;= 3)
+if(cursorPosition &gt;= 0 &amp;&amp; cursorPosition &lt; 4)
     draw_sprite(sp_green_bar, 0, 80, 160 + 8 + (cursorPosition*30));
-else if(cursorPosition &gt;= 4 &amp;&amp; cursorPosition &lt;= 5)
-    draw_sprite(sp_green_bar, 0, 80, 160 + 8 + (cursorPosition*30) + 30);
+else if(cursorPosition &gt;= 4 &amp;&amp; cursorPosition &lt; 4 + numEle)
+    draw_sprite(sp_green_bar, 0, 80, 190 + 8 + (cursorPosition*30));
 else
-    draw_sprite(sp_green_bar, 0, 80, 400 + 8);
+    draw_sprite(sp_green_bar, 0, 80, 220 + 8 + (cursorPosition*30));
 </string>
           </argument>
         </arguments>

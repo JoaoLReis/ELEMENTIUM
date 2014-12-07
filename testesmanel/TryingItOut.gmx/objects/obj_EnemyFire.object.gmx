@@ -29,7 +29,6 @@
 
 event_inherited();
 
-damage = 10;
 type = "FIRE";
 </string>
           </argument>

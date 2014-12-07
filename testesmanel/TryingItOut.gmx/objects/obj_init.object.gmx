@@ -26,8 +26,42 @@
           <argument>
             <kind>1</kind>
             <string>/// Init
-global.availablePoints = 10;
-global.defaultavailablePoints = 10;
+global.numberWorldsVisited = 0;
+
+//1 - Earth
+//2 - FIRE
+//3 - WATER
+//4 - FINAL
+global.actualRoom = 0;
+
+global.guitype = 0;
+
+room_goto(rm_menu);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///STATS
+
+global.availablePoints = 4;
+global.defaultavailablePoints = 4;
+
 global.curHealth = 0;
 global.maxHealth = 3;
 global.valueHealth = 50;
@@ -47,26 +81,113 @@ global.curProjRange = 0;
 global.maxProjRange = 3;
 global.valueProjRange = 30;
 global.defaultProjRange = 30;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///ELEMENTS levels
 
+global.possFireStr = 0;
 global.curFireStrength = 0;
 global.maxFireStrength = 3;
+
+global.possEarthStr = 0;
 global.curEarthStrength = 0;
 global.maxEarthStrength = 3;
-global.curIceStrength = 0;
-global.maxIceStrength = 0;
 
-global.Q_fire_cooldown = 9;
-global.E_fire_cooldown = 1;
-global.R_fire_cooldown = 27;
+global.possWaterStr = 0;
+global.curWaterStrength = 0;
+global.maxWaterStrength = 3;
+
+global.elements = ds_list_create();
+ds_list_add(global.elements,"NEUTRAL");
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///ELEMENTS COOLDOWNS
+
+global.Q_fire_cooldown = 13;
+global.E_fire_cooldown = 600;
+global.R_fire_cooldown = 900;
 
 global.Q_water_cooldown = 1;
-global.E_water_cooldown = 20.5;
-global.R_water_cooldown = 27;
+global.E_water_cooldown = 600;
+global.R_water_cooldown = 900;
 
 global.Q_earth_cooldown = 9;
-global.E_earth_cooldown = 1;
-global.R_earth_cooldown = 27;
-room_goto(rm_menu);
+global.E_earth_cooldown = 180;
+global.R_earth_cooldown = 1800;
+
+global.numberCooldowns = 0;
+global.cooldowns = ds_list_create();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///TREASURES number per planet
+
+global.treasures = ds_list_create();
+
+//Earth
+ds_list_add(global.treasures, 1);
+
+//FIRE
+ds_list_add(global.treasures, 1);
+
+//WATER
+ds_list_add(global.treasures, 1);
+
+
 </string>
           </argument>
         </arguments>

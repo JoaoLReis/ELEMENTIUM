@@ -29,17 +29,16 @@
 
 event_inherited();
 
-moveSpeed = moveSpeed/2;
+moveSpeed = 1.5;
 
 damage = 20;
 type = "EARTH";
-canSpike = true;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="2" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -56,7 +55,7 @@ canSpike = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>canSpike = true;
+            <string>canAct = true;
 </string>
           </argument>
         </arguments>
@@ -83,19 +82,22 @@ canSpike = true;
 
 image_angle = direction;
 
-if(canSpike)
+if(!frozen)
 {
-    var i;
-    for (i = 0; i &lt; 50; i += 1)
+    if(canAct)
     {
-        var b = instance_create(x, y, obj_earth_spike);
-        b.direction = 18 * i;
-        b.damage = b.damage / 10;
-        b.image_angle = image_angle;
-        b.speed = 2;
+        var i;
+        for (i = 0; i &lt; 20; i += 1)
+        {
+            var b = instance_create(x, y, obj_earth_spike);
+            b.direction = 18 * i;
+            b.damage = b.damage / 10;
+            b.image_angle = image_angle;
+            b.speed = 2;
+        }
+        canAct = false;
+        alarm[2] = 50;
     }
-    canSpike = false;
-    alarm[0] = 50;
 }
 </string>
           </argument>

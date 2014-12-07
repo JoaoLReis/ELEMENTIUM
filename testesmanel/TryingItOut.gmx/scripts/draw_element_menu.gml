@@ -21,6 +21,8 @@ else if (currentState == "EARTH")
 }
 
 //draw previous state
+if(ds_list_size(global.elements) == 1)
+    return noone;
 var previousState = getNextElementalState(argument0, false, argument1);
 var prevxoffset = -10;
 var prevyoffset = yoffset - 20;

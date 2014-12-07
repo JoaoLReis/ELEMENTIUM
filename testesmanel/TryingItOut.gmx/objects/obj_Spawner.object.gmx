@@ -32,14 +32,16 @@ event_inherited();
 maxHealth = 100;
 valueHealth = maxHealth;
 type = "NEUTRAL";
-spawnRate = 100;
-canSpawn = true;
+spawnRate = 360;
+canAct = true;
 damage = 3;
 moveSpeed = 0;
 speed = 0;
+
+numberSpawns = 5 + 2 * global.numberWorldsVisited;
 enemies = ds_list_create();
 removeList = ds_list_create();
-for (i = 0; i &lt; 20; i += 1)
+for (i = 0; i &lt; numberSpawns; i += 1)
 {
     ds_list_add(enemies, instance_create(x, y, spawningEnemy));
 }
@@ -65,7 +67,7 @@ for (i = 0; i &lt; 20; i += 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>canSpawn = true;
+            <string>canAct = true;
 </string>
           </argument>
         </arguments>
@@ -92,27 +94,31 @@ for (i = 0; i &lt; 20; i += 1)
 if(valueHealth &lt;= 0)  
     instance_destroy();
 
-if(canSpawn)
+if(!frozen)
 {
-    canSpawn = false;
-    for (i = 0; i &lt; ds_list_size(enemies); i += 1)
+    if(canAct)
     {
-        var enemy = ds_list_find_value(enemies, i);
-        if (!instance_exists(enemy))
+        canAct = false;
+        for (i = 0; i &lt; ds_list_size(enemies); i += 1)
         {
-            ds_list_add(removeList, i);
+            var enemy = ds_list_find_value(enemies, i);
+            if (!instance_exists(enemy))
+            {
+                ds_list_add(removeList, i);
+            }
         }
+        
+        for(i = 0; i &lt; ds_list_size(removeList); i++)
+        {
+            var newE = instance_create(x, y, spawningEnemy);
+            newE.chasing = false;
+            ds_list_replace(enemies, ds_list_find_value(removeList, i), newE);
+        }
+        ds_list_clear(removeList);
+        alarm[0] = spawnRate;
     }
-    
-    for(i = 0; i &lt; ds_list_size(removeList); i++)
-    {
-        var newE = instance_create(x, y, spawningEnemy);
-        newE.chasing = false;
-        ds_list_replace(enemies, ds_list_find_value(removeList, i), newE);
-    }
-    ds_list_clear(removeList);
-    alarm[0] = spawnRate;
 }
+
 </string>
           </argument>
         </arguments>

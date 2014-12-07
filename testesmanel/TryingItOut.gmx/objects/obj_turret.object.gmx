@@ -30,7 +30,7 @@
 event_inherited();
 radius = 150;
 
-maxHealth = 100;
+maxHealth = 50;
 type = "FIRE";
 valueHealth = maxHealth;
 
@@ -38,9 +38,8 @@ bullet = obj_fire_bullet;
 
 damage = 3;
 moveSpeed = 0;
-canShoot = true;
-speed = 0;
-fireRate = 10;
+speed = moveSpeed;
+fireRate = 20;
 </string>
           </argument>
         </arguments>
@@ -63,8 +62,8 @@ fireRate = 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Resets canShoot
-canShoot = true;
+            <string>///Resets canAct
+canAct = true;
 </string>
           </argument>
         </arguments>
@@ -94,20 +93,23 @@ canShoot = true;
     
 target = obj_player;
 
-if (point_distance(x, y, target.x, target.y) &lt; radius)
-{ 
-    image_angle = point_direction(x, y, target.x, target.y);
-    if(canShoot)
-    {
-        var b = instance_create(x, y, bullet);
-        b.direction = image_angle;
-        b.image_angle = image_angle;
-        b.speed = 4;
-        alarm[0] = fireRate;
-        canShoot = false;
-        b.deathTimer = fireRate*4;
+if(!frozen)
+{
+    if (point_distance(x, y, target.x, target.y) &lt; radius)
+    { 
+        image_angle = point_direction(x, y, target.x, target.y);
+        if(canAct)
+        {
+            var b = instance_create(x, y, bullet);
+            b.direction = image_angle;
+            b.image_angle = image_angle;
+            b.speed = 4;
+            alarm[0] = fireRate;
+            canAct = false;
+        }
     }
 }
+
 </string>
           </argument>
         </arguments>

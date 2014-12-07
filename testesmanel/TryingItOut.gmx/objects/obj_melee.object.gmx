@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>/// Sets Melee duration
-alarm[0]=6;
+alarm[0]=3;
 </string>
           </argument>
         </arguments>

@@ -29,8 +29,9 @@
 
 event_inherited();
 
-damage = global.valueAttack;
+damage = global.valueAttack * 2;
 damageType = "EARTH";
+explosion = obj_earth_explosion;
 </string>
           </argument>
         </arguments>

@@ -29,9 +29,9 @@
 
 event_inherited();
 
-moveSpeed = moveSpeed/2;
+moveSpeed = moveSpeed/1.5;
 
-damage = 20;
+damage = damage * 2;
 type = "EARTH";
 </string>
           </argument>

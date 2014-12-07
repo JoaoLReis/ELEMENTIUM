@@ -28,8 +28,10 @@
             <string>/// Sets projectile range
 alarm[0]=random_range(global.valueProjRange - 10, global.valueProjRange);
 
-damage = global.valueAttack;
+damage = global.valueAttack * 3;
 damageType = "NEUTRAL";
+
+explosion = obj_explosion;
 </string>
           </argument>
         </arguments>
@@ -83,7 +85,7 @@ image_angle = direction;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_shadowcaster">
+    <event eventtype="4" ename="obj_environment">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -126,10 +128,12 @@ image_angle = direction;
             <string>///Damage Enemy
 
 var enemyHit = instance_place(x, y, obj_enemy);
-
-damageEnemy(damage, damageType, enemyHit);
-
-instance_destroy();
+if(!enemyHit.isProjectile)
+{
+    damageEnemy(damage, damageType, enemyHit);
+    instance_create(enemyHit.x, enemyHit.y, explosion);
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
