@@ -1,32 +1,61 @@
+var strength = 1;
+var anglej = global.anglej;
+var j = false;
+if(joystick_exists(1)){
+    j = true;
+    key_right = 0;
+    key_left = 0;
+    key_up = 0;
+    key_down = 0;
 
+    var xj = joystick_rpos(1);
+    if(xj > 0)
+        key_right = xj;
+    else
+        key_left = -xj;
+    
+    var yj = joystick_zpos(1);
+    if(yj > 0)
+        key_down = yj;
+    else
+        key_up = -yj;
+    strength = sqrt(xj * xj + yj * yj);
+    if(strength > 0.4){
+        anglej  = arctan2(-yj, xj);    
+        anglej = radtodeg(anglej);
+        if(anglej < 0)
+            anglej += 360;
+        global.anglej = anglej;
+    }
+}
 
 //Q
-if(mouse_check_button(mb_left))
+if(mouse_check_button(mb_left) || (j && strength > 0.3))
 {
     switch elementalState
     {
         case 'NEUTRAL':
         {
             if(canshoot)
-                BulletShoot();
+                BulletShoot(j, anglej);
         }
         break;
         case 'FIRE': 
         {
             if(global.curFireStrength > 0 && obj_player.spells[0] < 0)
-                FireBall();
+                FireBall(j, anglej);
         }; 
         break;
         case 'WATER':
         {
             if(global.curWaterStrength > 0 && obj_player.spells[3] < 0)
-                WaterJet();
+                WaterJet(j, anglej);
         };
         break;
         case 'EARTH':
         {   
             if(global.curEarthStrength > 0 && obj_player.spells[6] < 0)
-                EarthProjectile();
+                EarthProjectile(j, anglej);
         };
         break;
     }    
@@ -34,7 +63,7 @@ if(mouse_check_button(mb_left))
 }
 
 //E
-if(mouse_check_button(mb_right))
+if(mouse_check_button(mb_right) || (j && joystick_check_button(1, 6)))
 {
     switch elementalState
     {
@@ -47,19 +76,19 @@ if(mouse_check_button(mb_right))
         case 'FIRE': 
         {
             if(global.curFireStrength > 1 && obj_player.spells[1] < 0)
-                Dragon();
+                Dragon(j, anglej);
         }; 
         break;
         case 'WATER':
         {
             if(global.curWaterStrength > 1 && obj_player.spells[4] < 0)
-                IceWall();
+                IceWall(j, anglej);
         };
         break;
         case 'EARTH':
         {   
             if(global.curEarthStrength > 1 && obj_player.spells[7] < 0)
-                GiantBoulder();
+                GiantBoulder(j, anglej);
         };
         break;
     }    
@@ -67,32 +96,32 @@ if(mouse_check_button(mb_right))
 }
 
 //R
-if(mouse_check_button(mb_middle))
+if(mouse_check_button(mb_middle) || ( j && joystick_check_button(1, 5)))
 {
     switch elementalState
     {
         case 'NEUTRAL':
         {
             if(canshoot)
-                BulletShoot();
+                BulletShoot(j, anglej);
         }
         break;
         case 'FIRE': 
         {
             if(global.curFireStrength > 2 && obj_player.spells[2] < 0)
-                FireWall();
+                FireWall(j, anglej);
         }; 
         break;
         case 'WATER':
         {
             if(global.curWaterStrength > 2 && obj_player.spells[5] < 0)
-                WaterNova();
+                WaterNova(j, anglej);
         };
         break;
         case 'EARTH':
         {   
             if(global.curEarthStrength > 2 && obj_player.spells[8] < 0)
-                StoneArmor();
+                StoneArmor(j, anglej);
         };
         break;
     }    

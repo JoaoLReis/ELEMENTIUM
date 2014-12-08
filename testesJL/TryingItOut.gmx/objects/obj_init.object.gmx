@@ -33,6 +33,12 @@ global.numberWorldsVisited = 0;
 //3 - WATER
 //4 - FINAL
 global.actualRoom = 0;
+global.last_angle = -1;
+global.prev_button8 = -1;
+global.prev_button7 = -1;
+global.prev_button4 = -1;
+global.guitype = 0;
+global.anglej = 0;
 
 room_goto(rm_menu);
 </string>
@@ -185,7 +191,24 @@ ds_list_add(global.treasures, 1);
 //WATER
 ds_list_add(global.treasures, 1);
 
+//FINAL
+ds_list_add(global.treasures, 10);
 
+
+//ROOM CLEARANCE TREASURES
+global.roomTreasures = ds_list_create();
+
+//Earth
+ds_list_add(global.roomTreasures, 4);
+
+//FIRE
+ds_list_add(global.roomTreasures, 4);
+
+//WATER
+ds_list_add(global.roomTreasures, 4);
+
+//FINAL
+ds_list_add(global.roomTreasures, 10);
 </string>
           </argument>
         </arguments>

@@ -91,7 +91,7 @@ if(!frozen)
         {
             var b = instance_create(x, y, obj_earth_spike);
             b.direction = 18 * i;
-            b.damage = b.damage / 10;
+            b.damage = b.damage / 2;
             b.image_angle = image_angle;
             b.speed = 2;
         }

@@ -37,12 +37,14 @@ switch(incType)
         }
         player.interacting = false;
         with (interactable) { instance_destroy(); } 
+        ds_list_replace(global.roomTreasures, global.actualRoom - 1, ds_list_find_value(global.roomTreasures, global.actualRoom - 1) - 1);
         break;
     case 2: //points
         global.defaultavailablePoints +=1;
         floatingMessage( "Max Points Increased!"); 
         player.interacting = false;
         with (interactable) { instance_destroy(); } 
+        ds_list_replace(global.treasures, global.actualRoom - 1, ds_list_find_value(global.treasures, global.actualRoom - 1) - 1);
         break;
     
     case 3: //health
@@ -52,6 +54,7 @@ switch(incType)
         floatingMessage( "Max Health Increased!");
         player.interacting = false;
         with (interactable) { instance_destroy(); } 
+        ds_list_replace(global.treasures, global.actualRoom - 1, ds_list_find_value(global.treasures, global.actualRoom - 1) - 1);
         break;
         
     case 4: //attack
@@ -61,6 +64,7 @@ switch(incType)
         floatingMessage( "Max Attack Increased!");
         player.interacting = false;
         with (interactable) { instance_destroy(); } 
+        ds_list_replace(global.treasures, global.actualRoom - 1, ds_list_find_value(global.treasures, global.actualRoom - 1) - 1);
         break;
         
     case 5: //defense
@@ -70,6 +74,7 @@ switch(incType)
         floatingMessage( "Max Defense Increased!");
         player.interacting = false;
         with (interactable) { instance_destroy(); } 
+        ds_list_replace(global.treasures, global.actualRoom - 1, ds_list_find_value(global.treasures, global.actualRoom - 1) - 1);
         break;
         
     case 6: //range
@@ -79,8 +84,9 @@ switch(incType)
         floatingMessage( "Max Projectile Range Increased!");
         player.interacting = false;
         with (interactable) { instance_destroy(); } 
+        ds_list_replace(global.treasures, global.actualRoom - 1, ds_list_find_value(global.treasures, global.actualRoom - 1) - 1);
         break;
 
 }
 
-ds_list_replace(global.treasures, global.actualRoom - 1, ds_list_find_value(global.treasures, global.actualRoom) - 1);
+

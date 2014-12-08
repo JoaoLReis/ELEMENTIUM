@@ -7,8 +7,8 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>1</bbox_left>
-  <bbox_right>29</bbox_right>
+  <bbox_left>3</bbox_left>
+  <bbox_right>28</bbox_right>
   <bbox_top>2</bbox_top>
   <bbox_bottom>30</bbox_bottom>
   <HTile>0</HTile>
@@ -20,6 +20,6 @@
   <width>32</width>
   <height>32</height>
   <frames>
-    <frame index="0">images\sp_earth_spiral_0.png</frame>
+    <frame index="0">images\sp_earth_gunner_spawner_0.png</frame>
   </frames>
 </sprite>

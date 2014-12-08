@@ -1135,13 +1135,13 @@
     <instance objName="obj_enemyEarth" x="448" y="2048" name="inst_4B8A23E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemyEarth" x="192" y="1984" name="inst_AB6FC0D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemyEarth" x="224" y="1760" name="inst_C341F895" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_treasure_attack" x="1152" y="2144" name="inst_4FBE28DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_treasure_all" x="1152" y="1760" name="inst_3E3C733F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_treasure_defense" x="1024" y="2208" name="inst_243C6C90" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_treasure_all" x="1216" y="1792" name="inst_AD243187" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_treasure_range" x="1216" y="2048" name="inst_DFF9A4D9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_treasure_points" x="1056" y="2112" name="inst_23961B2F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_treasure_health" x="1088" y="2016" name="inst_0BD4EBE6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_all" x="1376" y="2976" name="inst_7A41C328" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_all" x="1280" y="2944" name="inst_FC09E7F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_all" x="1376" y="2848" name="inst_373C9802" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_all" x="1280" y="2912" name="inst_ED32CD83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_all" x="1376" y="3040" name="inst_5A718C26" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_all" x="1376" y="2912" name="inst_0505F1D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_all" x="1280" y="3008" name="inst_C9D5FC51" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="768" y="2176" name="inst_9D5032F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="1792" y="1280" name="inst_A5D71892" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_breakable_fire" x="2304" y="1632" name="inst_3BF77023" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1185,13 +1185,6 @@
     <instance objName="obj_temp_stats" x="2016" y="3008" name="inst_3F549418" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_temp_stats" x="1952" y="2848" name="inst_DC9236F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_temp_stats" x="1600" y="2880" name="inst_329B89D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_treasure_all" x="1376" y="2848" name="inst_373C9802" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_treasure_all" x="1376" y="2912" name="inst_0505F1D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_treasure_all" x="1376" y="2976" name="inst_7A41C328" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_treasure_all" x="1376" y="3040" name="inst_5A718C26" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_treasure_all" x="1280" y="3008" name="inst_C9D5FC51" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_treasure_all" x="1280" y="2944" name="inst_FC09E7F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_treasure_all" x="1280" y="2912" name="inst_ED32CD83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background1" x="192" y="544" w="96" h="96" xo="128" yo="288" id="10000046" name="inst_0FB92750" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

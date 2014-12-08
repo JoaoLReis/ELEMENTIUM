@@ -1,4 +1,6 @@
 //Towards direction
+var controller = argument0;
+var angle = argument1;
 var b = instance_create(x, y, obj_stone_armor);
 b.prevDef = global.valueDefense;
 player = obj_player;

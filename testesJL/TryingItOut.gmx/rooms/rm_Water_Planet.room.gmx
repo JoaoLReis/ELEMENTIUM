@@ -1152,17 +1152,17 @@ global.cooldowns = ds_list_create();</code>
     <instance objName="obj_breakable_fire" x="4736" y="4352" name="inst_970D1288" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_breakable_fire" x="4736" y="3584" name="inst_5ED62B65" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_artefact_end" x="5056" y="1216" name="inst_3DB48DCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_treasure_all" x="5088" y="5440" name="inst_28D80B33" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_room" x="3008" y="2528" name="inst_4861C41F" locked="0" code="" scaleX="32" scaleY="24" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="2848" y="4896" name="inst_4091B53B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="3136" y="4896" name="inst_FD04108A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="3104" y="4544" name="inst_D31099D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_spawner" x="2848" y="4576" name="inst_00DB3F35" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_room" x="4032" y="3808" name="inst_E1E16D55" locked="0" code="" scaleX="18" scaleY="57" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="3680" y="4512" name="inst_7086DAE1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_spawner" x="3680" y="4832" name="inst_D60C1440" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_gunner_spawner" x="4384" y="4832" name="inst_89571446" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="3680" y="5152" name="inst_D201065B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="4160" y="5440" name="inst_0ED3C021" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="4352" y="5440" name="inst_F86390A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_spawner" x="4384" y="4832" name="inst_2F294781" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_gunner_spawner" x="2848" y="4544" name="inst_C3CF10B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="4384" y="4544" name="inst_9EDC2A0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="4352" y="4160" name="inst_5260AD5B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="3904" y="3808" name="inst_C456B59A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1171,7 +1171,7 @@ global.cooldowns = ds_list_create();</code>
     <instance objName="obj_water_spawner" x="2976" y="3680" name="inst_800C19BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="3296" y="3712" name="inst_406F4484" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="3168" y="1760" name="inst_D0E24E11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_spawner" x="3168" y="1952" name="inst_D81EC9A9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_gunner_spawner" x="5216" y="4160" name="inst_C89F53F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="3200" y="2176" name="inst_9DA78679" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="3648" y="2144" name="inst_27C7474F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="3648" y="1888" name="inst_44789719" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1180,7 +1180,7 @@ global.cooldowns = ds_list_create();</code>
     <instance objName="obj_water_spawner" x="4576" y="2912" name="inst_3E7BAD88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="4544" y="3232" name="inst_F7CC632F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="5056" y="2112" name="inst_3BB4198F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_spawner" x="5024" y="1760" name="inst_D9B2A589" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_gunner_spawner" x="3392" y="1920" name="inst_C39E971C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="5024" y="1440" name="inst_7912B648" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="4896" y="1952" name="inst_581F7119" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="5184" y="1568" name="inst_9E0FE077" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1189,7 +1189,7 @@ global.cooldowns = ds_list_create();</code>
     <instance objName="obj_water_spawner" x="4928" y="4192" name="inst_11CD0845" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="4928" y="3968" name="inst_51553BA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="5216" y="3936" name="inst_2DBBD317" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_spawner" x="5216" y="4128" name="inst_67EE9660" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_gunner_spawner" x="3680" y="4832" name="inst_0CB996AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="5472" y="4128" name="inst_FDD55F52" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="5440" y="3936" name="inst_FEAFDFAB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="4928" y="4800" name="inst_D64ED09A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1198,8 +1198,8 @@ global.cooldowns = ds_list_create();</code>
     <instance objName="obj_water_spawner" x="4928" y="5056" name="inst_F33F3299" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="4960" y="5280" name="inst_88801033" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_spawner" x="5184" y="5280" name="inst_47DE6F4E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_spawner" x="4928" y="5472" name="inst_CB8B0392" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_spawner" x="5248" y="5504" name="inst_9A1ECD2C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_gunner_spawner" x="5024" y="1728" name="inst_BDCD631E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_gunner_spawner" x="4928" y="5472" name="inst_99AD9C11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_temp_stats" x="4256" y="5568" name="inst_AD3EBB01" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_temp_stats" x="3648" y="5312" name="inst_A2B28BA0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_temp_stats" x="5504" y="4256" name="inst_D14B4ECA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1215,6 +1215,12 @@ global.cooldowns = ds_list_create();</code>
     <instance objName="obj_water_gunner" x="3360" y="3168" name="inst_F4FA66B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_gunner" x="3552" y="3168" name="inst_E06A8F1A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_gunner" x="3200" y="3008" name="inst_AE7B257B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_points" x="5088" y="5536" name="inst_66D72947" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_room" x="2688" y="4288" name="inst_5F698BFD" locked="0" code="" scaleX="20" scaleY="31" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_room" x="2656" y="3552" name="inst_FD1CA9AF" locked="0" code="" scaleX="29" scaleY="17" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_room" x="4192" y="2496" name="inst_D4A5D513" locked="0" code="" scaleX="21" scaleY="34" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_room" x="4704" y="3776" name="inst_218DE4FA" locked="0" code="" scaleX="30" scaleY="19" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_gunner_spawner" x="5248" y="5472" name="inst_14C513EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background3" x="3488" y="2880" w="64" h="64" xo="128" yo="320" id="10000609" name="inst_DE6CA5EB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

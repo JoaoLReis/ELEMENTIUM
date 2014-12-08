@@ -129,10 +129,10 @@ if(sprite != noone)
     draw_sprite_ext(sprite, 0, drawX, drawY, spriteXScale, spriteYScale, image_angle, image_blend, image_alpha);
 
     draw_set_font(fnt_Numbers);
-    draw_set_color(c_black);
+    draw_set_color(c_ltgray);
     draw_set_halign(fa_center);
     var aux = lifetime div 60;
-    draw_text(drawX, drawY, string(aux));
+    draw_text_shadow(drawX, drawY, string(aux));
 }
 </string>
           </argument>

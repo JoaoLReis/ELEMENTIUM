@@ -49,7 +49,8 @@
       <sprite>sprites\sp_suicide_spawner</sprite>
       <sprite>sprites\sp_turret</sprite>
       <sprite>sprites\sp_earth_spikes</sprite>
-      <sprite>sprites\sp_earth_spiral</sprite>
+      <sprite>sprites\sp_earth_gunner_spawner</sprite>
+      <sprite>sprites\sp_fire_gunner_spawner</sprite>
       <sprite>sprites\sp_earth_gunner</sprite>
       <sprite>sprites\sp_water_gunner</sprite>
       <sprite>sprites\sp_fire_gunner</sprite>
@@ -87,6 +88,7 @@
       <sprite>sprites\sp_collision_simple</sprite>
       <sprite>sprites\sp_treasure_chest</sprite>
       <sprite>sprites\sp_temp_stats</sprite>
+      <sprite>sprites\sp_treasure_room</sprite>
     </sprites>
     <sprites name="elementPickup">
       <sprite>sprites\sp_fire_pickup</sprite>
@@ -130,6 +132,7 @@
       <script>scripts\nextElementalState.gml</script>
       <script>scripts\getNextElementalState.gml</script>
       <script>scripts\floatingMessage.gml</script>
+      <script>scripts\draw_text_shadow.gml</script>
     </scripts>
     <scripts name="Projectile">
       <script>scripts\Mouse_process_shoot.gml</script>
@@ -220,6 +223,7 @@
         <object>objects\obj_suicide_fire</object>
         <object>objects\obj_fire_Spawner</object>
         <object>objects\obj_suicide_spawner</object>
+        <object>objects\obj_fire_gunner_spawner</object>
         <object>objects\obj_fire_bullet</object>
         <object>objects\obj_fire_turret</object>
         <object>objects\obj_fire_gunner</object>
@@ -227,6 +231,7 @@
       <objects name="Water">
         <object>objects\obj_enemyWater</object>
         <object>objects\obj_water_spawner</object>
+        <object>objects\obj_water_gunner_spawner</object>
         <object>objects\obj_water_gunner</object>
         <object>objects\obj_water_bullet</object>
       </objects>
@@ -236,6 +241,7 @@
         <object>objects\obj_enemy_spikes</object>
         <object>objects\obj_earth_spike</object>
         <object>objects\obj_earth_spike_spawner</object>
+        <object>objects\obj_earth_gunner_spawner</object>
         <object>objects\obj_earth_gunner</object>
         <object>objects\obj_earth_bullet</object>
       </objects>
@@ -269,6 +275,7 @@
       <object>objects\obj_portal</object>
       <object>objects\obj_environment</object>
       <object>objects\obj_interactable</object>
+      <object>objects\obj_treasure_room</object>
     </objects>
     <objects name="Treasure">
       <object>objects\obj_treasure</object>
@@ -281,6 +288,7 @@
       <object>objects\obj_treasure_range</object>
       <object>objects\obj_treasure_spawn</object>
       <object>objects\obj_goldTreasure</object>
+      <object>objects\obj_room_gold_treasure</object>
       <object>objects\obj_tempTreasure</object>
     </objects>
     <objects name="ElementPickup">
@@ -292,7 +300,6 @@
     <objects name="Cooldowns">
       <object>objects\obj_cooldown</object>
     </objects>
-    <object>objects\object82</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>

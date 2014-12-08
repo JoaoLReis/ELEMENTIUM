@@ -36,10 +36,10 @@ valueHealth = maxHealth;
 
 bullet = obj_fire_bullet;
 
-damage = 3;
+damage = 4.5;
 moveSpeed = 0;
 speed = moveSpeed;
-fireRate = 20;
+fireRate = 30;
 </string>
           </argument>
         </arguments>
