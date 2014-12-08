@@ -29,7 +29,7 @@
 
 event_inherited();
 
-damage = 5;
+damage = damage/2;
 type = "WATER";
 
 moveSpeed = moveSpeed * 1.5;

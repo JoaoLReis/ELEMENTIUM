@@ -1,5 +1,7 @@
 //Towards direction
 var i;
+var controller = argument0;
+var angle = argument1;
 for (i = 0; i < 50; i += 1)
 {
     var b = instance_create(x, y, obj_bulletIce);

@@ -78,6 +78,7 @@
     </sprites>
     <sprites name="Map">
       <sprite>sprites\sp_collision</sprite>
+      <sprite>sprites\sp_secret</sprite>
       <sprite>sprites\sp_breakable_earth</sprite>
       <sprite>sprites\sp_collision_Water</sprite>
       <sprite>sprites\sp_breakable_ice</sprite>
@@ -86,6 +87,7 @@
       <sprite>sprites\sp_collision_simple</sprite>
       <sprite>sprites\sp_treasure_chest</sprite>
       <sprite>sprites\sp_temp_stats</sprite>
+      <sprite>sprites\sp_treasure_room</sprite>
     </sprites>
     <sprites name="elementPickup">
       <sprite>sprites\sp_fire_pickup</sprite>
@@ -129,6 +131,7 @@
       <script>scripts\nextElementalState.gml</script>
       <script>scripts\getNextElementalState.gml</script>
       <script>scripts\floatingMessage.gml</script>
+      <script>scripts\draw_text_shadow.gml</script>
     </scripts>
     <scripts name="Projectile">
       <script>scripts\Mouse_process_shoot.gml</script>
@@ -172,6 +175,8 @@
   <fonts name="fonts">
     <font>fonts\fnt_Numbers</font>
     <font>fonts\fnt_pickup</font>
+    <font>fonts\fnt_gameOver</font>
+    <font>fonts\fnt_youWin</font>
   </fonts>
   <objects name="objects">
     <objects name="planets">
@@ -253,6 +258,7 @@
     </objects>
     <objects name="Map">
       <object>objects\obj_shadowcaster</object>
+      <object>objects\obj_secret</object>
       <object>objects\obj_wall</object>
       <object>objects\obj_breakable_earth</object>
       <object>objects\obj_breakable_fire</object>
@@ -265,6 +271,7 @@
       <object>objects\obj_portal</object>
       <object>objects\obj_environment</object>
       <object>objects\obj_interactable</object>
+      <object>objects\obj_treasure_room</object>
     </objects>
     <objects name="Treasure">
       <object>objects\obj_treasure</object>
@@ -276,6 +283,8 @@
       <object>objects\obj_treasure_defense</object>
       <object>objects\obj_treasure_range</object>
       <object>objects\obj_treasure_spawn</object>
+      <object>objects\obj_goldTreasure</object>
+      <object>objects\obj_tempTreasure</object>
     </objects>
     <objects name="ElementPickup">
       <object>objects\obj_element_pickup</object>
@@ -286,6 +295,7 @@
     <objects name="Cooldowns">
       <object>objects\obj_cooldown</object>
     </objects>
+    <object>objects\object82</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>

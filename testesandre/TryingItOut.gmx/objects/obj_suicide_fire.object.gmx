@@ -29,7 +29,6 @@
 
 event_inherited();
 
-damage = 10;
 moveSpeed = 4;
 type = "FIRE";
 </string>

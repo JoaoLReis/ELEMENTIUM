@@ -10,8 +10,6 @@ switch (element)
         ds_list_add(elementList, "EARTH");
         global.possEarthStr += 1;
         player.interacting = false;
-        global.availablePoints += 1;
-        global.defaultavailablePoints += 1;
         break;
     //Fire
     case 2:
@@ -19,8 +17,6 @@ switch (element)
         ds_list_add(elementList, "FIRE");
         global.possFireStr += 1;
         player.interacting = false;
-        global.availablePoints += 1;
-        global.defaultavailablePoints += 1;
         break;
     //Water
     case 3:
@@ -28,8 +24,6 @@ switch (element)
         ds_list_add(elementList, "WATER");
         global.possWaterStr += 1;
         player.interacting = false;
-        global.availablePoints += 1;
-        global.defaultavailablePoints += 1;
         break;
 
 }

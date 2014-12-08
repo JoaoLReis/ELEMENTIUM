@@ -30,6 +30,11 @@
 event_inherited();
 
 ident = 201;
+
+if(global.possEarthStr &gt; 0)
+{
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

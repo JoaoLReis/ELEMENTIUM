@@ -49,6 +49,7 @@ interacting = false;
 interactable = self;
 
 team = TEAM_PLAYER;
+
 </string>
           </argument>
         </arguments>
@@ -179,6 +180,12 @@ R_earth_cooldown = global.R_earth_cooldown;
             <string>///performance
 
 instance_deactivate_all(true);
+instance_activate_object(obj_treasure_room);
+instance_activate_object(obj_Spawner);
+with(obj_Spawner)
+{
+    self.frozen = true;
+}
 </string>
           </argument>
         </arguments>
@@ -339,39 +346,81 @@ key_right = keyboard_check(vk_right);
 key_left = -keyboard_check(vk_left);
 key_up = -keyboard_check(vk_up);
 key_down = keyboard_check(vk_down);
+var strength = 1;
+var anglej = 0;
+var j = false;
+
+if(joystick_exists(1)){
+    j = true;
+    key_right = 0;
+    key_left = 0;
+    key_up = 0;
+    key_down = 0;
+
+    var xj = joystick_xpos(1);
+    if(xj &gt; 0)
+        key_right = xj;
+    else
+        key_left = -xj;
+    
+    var yj = joystick_ypos(1);
+    if(yj &gt; 0)
+        key_down = yj;
+    else
+        key_up = -yj;
+    strength = sqrt(xj * xj + yj * yj);
+    if(strength != 0){
+        var anglej  = arctan2(-yj, xj);    
+        anglej = radtodeg(anglej);
+        if(anglej &lt; 0)
+            anglej += 360;
+    }
+}
 
 //step event
 step_count = (step_count + 1) mod 14;
 
 //Movement
-if(canmove)
+if(canmove &amp;&amp; strength &gt; 0.3)
 {
-    if(key_up != 0 || keyboard_check(ord("W")))
+    if((key_up != 0 &amp;&amp; anglej &gt;= 45 &amp;&amp; anglej &lt; 135) || keyboard_check(ord("W")))
     {
-        SpriteDirection = 90;
-        if place_free(x, y - acceleration)
-            motion_add(90, acceleration)
+         SpriteDirection = 90;
+        if place_free(x, y - 1)
+            if(!keyboard_check(ord("W")))
+                motion_add(anglej, acceleration * strength)    
+            else
+                motion_add(90, acceleration * strength)
         sprite_index = sp_player_N;
     }
-    if(key_down != 0 || keyboard_check(ord("S")))
+    if((key_down != 0 &amp;&amp; anglej &gt;= 225 &amp;&amp; anglej &lt; 315) || keyboard_check(ord("S")))
     {
         SpriteDirection = 270;
         if place_free(x, y + 1)
-            motion_add(270, acceleration)
+            if(!keyboard_check(ord("S")))
+                motion_add(anglej, acceleration * strength)    
+            else
+                motion_add(270, acceleration * strength)
         sprite_index = sp_player_S;
     }
-    if(key_left != 0 || keyboard_check(ord("A")))
+    if((key_left != 0 &amp;&amp; anglej &gt;= 135 &amp;&amp; anglej &lt; 225) || keyboard_check(ord("A")))
     {
         SpriteDirection = 180;
         if place_free(x - 1,y)
-            motion_add(180, acceleration)
+            if(!keyboard_check(ord("A")))
+                motion_add(anglej, acceleration * strength)    
+            else
+                motion_add(180, acceleration * strength)
         sprite_index = sp_player_W;
     }
-    if(key_right != 0 || keyboard_check(ord("D")))
+    if((key_right != 0 &amp;&amp; (anglej &gt;= 315 || anglej &lt; 45)) || keyboard_check(ord("D")))
     {
         SpriteDirection = 0;
         if place_free(x + 1, y)
-            motion_add(0, acceleration)
+            if(!keyboard_check(ord("D")))
+                motion_add(anglej, acceleration * strength)    
+            else
+                motion_add(0, acceleration * strength)
         sprite_index = sp_player_E;
     }
     if(key_up != 0 &amp;&amp; key_right != 0 || (keyboard_check(ord("W")) &amp;&amp; keyboard_check(ord("D"))))
@@ -549,11 +598,19 @@ depth = room_height -y;
 
 if(interacting)
 {
-    if(keyboard_check_pressed(ord("E")))
+    if(keyboard_check_pressed(ord("F")) || joystick_check_button(1, 3))
     {       
         Interact(self.id, interactable.id);
     }
 }
+var b8 = joystick_check_button(1, 8);
+if(b8 &amp;&amp; global.prev_button8 != b8)
+    nextElementalState(elementalState, true, index);
+global.prev_button8 = b8;
+var b7 = joystick_check_button(1, 7);
+if(b7 &amp;&amp; global.prev_button7 != b7)
+    nextElementalState(elementalState, false, index);
+global.prev_button7 = b7;
 </string>
           </argument>
         </arguments>
@@ -577,6 +634,33 @@ if(interacting)
             <string>///Performance
 
 instance_activate_region(view_xview[0] - 64, view_yview - 64, view_wview[0] + 128, view_hview + 128, true);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//change stats
+
+var b4 = joystick_check_button(1, 4);
+if(b4 &amp;&amp; global.prev_button4 != b4){
+    global.guitype = (global.guitype + 1) % 2;
+}
+global.prev_button4 = b4;
 </string>
           </argument>
         </arguments>
@@ -791,6 +875,13 @@ nextElementalState(elementalState, true, index);
 {
     draw_sprite(sp_Interact, 0, x, y-40);
 }
+
+///cursor
+if(joystick_exists(1)){
+    var angle = global.anglej;
+    angle = degtorad(angle);
+    draw_sprite(sp_light, 0, x + (cos(angle) * 100), y - (sin(angle) * 100));
+}
 </string>
           </argument>
         </arguments>
@@ -814,7 +905,7 @@ nextElementalState(elementalState, true, index);
           <argument>
             <kind>1</kind>
             <string>/// HEALTHBAR
-var maxHealth = global.defaultHealth + global.curHealth * 50;
+var maxHealth = global.defaultHealth + global.curHealth * 10;
 draw_healthbar(10, 10, 10 + maxHealth, 20, (global.valueHealth / maxHealth) * 100, c_black, c_red, c_red, 0, true, true);
 </string>
           </argument>
@@ -859,71 +950,140 @@ draw_element_menu(elementalState, index);
           <argument>
             <kind>1</kind>
             <string>///MINIMAP STUFF
-
-var mapLeft = WIDTH - mapXSize;
-var mapTop = HEIGHT - mapYSize;
-
-draw_set_color(c_black);
-draw_rectangle(mapLeft - 2, 0, WIDTH, mapYSize + 2, false);
-
-
-if(surface_exists(mapSurface))
-{
-    draw_surface(mapSurface, mapLeft, 0);
-}
-else
-{
-    mapSurface = surface_create(mapXSize, mapYSize);
-    initiateSurface = 1;
-}
-
-with(obj_player)
-{
-    if team == TEAM_PLAYER draw_set_color(c_blue);
+if(room != rm_starting_area){
+    var mapLeft = WIDTH - mapXSize;
+    var mapTop = HEIGHT - mapYSize;
     
-    draw_rectangle(mapLeft + x*other.mapXScale - 1, y*other.mapYScale - 1, mapLeft + x*other.mapXScale + 1, y*other.mapYScale + 1, false);
-}
-
-with(obj_enemy)
-{
-    if team == TEAM_ENEMY draw_set_color(c_red);
+    draw_set_color(c_black);
+    draw_rectangle(mapLeft - 2, 0, WIDTH, mapYSize + 2, false);
     
-    draw_rectangle(mapLeft + x*other.mapXScale - 1, y*other.mapYScale - 1, mapLeft + x*other.mapXScale + 1, y*other.mapYScale + 1, false);
-}
-
-with(obj_portal)
-{
-    if team == TEAM_PORTALS draw_set_color(c_yellow);
     
-    draw_rectangle(mapLeft + x*other.mapXScale - 1, y*other.mapYScale - 1, mapLeft + x*other.mapXScale + 1, y*other.mapYScale + 1, false);
-}
-
-with(obj_interact_scenario)
-{
-    if team == TEAM_BREAKABLE draw_set_color(c_orange);
+    if(surface_exists(mapSurface))
+    {
+        draw_surface(mapSurface, mapLeft, 0);
+    }
+    else
+    {
+        mapSurface = surface_create(mapXSize, mapYSize);
+        initiateSurface = 1;
+    }
     
-    draw_rectangle(mapLeft + x*other.mapXScale - 1, y*other.mapYScale - 1, mapLeft + x*other.mapXScale + 1, y*other.mapYScale + 1, false);
-}
-
-with(obj_treasure)
-{
-    if team == TEAM_PICKUPS draw_set_color(c_dkgray);
+    with(obj_player)
+    {
+        if team == TEAM_PLAYER draw_set_color(c_blue);
+        
+        draw_rectangle(mapLeft + x*other.mapXScale - 1, y*other.mapYScale - 1, mapLeft + x*other.mapXScale + 1, y*other.mapYScale + 1, false);
+    }
     
-    draw_rectangle(mapLeft + x*other.mapXScale - 1, y*other.mapYScale - 1, mapLeft + x*other.mapXScale + 1, y*other.mapYScale + 1, false);
-}
-
-with(obj_wall)
-{
-     if team == TEAM_WALLS draw_set_color(c_ltgray);
+    with(obj_enemy)
+    {
+        if team == TEAM_ENEMY draw_set_color(c_red);
+        
+        draw_rectangle(mapLeft + x*other.mapXScale - 1, y*other.mapYScale - 1, mapLeft + x*other.mapXScale + 1, y*other.mapYScale + 1, false);
+    }
     
-    draw_rectangle(mapLeft + x*other.mapXScale - 1, y*other.mapYScale - 1, mapLeft + x*other.mapXScale + 1, y*other.mapYScale + 1, false);
-}
+    with(obj_portal)
+    {
+        if team == TEAM_PORTALS draw_set_color(c_yellow);
+        
+        draw_rectangle(mapLeft + x*other.mapXScale - 1, y*other.mapYScale - 1, mapLeft + x*other.mapXScale + 1, y*other.mapYScale + 1, false);
+    }
+    
+    with(obj_interact_scenario)
+    {
+        if team == TEAM_BREAKABLE draw_set_color(c_orange);
+        
+        draw_rectangle(mapLeft + x*other.mapXScale - 1, y*other.mapYScale - 1, mapLeft + x*other.mapXScale + 1, y*other.mapYScale + 1, false);
+    }
+    
+    with(obj_treasure)
+    {
+        if team == TEAM_PICKUPS draw_set_color(c_dkgray);
+        
+        draw_rectangle(mapLeft + x*other.mapXScale - 1, y*other.mapYScale - 1, mapLeft + x*other.mapXScale + 1, y*other.mapYScale + 1, false);
+    }
+    
+    with(obj_wall)
+    {
+         if team == TEAM_WALLS draw_set_color(c_ltgray);
+        
+        draw_rectangle(mapLeft + x*other.mapXScale - 1, y*other.mapYScale - 1, mapLeft + x*other.mapXScale + 1, y*other.mapYScale + 1, false);
+    }
+    
+    //Draw view rect
+    draw_set_color(c_ltgray);
+    draw_rectangle(mapLeft + view_xview*mapXScale, view_yview*mapYScale, mapLeft + (view_xview + view_wview)*mapXScale, (view_yview + view_hview)*mapYScale, true);
 
-//Draw view rect
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Time + stat level
+
+var xoffset = 20;
+var yoffset = 120;
+
+draw_set_font(fnt_pickup);
 draw_set_color(c_ltgray);
-draw_rectangle(mapLeft + view_xview*mapXScale, view_yview*mapYScale, mapLeft + (view_xview + view_wview)*mapXScale, (view_yview + view_hview)*mapYScale, true);
+draw_set_halign(fa_left);
 
+var hours = 0;
+var minutes = 0;
+var seconds = 0;
 
+seconds = current_time div 1000;
+minutes = seconds div 60;
+hours = minutes div 60;
+minutes = minutes mod 60;
+seconds = seconds mod 60;
+
+draw_text_shadow(xoffset, yoffset, string(hours) + ":" + string(minutes) + ":" + string(seconds));
+
+if(global.guitype == 0){ 
+    
+    draw_text_shadow(xoffset, yoffset + 30, "Health: " + string(global.curHealth) + " / " + string(global.maxHealth));
+    
+    draw_text_shadow(xoffset, yoffset + 60, "Attack: " + string(global.curAttack) + " / " + string(global.maxAttack));
+    
+    draw_text_shadow(xoffset, yoffset + 90, "Defense: " + string(global.curDefense) + " / " + string(global.maxDefense));
+    
+    draw_text_shadow(xoffset, yoffset + 120, "Range: " + string(global.curProjRange) + " / " + string(global.maxProjRange));
+
+}else{
+    
+    draw_text_shadow(xoffset, yoffset + 30, "Health: " + string(global.defaultHealth + global.curHealth * 10));
+    
+    draw_text_shadow(xoffset, yoffset + 60, "Attack: " + string(global.defaultAttack + global.curAttack * 0.5));
+    
+    var defInc = 0;
+    for(var i = 0; i &lt; global.curDefense; i++)
+    {
+        defInc += (1 - defInc)*(0.085) 
+    }
+    
+    draw_text_shadow(xoffset, yoffset + 90, "Defense: " + string((global.defaultDefense + defInc) * 100) + "%" );
+    
+    draw_text_shadow(xoffset, yoffset + 120, "Range: " + string(global.defaultProjRange + global.curProjRange * 2));
+}
+
+draw_text_shadow(xoffset, yoffset + 150, "'Z' to swap info");
 </string>
           </argument>
         </arguments>
@@ -986,6 +1146,78 @@ if(initiateSurface == 1)
     surface_reset_target();  
     initiateSurface = 0;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="90">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.guitype = (global.guitype + 1) % 2;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="81">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Moves Elemental State Downwards
+nextElementalState(elementalState, false, index);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="69">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Moves Elemental State upward
+nextElementalState(elementalState, true, index);
+
 </string>
           </argument>
         </arguments>

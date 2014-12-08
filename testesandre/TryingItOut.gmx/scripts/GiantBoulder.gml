@@ -1,6 +1,11 @@
 //Towards direction
+var controller = argument0;
+var angle = argument1;
 var b = instance_create(x, y, obj_giant_boulder);
-b.direction = point_direction(x, y, mouse_x, mouse_y);
+if(controller)
+    b.direction = angle;
+else
+    b.direction = point_direction(x, y, mouse_x, mouse_y);
 b.image_angle = image_angle;
 b.speed = 7;
 

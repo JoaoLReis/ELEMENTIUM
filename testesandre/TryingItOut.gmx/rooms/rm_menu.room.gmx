@@ -30,7 +30,7 @@ global.curFireStrength = 0;
 
 global.curEarthStrength = 0;
 
-global.curIceStrength = 0;
+global.curWaterStrength = 0;
 
 while (ds_list_size(global.elements) &gt; 1)
 {

@@ -87,6 +87,7 @@
       <sprite>sprites\sp_collision_simple</sprite>
       <sprite>sprites\sp_treasure_chest</sprite>
       <sprite>sprites\sp_temp_stats</sprite>
+      <sprite>sprites\sp_treasure_room</sprite>
     </sprites>
     <sprites name="elementPickup">
       <sprite>sprites\sp_fire_pickup</sprite>
@@ -270,6 +271,7 @@
       <object>objects\obj_portal</object>
       <object>objects\obj_environment</object>
       <object>objects\obj_interactable</object>
+      <object>objects\obj_treasure_room</object>
     </objects>
     <objects name="Treasure">
       <object>objects\obj_treasure</object>

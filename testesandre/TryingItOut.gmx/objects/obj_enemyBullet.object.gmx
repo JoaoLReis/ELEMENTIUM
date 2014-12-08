@@ -33,7 +33,7 @@ type = "NEUTRAL";
 
 moveSpeed = 2;
 
-damage = 12;
+damage = 10 + 1*global.numberWorldsVisited;
 explosion = obj_explosion;
 
 speed = moveSpeed;

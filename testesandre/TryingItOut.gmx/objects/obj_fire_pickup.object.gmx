@@ -30,6 +30,11 @@
 event_inherited();
 
 ident = 202;
+
+if(global.possFireStr &gt; 0)
+{
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

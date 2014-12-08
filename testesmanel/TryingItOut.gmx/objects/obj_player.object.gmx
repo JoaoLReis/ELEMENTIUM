@@ -180,6 +180,12 @@ R_earth_cooldown = global.R_earth_cooldown;
             <string>///performance
 
 instance_deactivate_all(true);
+instance_activate_object(obj_treasure_room);
+instance_activate_object(obj_Spawner);
+with(obj_Spawner)
+{
+    self.frozen = true;
+}
 </string>
           </argument>
         </arguments>

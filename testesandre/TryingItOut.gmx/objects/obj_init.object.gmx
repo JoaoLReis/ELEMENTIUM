@@ -26,6 +26,43 @@
           <argument>
             <kind>1</kind>
             <string>/// Init
+global.numberWorldsVisited = 0;
+
+//1 - Earth
+//2 - FIRE
+//3 - WATER
+//4 - FINAL
+global.actualRoom = 0;
+global.last_angle = -1;
+global.prev_button8 = -1;
+global.prev_button7 = -1;
+global.prev_button4 = -1;
+global.guitype = 0;
+global.anglej = 0;
+
+room_goto(rm_menu);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///STATS
+
 global.availablePoints = 4;
 global.defaultavailablePoints = 4;
 
@@ -48,6 +85,27 @@ global.curProjRange = 0;
 global.maxProjRange = 3;
 global.valueProjRange = 30;
 global.defaultProjRange = 30;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///ELEMENTS levels
 
 global.possFireStr = 0;
 global.curFireStrength = 0;
@@ -61,6 +119,31 @@ global.possWaterStr = 0;
 global.curWaterStrength = 0;
 global.maxWaterStrength = 3;
 
+global.elements = ds_list_create();
+ds_list_add(global.elements,"NEUTRAL");
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///ELEMENTS COOLDOWNS
+
 global.Q_fire_cooldown = 13;
 global.E_fire_cooldown = 600;
 global.R_fire_cooldown = 900;
@@ -73,16 +156,42 @@ global.Q_earth_cooldown = 9;
 global.E_earth_cooldown = 180;
 global.R_earth_cooldown = 1800;
 
-global.elements = ds_list_create();
-ds_list_add(global.elements,"NEUTRAL");
-
-global.numberWorldsVisited = 0;
-global.actualRoom = 0;
-
 global.numberCooldowns = 0;
 global.cooldowns = ds_list_create();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///TREASURES number per planet
 
-room_goto(rm_menu);
+global.treasures = ds_list_create();
+
+//Earth
+ds_list_add(global.treasures, 1);
+
+//FIRE
+ds_list_add(global.treasures, 1);
+
+//WATER
+ds_list_add(global.treasures, 1);
+
+
 </string>
           </argument>
         </arguments>

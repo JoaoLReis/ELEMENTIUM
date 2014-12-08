@@ -38,7 +38,7 @@ damage = 3;
 moveSpeed = 0;
 speed = 0;
 
-numberSpawns = 5 + 5 * global.numberWorldsVisited;
+numberSpawns = 5 + 2 * global.numberWorldsVisited;
 enemies = ds_list_create();
 removeList = ds_list_create();
 for (i = 0; i &lt; numberSpawns; i += 1)
@@ -101,10 +101,20 @@ if(!frozen)
         canAct = false;
         for (i = 0; i &lt; ds_list_size(enemies); i += 1)
         {
+            var probably_disabled = false;
             var enemy = ds_list_find_value(enemies, i);
             if (!instance_exists(enemy))
             {
+                probably_disabled = true;
+            }            
+            instance_activate_object(enemy);
+            if (!instance_exists(enemy))
+            {
                 ds_list_add(removeList, i);
+            }
+            else if (probably_disabled)
+            {
+                instance_deactivate_object(enemy);
             }
         }
         
@@ -119,6 +129,29 @@ if(!frozen)
     }
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="50">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>frozen = false;
 </string>
           </argument>
         </arguments>
