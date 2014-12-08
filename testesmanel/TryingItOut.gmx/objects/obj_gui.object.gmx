@@ -67,6 +67,27 @@ key_left = -keyboard_check_pressed(ord('A'));
 key_up = -keyboard_check_pressed(ord('W'));
 key_down = keyboard_check_pressed(ord('S'));
 
+if(joystick_exists(1)){
+    key_right = 0;
+    key_left = 0;
+    key_up = 0;
+    key_down = 0;
+    
+    var anglepov = joystick_pov(1);
+    if(global.last_angle != anglepov){
+        if(anglepov == 0){
+            key_up = 1;
+        }else if(anglepov == 90){
+            key_right = 1;
+        }else if(anglepov == 180){
+            key_down = 1;
+        }else if(anglepov == 270){
+            key_left = 1;
+        }
+    }
+    global.last_angle = anglepov;
+}
+
 if(key_up != 0){
     cursorPosition -= 1;
 }
@@ -187,7 +208,7 @@ if(cursorPosition &lt; 0)
     cursorPosition = 4 + numEle;
     
 //begin game
-if(keyboard_check_pressed(vk_enter)){
+if(keyboard_check_pressed(vk_enter) || joystick_check_button(1, 10)){
     UpdateStats(0);
     room_goto(rm_starting_area);
 }
@@ -216,8 +237,6 @@ if(keyboard_check_pressed(vk_enter)){
             <string>//click interaction on menu
 var xx = mouse_x;
 var yy = mouse_y;
-show_debug_message(xx);
-show_debug_message(yy);
 if(yy &gt; 120 &amp;&amp; yy &lt; 142 &amp;&amp; xx &gt; 260 &amp;&amp; xx &lt; (290 + global.maxHealth * 20)){
     global.availablePoints += global.curHealth;
     if(xx &gt; 290)

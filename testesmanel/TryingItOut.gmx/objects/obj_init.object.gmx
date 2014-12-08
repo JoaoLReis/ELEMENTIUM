@@ -33,8 +33,12 @@ global.numberWorldsVisited = 0;
 //3 - WATER
 //4 - FINAL
 global.actualRoom = 0;
-
+global.last_angle = -1;
+global.prev_button8 = -1;
+global.prev_button7 = -1;
+global.prev_button4 = -1;
 global.guitype = 0;
+global.anglej = 0;
 
 room_goto(rm_menu);
 </string>

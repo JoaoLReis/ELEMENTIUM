@@ -1,5 +1,15 @@
-var posx = mouse_x;
-var posy = mouse_y;
+var posx;
+var posy;
+var controller = argument0;
+var angle = argument1;
+
+posx = obj_player.x + (100 * cos(degtorad(angle)));
+posy = obj_player.y - (100 * sin(degtorad(angle)));
+
+if(!controller){
+    posx = mouse_x;
+    posy = mouse_y;
+}
 
 var b = instance_create(posx, posy, obj_ice_wall);
 

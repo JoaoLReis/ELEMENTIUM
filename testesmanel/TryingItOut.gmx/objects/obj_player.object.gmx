@@ -49,6 +49,7 @@ interacting = false;
 interactable = self;
 
 team = TEAM_PLAYER;
+
 </string>
           </argument>
         </arguments>
@@ -339,39 +340,81 @@ key_right = keyboard_check(vk_right);
 key_left = -keyboard_check(vk_left);
 key_up = -keyboard_check(vk_up);
 key_down = keyboard_check(vk_down);
+var strength = 1;
+var anglej = 0;
+var j = false;
+
+if(joystick_exists(1)){
+    j = true;
+    key_right = 0;
+    key_left = 0;
+    key_up = 0;
+    key_down = 0;
+
+    var xj = joystick_xpos(1);
+    if(xj &gt; 0)
+        key_right = xj;
+    else
+        key_left = -xj;
+    
+    var yj = joystick_ypos(1);
+    if(yj &gt; 0)
+        key_down = yj;
+    else
+        key_up = -yj;
+    strength = sqrt(xj * xj + yj * yj);
+    if(strength != 0){
+        var anglej  = arctan2(-yj, xj);    
+        anglej = radtodeg(anglej);
+        if(anglej &lt; 0)
+            anglej += 360;
+    }
+}
 
 //step event
 step_count = (step_count + 1) mod 14;
 
 //Movement
-if(canmove)
+if(canmove &amp;&amp; strength &gt; 0.3)
 {
-    if(key_up != 0 || keyboard_check(ord("W")))
+    if((key_up != 0 &amp;&amp; anglej &gt;= 45 &amp;&amp; anglej &lt; 135) || keyboard_check(ord("W")))
     {
-        SpriteDirection = 90;
-        if place_free(x, y - acceleration)
-            motion_add(90, acceleration)
+         SpriteDirection = 90;
+        if place_free(x, y - 1)
+            if(!keyboard_check(ord("W")))
+                motion_add(anglej, acceleration * strength)    
+            else
+                motion_add(90, acceleration * strength)
         sprite_index = sp_player_N;
     }
-    if(key_down != 0 || keyboard_check(ord("S")))
+    if((key_down != 0 &amp;&amp; anglej &gt;= 225 &amp;&amp; anglej &lt; 315) || keyboard_check(ord("S")))
     {
         SpriteDirection = 270;
         if place_free(x, y + 1)
-            motion_add(270, acceleration)
+            if(!keyboard_check(ord("S")))
+                motion_add(anglej, acceleration * strength)    
+            else
+                motion_add(270, acceleration * strength)
         sprite_index = sp_player_S;
     }
-    if(key_left != 0 || keyboard_check(ord("A")))
+    if((key_left != 0 &amp;&amp; anglej &gt;= 135 &amp;&amp; anglej &lt; 225) || keyboard_check(ord("A")))
     {
         SpriteDirection = 180;
         if place_free(x - 1,y)
-            motion_add(180, acceleration)
+            if(!keyboard_check(ord("A")))
+                motion_add(anglej, acceleration * strength)    
+            else
+                motion_add(180, acceleration * strength)
         sprite_index = sp_player_W;
     }
-    if(key_right != 0 || keyboard_check(ord("D")))
+    if((key_right != 0 &amp;&amp; (anglej &gt;= 315 || anglej &lt; 45)) || keyboard_check(ord("D")))
     {
         SpriteDirection = 0;
         if place_free(x + 1, y)
-            motion_add(0, acceleration)
+            if(!keyboard_check(ord("D")))
+                motion_add(anglej, acceleration * strength)    
+            else
+                motion_add(0, acceleration * strength)
         sprite_index = sp_player_E;
     }
     if(key_up != 0 &amp;&amp; key_right != 0 || (keyboard_check(ord("W")) &amp;&amp; keyboard_check(ord("D"))))
@@ -549,11 +592,19 @@ depth = room_height -y;
 
 if(interacting)
 {
-    if(keyboard_check_pressed(ord("F")))
+    if(keyboard_check_pressed(ord("F")) || joystick_check_button(1, 3))
     {       
         Interact(self.id, interactable.id);
     }
 }
+var b8 = joystick_check_button(1, 8);
+if(b8 &amp;&amp; global.prev_button8 != b8)
+    nextElementalState(elementalState, true, index);
+global.prev_button8 = b8;
+var b7 = joystick_check_button(1, 7);
+if(b7 &amp;&amp; global.prev_button7 != b7)
+    nextElementalState(elementalState, false, index);
+global.prev_button7 = b7;
 </string>
           </argument>
         </arguments>
@@ -577,6 +628,33 @@ if(interacting)
             <string>///Performance
 
 instance_activate_region(view_xview[0] - 64, view_yview - 64, view_wview[0] + 128, view_hview + 128, true);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//change stats
+
+var b4 = joystick_check_button(1, 4);
+if(b4 &amp;&amp; global.prev_button4 != b4){
+    global.guitype = (global.guitype + 1) % 2;
+}
+global.prev_button4 = b4;
 </string>
           </argument>
         </arguments>
@@ -790,6 +868,13 @@ nextElementalState(elementalState, true, index);
             <string>if(interacting)
 {
     draw_sprite(sp_Interact, 0, x, y-40);
+}
+
+///cursor
+if(joystick_exists(1)){
+    var angle = global.anglej;
+    angle = degtorad(angle);
+    draw_sprite(sp_light, 0, x + (cos(angle) * 100), y - (sin(angle) * 100));
 }
 </string>
           </argument>
