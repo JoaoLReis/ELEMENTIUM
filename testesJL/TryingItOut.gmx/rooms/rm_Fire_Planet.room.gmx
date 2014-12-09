@@ -1201,7 +1201,7 @@ global.cooldowns = ds_list_create();</code>
     <instance objName="obj_fire_turret" x="1760" y="1696" name="inst_970A1376" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_fire_turret" x="1504" y="1728" name="inst_1CD4FFE7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_fire_Spawner" x="1152" y="1920" name="inst_96E4EF14" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_treasure_points" x="480" y="6272" name="inst_B6FC2877" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_room" x="2976" y="1600" name="inst_90C56800" locked="0" code="" scaleX="27" scaleY="21" colour="4294967295" rotation="0"/>
     <instance objName="obj_fire_Spawner" x="1728" y="1920" name="inst_37F5358D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_fire_Spawner" x="1984" y="1920" name="inst_DB2BB665" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_suicide_fire" x="2176" y="1728" name="inst_EE2D6D82" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1228,7 +1228,7 @@ global.cooldowns = ds_list_create();</code>
     <instance objName="obj_treasure_room" x="1696" y="3808" name="inst_CCE708D3" locked="0" code="" scaleX="27" scaleY="33" colour="4294967295" rotation="0"/>
     <instance objName="obj_treasure_room" x="960" y="1504" name="inst_9F6FB991" locked="0" code="" scaleX="42" scaleY="25" colour="4294967295" rotation="0"/>
     <instance objName="obj_fire_gunner_spawner" x="3712" y="2208" name="inst_35EB5A1D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_treasure_room" x="2976" y="1600" name="inst_90C56800" locked="0" code="" scaleX="27" scaleY="21" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_points" x="544" y="6240" name="inst_2B2F81D9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background3" x="3424" y="2976" w="64" h="64" xo="64" yo="256" id="10000573" name="inst_BCB61566" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

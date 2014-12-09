@@ -28,6 +28,7 @@
             <string>event_inherited();
 
 team = TEAM_PICKUPS
+type = TREASURE_TYPE_FIXED;
 </string>
           </argument>
         </arguments>

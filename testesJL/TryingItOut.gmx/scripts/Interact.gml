@@ -26,27 +26,27 @@ if(interactable != player)
             
         //treasures TODO: also add current values
         case 501: //points, health, attack, defense, range
-            IncreaseStat(1, player);
+            IncreaseStat(1, player, interactable.type);
             break;
         
         case 502: //points
-            IncreaseStat(2, player);
+            IncreaseStat(2, player, interactable.type);
             break;
         
         case 503: //health
-            IncreaseStat(3, player);
+            IncreaseStat(3, player, interactable.type);
             break;
             
         case 504: //attack
-            IncreaseStat(4, player);
+            IncreaseStat(4, player, interactable.type);
             break;
             
         case 505: //defense
-            IncreaseStat(5, player);
+            IncreaseStat(5, player, interactable.type);
             break;
             
         case 506: //range
-            IncreaseStat(6, player); 
+            IncreaseStat(6, player, interactable.type); 
             break;
         //random temp stats
         case 507: 

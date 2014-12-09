@@ -199,13 +199,13 @@ ds_list_add(global.treasures, 10);
 global.roomTreasures = ds_list_create();
 
 //Earth
-ds_list_add(global.roomTreasures, 4);
+ds_list_add(global.roomTreasures, 15);
 
 //FIRE
-ds_list_add(global.roomTreasures, 4);
+ds_list_add(global.roomTreasures, 15);
 
 //WATER
-ds_list_add(global.roomTreasures, 4);
+ds_list_add(global.roomTreasures, 15);
 
 //FINAL
 ds_list_add(global.roomTreasures, 10);

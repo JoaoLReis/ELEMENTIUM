@@ -107,13 +107,19 @@ if(ds_list_empty(spawner_list))
     show_debug_message("REKT SON!");
     
     var number = irandom(99);
-    if(number mod 10 == 0)
+    if(number mod 10 &lt; 2)
     {
         instance_create(x + sprite_width / 2, y + sprite_height / 2, obj_temp_stats);
     }
-    else if(number mod 20 == 5)
+    else if(number mod 10 &gt;= 2 &amp;&amp; number mod 10 &lt; 6)
     {
-        instance_create(x + sprite_width / 2, y + sprite_height / 2, obj_treasure_all);
+        var treasure = instance_create(x + sprite_width / 2, y + sprite_height / 2, obj_treasure_points);
+        treasure.type = TREASURE_TYPE_ROOM;
+    }
+    else if(number mod 10 &gt;= 6)
+    {
+        var treasure = instance_create(x + sprite_width / 2, y + sprite_height / 2, obj_treasure_all);
+        treasure.type = TREASURE_TYPE_ROOM;
     }
     instance_destroy();
 }

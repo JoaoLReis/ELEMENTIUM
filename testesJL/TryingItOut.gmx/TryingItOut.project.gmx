@@ -312,7 +312,7 @@
     <room>rooms\rm_Fire_Planet</room>
     <room>rooms\rm_gameover</room>
   </rooms>
-  <constants number="11">
+  <constants number="13">
     <constant name="DOWN">3</constant>
     <constant name="UP">2</constant>
     <constant name="RIGHT">1</constant>
@@ -324,6 +324,8 @@
     <constant name="TEAM_PICKUPS">4</constant>
     <constant name="TEAM_PORTALS">5</constant>
     <constant name="TEAM_WALLS">6</constant>
+    <constant name="TREASURE_TYPE_ROOM">0</constant>
+    <constant name="TREASURE_TYPE_FIXED">1</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

@@ -1215,12 +1215,15 @@ global.cooldowns = ds_list_create();</code>
     <instance objName="obj_water_gunner" x="3360" y="3168" name="inst_F4FA66B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_gunner" x="3552" y="3168" name="inst_E06A8F1A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_gunner" x="3200" y="3008" name="inst_AE7B257B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_treasure_points" x="5088" y="5536" name="inst_66D72947" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_gunner_spawner" x="5248" y="5472" name="inst_14C513EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_treasure_room" x="2688" y="4288" name="inst_5F698BFD" locked="0" code="" scaleX="20" scaleY="31" colour="4294967295" rotation="0"/>
     <instance objName="obj_treasure_room" x="2656" y="3552" name="inst_FD1CA9AF" locked="0" code="" scaleX="29" scaleY="17" colour="4294967295" rotation="0"/>
     <instance objName="obj_treasure_room" x="4192" y="2496" name="inst_D4A5D513" locked="0" code="" scaleX="21" scaleY="34" colour="4294967295" rotation="0"/>
     <instance objName="obj_treasure_room" x="4704" y="3776" name="inst_218DE4FA" locked="0" code="" scaleX="30" scaleY="19" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_gunner_spawner" x="5248" y="5472" name="inst_14C513EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_points" x="5088" y="5536" name="inst_5E958D29" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_room" x="2976" y="1664" name="inst_0098336E" locked="0" code="" scaleX="27" scaleY="20" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_room" x="4768" y="1280" name="inst_F6235197" locked="0" code="" scaleX="19" scaleY="32" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_room" x="3456" y="4256" name="inst_CCEA9205" locked="0" code="" scaleX="12" scaleY="35" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background3" x="3488" y="2880" w="64" h="64" xo="128" yo="320" id="10000609" name="inst_DE6CA5EB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
