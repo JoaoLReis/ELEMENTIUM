@@ -53,11 +53,21 @@ alarm[0] = alarmTime;
             <kind>1</kind>
             <string>if(deactivatedObject != 0)
 {
+    var probably_disabled = false;
+    if (!instance_exists(deactivatedObject))
+    {
+        probably_disabled = true;
+    }              
+    instance_activate_object(deactivatedObject);
     if(instance_exists(deactivatedObject))
     {
         if(deactivatedObject.moveSpeed &gt; 0)
             deactivatedObject.speed = deactivatedObject.moveSpeed;
         deactivatedObject.frozen = false;
+    }
+    else if (probably_disabled)
+    {
+        instance_deactivate_object(deactivatedObject);
     }
     //instance_activate_object(deactivatedObject);
 }

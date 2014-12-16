@@ -70,7 +70,7 @@ if(mouse_check_button(mb_right) || (j && joystick_check_button(1, 6)))
         case 'NEUTRAL':
         {
             if(canmelee)
-                Melee();
+                Melee(j, anglej);
         }
         break;
         case 'FIRE': 
