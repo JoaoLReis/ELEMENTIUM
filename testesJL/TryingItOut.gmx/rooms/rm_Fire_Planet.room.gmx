@@ -821,7 +821,7 @@ global.cooldowns = ds_list_create();</code>
     <instance objName="obj_shadowcaster" x="2816" y="3328" name="inst_B97BF39D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="2688" y="3328" name="inst_6B4D62D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="2816" y="2688" name="inst_A2238EFE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_suicide_spawner" x="3936" y="3168" name="inst_0C9EFDE1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_points" x="544" y="6240" name="inst_2B2F81D9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_suicide_spawner" x="3872" y="2656" name="inst_3718E3D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="2816" y="3072" name="inst_12801992" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="2816" y="3200" name="inst_BF04202D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1142,8 +1142,8 @@ global.cooldowns = ds_list_create();</code>
     <instance objName="obj_fire_Spawner" x="2368" y="3296" name="inst_0246C18A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_fire_Spawner" x="864" y="5376" name="inst_A20F9482" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_fire_Spawner" x="1504" y="5344" name="inst_364AC693" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_fire_Spawner" x="3072" y="2848" name="inst_DAF1C11E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_fire_Spawner" x="3200" y="2592" name="inst_0CC9D125" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fire_gunner_spawner" x="3712" y="2208" name="inst_35EB5A1D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fire_Spawner" x="3104" y="2848" name="inst_0CC9D125" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="768" y="2176" name="inst_BA864A96" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="1920" y="1280" name="inst_C028A8EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="2048" y="2432" name="inst_B3DAAB46" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1179,7 +1179,7 @@ global.cooldowns = ds_list_create();</code>
     <instance objName="obj_fire_turret" x="1152" y="5376" name="inst_BF02A633" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_fire_turret" x="2368" y="3392" name="inst_930170F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_fire_turret" x="1856" y="4288" name="inst_DB5C4E94" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_fire_gunner" x="3616" y="3200" name="inst_A2791B3E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fire_gunner" x="3872" y="3232" name="inst_A2791B3E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_fire_turret" x="3904" y="1088" name="inst_6E51FE30" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_fire_turret" x="3168" y="1632" name="inst_D26400F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_fire_turret" x="4288" y="1312" name="inst_3AA9A737" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1205,7 +1205,7 @@ global.cooldowns = ds_list_create();</code>
     <instance objName="obj_fire_Spawner" x="1728" y="1920" name="inst_37F5358D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_fire_Spawner" x="1984" y="1920" name="inst_DB2BB665" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_suicide_fire" x="2176" y="1728" name="inst_EE2D6D82" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_treasure_room" x="3008" y="2528" name="inst_44303426" locked="0" code="" scaleX="32" scaleY="24" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_room" x="3040" y="2528" name="inst_44303426" locked="0" code="" scaleX="32" scaleY="24" colour="4294967295" rotation="0"/>
     <instance objName="obj_fire_pickup" x="1280" y="2592" name="inst_651FC1E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_breakable_earth" x="1664" y="4864" name="inst_0B474988" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_temp_stats" x="2368" y="4704" name="inst_5A1C509E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1217,18 +1217,14 @@ global.cooldowns = ds_list_create();</code>
     <instance objName="obj_temp_stats" x="4352" y="384" name="inst_D64FAF0C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_temp_stats" x="3616" y="384" name="inst_9B2C31F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_temp_stats" x="1056" y="1632" name="inst_296037C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_fire_gunner" x="3168" y="3008" name="inst_B109F975" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_fire_gunner" x="3392" y="2624" name="inst_D5B8615E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_fire_gunner" x="3712" y="2688" name="inst_7C818B78" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_room" x="960" y="1504" name="inst_9F6FB991" locked="0" code="" scaleX="42" scaleY="25" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fire_gunner" x="3200" y="2624" name="inst_D5B8615E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treasure_room" x="1696" y="3808" name="inst_CCE708D3" locked="0" code="" scaleX="27" scaleY="33" colour="4294967295" rotation="0"/>
     <instance objName="obj_fire_turret" x="3616" y="1888" name="inst_375CBF5B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_treasure_room" x="3488" y="256" name="inst_9C31688A" locked="0" code="" scaleX="34" scaleY="39" colour="4294967295" rotation="0"/>
     <instance objName="obj_fire_turret" x="3136" y="2144" name="inst_995C30FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_fire_turret" x="1216" y="1728" name="inst_1DA2ADB1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_fire_gunner_spawner" x="3680" y="1248" name="inst_D87895E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_treasure_room" x="1696" y="3808" name="inst_CCE708D3" locked="0" code="" scaleX="27" scaleY="33" colour="4294967295" rotation="0"/>
-    <instance objName="obj_treasure_room" x="960" y="1504" name="inst_9F6FB991" locked="0" code="" scaleX="42" scaleY="25" colour="4294967295" rotation="0"/>
-    <instance objName="obj_fire_gunner_spawner" x="3712" y="2208" name="inst_35EB5A1D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_treasure_points" x="544" y="6240" name="inst_2B2F81D9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background3" x="3424" y="2976" w="64" h="64" xo="64" yo="256" id="10000573" name="inst_BCB61566" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

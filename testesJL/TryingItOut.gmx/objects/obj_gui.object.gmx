@@ -366,18 +366,18 @@ draw_set_font(fnt_pickup);
 draw_text(100, 100, "Avalible Points: " + string(global.availablePoints));
 draw_text(100, 130, "Character:");
     draw_menu_bar(160, global.curHealth, global.maxHealth, "Health: ");
-    draw_text(500, 160, "Value: " + string(global.defaultHealth + global.curHealth * 10));
+    draw_text(750, 160, "Value: " + string(global.defaultHealth + global.curHealth * 10));
     draw_menu_bar(190, global.curAttack, global.maxAttack, "Attack: ");
-    draw_text(500, 190, "Value: " + string(global.defaultAttack + global.curAttack * 0.5));
+    draw_text(750, 190, "Value: " + string(global.defaultAttack + global.curAttack * 0.5));
     var defInc = 0;
     for(var i = 0; i &lt; global.curDefense; i++)
     {
         defInc += (1 - defInc)*(0.085) 
     }
     draw_menu_bar(220, global.curDefense, global.maxDefense, "Defense: ");
-    draw_text(500, 220, "Value: " + string((global.defaultDefense + defInc * 100)) + "%");
+    draw_text(750, 220, "Value: " + string((global.defaultDefense + defInc * 100)) + "%");
     draw_menu_bar(250, global.curProjRange, global.maxProjRange, "Projectile Range: ");
-    draw_text(500, 250, "Value: " + string(global.defaultProjRange + global.curProjRange * 2));
+    draw_text(750, 250, "Value: " + string(global.defaultProjRange + global.curProjRange * 2));
     
 draw_text(100, 280, "Elements:");
 

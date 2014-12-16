@@ -836,7 +836,7 @@
     <instance objName="obj_shadowcaster" x="2048" y="2560" name="inst_F314BA78" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="2048" y="2688" name="inst_6938B53C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="1920" y="2304" name="inst_23275FDB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_pickup" x="1152" y="1888" name="inst_03B694B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_pickup" x="1472" y="3200" name="inst_03B694B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="1664" y="2304" name="inst_BAE7A6A9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="1536" y="2304" name="inst_6BBA6684" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="1408" y="2304" name="inst_0A0DCE63" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1155,8 +1155,8 @@
     <instance objName="obj_shadowcaster" x="2176" y="1536" name="inst_44D51FF3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadowcaster" x="2048" y="1536" name="inst_25C067E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_end_game" x="2592" y="1824" name="inst_2C6918B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_element_earth" x="1216" y="1888" name="inst_62DEAB43" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_fire_pickup" x="1280" y="1920" name="inst_3CAB0F50" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_element_earth" x="1472" y="3040" name="inst_62DEAB43" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fire_pickup" x="1472" y="3136" name="inst_3CAB0F50" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_secret" x="1792" y="2304" name="inst_7E78CF5E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_temp_stats" x="1696" y="2976" name="inst_ED4ECCF6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_temp_stats" x="1728" y="2976" name="inst_B4B698D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
